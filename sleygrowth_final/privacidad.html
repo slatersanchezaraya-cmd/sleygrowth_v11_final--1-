@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Políticas de Privacidad de Sley Growth.">
+<title>Políticas de Privacidad — Sley Growth</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#050816;color:#fff;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(5,8,22,0.8);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);transition:all 0.3s}
+nav.scrolled{background:rgba(5,8,22,0.97)}
+.nav-inner{max-width:1280px;margin:0 auto;height:68px;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:17px;font-weight:900;letter-spacing:-0.05em;color:#fff;text-decoration:none}
+.nav-logo span{color:#00D4FF}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{color:#A1A1AA;font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;text-decoration:none;transition:all 0.2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.06)}
+.dropdown{position:relative}
+.dropdown>button{color:#A1A1AA;font-size:13px;font-weight:500;background:none;border:none;cursor:pointer;padding:6px 12px;border-radius:6px;display:flex;align-items:center;gap:4px;transition:all 0.2s;font-family:'Inter',sans-serif}
+.dropdown:hover>button{color:#fff;background:rgba(255,255,255,0.06)}
+.dropdown-menu{position:absolute;top:calc(100%+8px);left:50%;transform:translateX(-50%);background:rgba(11,16,32,0.98);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:8px;min-width:250px;opacity:0;pointer-events:none;transition:all 0.2s;backdrop-filter:blur(20px);box-shadow:0 24px 64px rgba(0,0,0,0.5)}
+.dropdown:hover .dropdown-menu{opacity:1;pointer-events:auto}
+.di{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;transition:background 0.15s}
+.di:hover{background:rgba(255,255,255,0.06)}
+.di strong{color:#fff;font-size:12px;display:block;font-weight:700}
+.di span{color:#A1A1AA;font-size:11px;margin-top:2px;display:block}
+.btn-nav{background:linear-gradient(135deg,#00D4FF,#8B5CF6);color:#fff;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:9px 20px;border-radius:8px;text-decoration:none;transition:all 0.3s}
+.btn-nav:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,212,255,0.3)}
+.btn-nav,.btn-p{position:relative;overflow:hidden}
+.btn-nav::before,.btn-p::before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(82.3deg,rgba(150,93,233,1) 10.8%,rgba(99,88,238,1) 94.3%);transform:scaleX(0);transform-origin:0 50%;transition:transform .475s}
+.btn-nav:hover::before,.btn-p:hover::before{transform:scaleX(1)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;display:block}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,8,22,0.98);backdrop-filter:blur(24px);z-index:99;padding:88px 24px 40px;overflow-y:auto;flex-direction:column}
+.mobile-menu.open{display:flex}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;pointer-events:none}
+.hb1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.08),transparent 70%);top:-200px;right:-100px}
+.hb2{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.07),transparent 70%);bottom:-200px;left:-100px}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black,transparent)}
+.hi{max-width:1280px;margin:0 auto;padding:140px 32px 100px;position:relative;z-index:2;width:100%}
+.hlbl{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.18);font-size:10px;font-weight:700;color:#00D4FF;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:32px}
+.ldot{width:6px;height:6px;border-radius:50%;background:#00D4FF;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.5)}}
+.htitle{font-size:clamp(48px,7vw,96px);font-weight:900;letter-spacing:-0.05em;line-height:0.92;color:#fff;margin-bottom:28px}
+.htitle .muted{color:rgba(255,255,255,0.18)}
+.grad{background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdesc{font-size:18px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.7;max-width:580px;margin-bottom:44px}
+.hcta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:80px}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:linear-gradient(135deg,#00D4FF,#8B5CF6);color:#fff;border-radius:10px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(0,212,255,0.3)}
+.btn-g{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:transparent;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.btn-g:hover{color:#fff;border-color:rgba(255,255,255,0.3)}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden}
+.sb{background:#050816;padding:28px 24px;transition:background 0.2s}.sb:hover{background:rgba(255,255,255,0.02)}
+.sn{font-size:clamp(28px,3vw,42px);font-weight:900;letter-spacing:-0.04em;background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
+.sl{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.4}
+.clients-sec{padding:48px 32px;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+.clients-inner{max-width:1280px;margin:0 auto}
+.clbl{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.25);text-align:center;margin-bottom:28px}
+.crow{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.cname{font-size:13px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.05em;transition:color 0.2s;cursor:default}
+.cname:hover{color:rgba(255,255,255,0.5)}
+.sec{padding:100px 32px}
+.sec-in{max-width:1280px;margin:0 auto}
+.sey{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sey::before{content:'';width:20px;height:1px;background:currentColor}
+.stitle{font-size:clamp(32px,4vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:1.0;color:#fff;margin-bottom:56px}
+.stitle span{color:rgba(255,255,255,0.18)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden}
+.pilar{padding:48px 44px;background:#050816;transition:background 0.3s;position:relative;overflow:hidden}
+.pilar::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--pc);opacity:0;transition:opacity 0.3s}
+.pilar:hover{background:rgba(255,255,255,0.02)}.pilar:hover::before{opacity:1}
+.picon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px;border:1px solid;transition:transform 0.2s}
+.pilar:hover .picon{transform:scale(1.05)}
+.ptitle{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:10px}
+.pdesc{font-size:13.5px;color:rgba(255,255,255,0.38);font-weight:300;line-height:1.7;margin-bottom:24px}
+.plinks{display:flex;flex-wrap:wrap;gap:8px}
+.plink{font-size:11px;font-weight:600;color:rgba(255,255,255,0.4);text-decoration:none;padding:5px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:100px;transition:all 0.2s}
+.plink:hover{color:#fff;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07)}
+.parrow{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;text-decoration:none;margin-top:20px;transition:all 0.2s}
+.parrow:hover{gap:10px}
+.why-sec{padding:100px 32px;border-top:1px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,transparent,rgba(139,92,246,0.03),transparent)}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto}
+.wlist{display:flex;flex-direction:column;gap:0;margin-top:40px}
+.witem{padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:grid;grid-template-columns:32px 1fr;gap:16px;align-items:start}
+.witem:last-child{border-bottom:none}
+.wnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.2);font-weight:700;padding-top:3px}
+.wtitle{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-0.01em}
+.wdesc{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.65}
+.wright{position:relative}
+.wcm{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:36px;margin-bottom:16px}
+.wcm-tag{font-family:'JetBrains Mono',monospace;font-size:9px;color:#00D4FF;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px}
+.wcm-title{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:10px}
+.wcm-desc{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.65}
+.wcards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wcard{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px}
+.wcard-num{font-size:26px;font-weight:900;background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.wcard-lbl{font-size:12px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.4}
+.proj-sec{padding:100px 32px;border-top:1px solid rgba(255,255,255,0.06)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;margin-bottom:32px}
+.pcard{position:relative;background:#050816;aspect-ratio:4/3;overflow:hidden;text-decoration:none;display:block;transition:all 0.3s}
+.pcard:hover .pbg{transform:scale(1.05)}
+.pbg{position:absolute;inset:0;transition:transform 0.4s ease;display:flex;align-items:center;justify-content:center;font-size:60px}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,0.95) 0%,rgba(5,8,22,0.3) 60%,transparent 100%);opacity:0.7;transition:opacity 0.3s}
+.pcard:hover .pov{opacity:0.9}
+.pinfo{position:absolute;bottom:0;left:0;right:0;padding:24px}
+.pcat{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00D4FF;margin-bottom:4px}
+.pname{font-size:16px;font-weight:800;color:#fff;letter-spacing:-0.01em}
+.pdomain{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px}
+.proc-sec{padding:100px 32px;border-top:1px solid rgba(255,255,255,0.06)}
+.proc-in{max-width:1280px;margin:0 auto}
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;margin-top:56px}
+.pstep{background:#050816;padding:40px 32px;transition:background 0.2s}.pstep:hover{background:rgba(255,255,255,0.02)}
+.ps-n{font-family:'JetBrains Mono',monospace;font-size:44px;font-weight:700;color:rgba(255,255,255,0.05);letter-spacing:-0.04em;line-height:1;margin-bottom:20px}
+.ps-t{font-size:15px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
+.ps-d{font-size:13px;color:rgba(255,255,255,0.32);font-weight:300;line-height:1.65}
+.ps-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;color:#00D4FF;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.15);border-radius:4px;padding:3px 8px;margin-top:16px;letter-spacing:0.06em}
+.cta-sec{padding:100px 32px;border-top:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(139,92,246,0.06),transparent);pointer-events:none}
+.cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.cta-title{font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-0.04em;line-height:0.95;color:#fff;margin-bottom:20px}
+.cta-desc{font-size:16px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.7;margin-bottom:40px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-note{font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px}
+footer{background:#050816;border-top:1px solid rgba(255,255,255,0.06);padding:72px 32px 36px}
+.fin{max-width:1280px;margin:0 auto}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px}
+.flogo{font-size:17px;font-weight:900;letter-spacing:-0.05em;color:#fff;text-decoration:none;display:block;margin-bottom:14px}
+.flogo span{color:#00D4FF}
+.ftag{font-size:13px;color:rgba(255,255,255,0.28);font-weight:300;line-height:1.7;max-width:260px;margin-bottom:24px}
+.fcontact a{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.28);text-decoration:none;margin-bottom:10px;transition:color 0.2s}
+.fcontact a:hover{color:#00D4FF}
+.fsocial{display:flex;gap:8px;margin-top:22px}
+.fsoc{width:38px;height:38px;border-radius:9px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.28);text-decoration:none;transition:all 0.2s}
+.fsoc:hover{border-color:rgba(0,212,255,0.35);color:#00D4FF;transform:translateY(-2px)}
+.fct{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:18px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:13px;color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.2s;font-weight:300}
+.flinks a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,0.05);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy{font-size:12px;color:rgba(255,255,255,0.2)}
+.flegal{display:flex;gap:20px}
+.flegal a{font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s}.flegal a:hover{color:#fff}
+.waf{position:fixed;bottom:24px;right:24px;z-index:50;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);transition:all 0.3s;text-decoration:none}
+.waf:hover{transform:scale(1.1)}
+.rev{opacity:0;transform:translateY(28px);transition:none}.rev.in{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:none}.rvl.in{opacity:1;transform:translateX(0);transition:opacity .65s ease,transform .65s ease}
+.rvr{opacity:0;transform:translateX(28px);transition:none}.rvr.in{opacity:1;transform:translateX(0);transition:opacity .65s ease,transform .65s ease}
+@media(max-width:1024px){.pgrid{grid-template-columns:1fr}.wgrid{grid-template-columns:1fr}.wright{display:none}.proj-grid{grid-template-columns:1fr 1fr}.psteps{grid-template-columns:repeat(2,1fr)}.ftop{grid-template-columns:1fr 1fr;gap:36px}.hstats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links,.btn-nav{display:none!important}.hamburger{display:flex}.hi{padding:120px 20px 80px}.sec,.why-sec,.proj-sec,.proc-sec,.cta-sec{padding:72px 20px}.clients-sec{padding:36px 20px}.htitle{font-size:clamp(40px,10vw,56px)}.proj-grid{grid-template-columns:1fr}.psteps{grid-template-columns:1fr}.hstats{grid-template-columns:1fr 1fr}.hcta{flex-direction:column;align-items:flex-start}.btn-p,.btn-g{width:100%;justify-content:center}.cta-btns{flex-direction:column;align-items:center}.ftop{grid-template-columns:1fr;gap:28px}.fbot{flex-direction:column;text-align:center}.crow{gap:20px}.legal-wrap{padding:110px 20px 60px}.legal-title{font-size:clamp(28px,8vw,36px)}footer,.sg-footer{padding:56px 20px 28px}.hb1,.hb2{width:280px!important;height:280px!important}.ldot{animation:none!important}.rev,.rvl,.rvr{transition:opacity .4s ease,transform .4s ease}}
+
+/* ─── FOOTER SLEY GROWTH ─── */
+.sg-footer{background:#0d0f1a;border-top:1px solid rgba(255,255,255,0.07);padding:64px 32px 32px;font-family:'Inter',sans-serif}
+.sgf-inner{max-width:1280px;margin:0 auto}
+.sgf-top{display:grid;grid-template-columns:1.6fr 1fr 1.4fr;gap:56px;margin-bottom:48px}
+.sgf-logo{font-size:20px;font-weight:900;letter-spacing:-0.05em;color:#fff;text-decoration:none;display:block;margin-bottom:12px}
+.sgf-logo span{color:#00D4FF}
+.sgf-tagline{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.65;margin-bottom:24px;max-width:240px}
+.sgf-contacts{display:flex;flex-direction:column;gap:12px}
+.sgf-contact-item{display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s}
+.sgf-contact-item:hover{color:#fff}
+.sgf-ci-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sgf-col-title{font-size:13px;font-weight:800;color:#fff;letter-spacing:0.02em;margin-bottom:18px}
+.sgf-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.sgf-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color .2s;font-weight:400}
+.sgf-links a:hover{color:#fff}
+.sgf-cta-text{font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.65;margin-bottom:0}
+.sgf-social{display:flex;gap:10px;margin-top:14px}
+.sgf-soc{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;transition:all .2s}
+.sgf-soc:hover{background:rgba(255,255,255,0.14);color:#fff;transform:translateY(-2px)}
+.sgf-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.sgf-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+.sgf-legal{display:flex;gap:24px}
+.sgf-legal a{font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;transition:color .2s}
+.sgf-legal a:hover{color:#fff}
+@media(max-width:900px){.sgf-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:600px){.sgf-top{grid-template-columns:1fr;gap:28px}.sgf-bottom{flex-direction:column;text-align:center}}
+
+.legal-wrap{max-width:860px;margin:0 auto;padding:140px 32px 80px}
+.legal-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00D4FF;margin-bottom:14px}
+.legal-title{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-0.04em;color:#fff;margin-bottom:12px;line-height:1.05}
+.legal-updated{font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:48px}
+.legal-section{margin-bottom:36px}
+.legal-section h2{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:14px}
+.legal-section h3{font-size:15px;font-weight:700;color:#fff;margin:20px 0 10px}
+.legal-section p{font-size:14.5px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:14px}
+.legal-section ul{list-style:none;padding:0;margin:0 0 14px}
+.legal-section li{font-size:14.5px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.7;padding-left:24px;position:relative;margin-bottom:10px}
+.legal-section li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:#00D4FF}
+.legal-section a{color:#00D4FF;text-decoration:none}
+.legal-section a:hover{text-decoration:underline}
+.legal-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px;margin:24px 0}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:50;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);transition:all 0.3s;text-decoration:none}.wa-float:hover{transform:scale(1.1)}
+</style>
+<link rel="stylesheet" href="assets/animations.css">
+<link rel="stylesheet" href="assets/ui-polish.css">
+</head>
+<body>
+<a href="#main" class="sg-skip">Saltar al contenido</a>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SLEY<span>GROWTH.</span></a>
+    <ul class="nav-links" style="display:flex">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios/desarrollo-web.html">Desarrollo</a></li>
+      <li><a href="servicios/auditoria-seo.html">SEO</a></li>
+      <li><a href="servicios/meta-ads.html">Marketing</a></li>
+      <li><a href="servicios/chatbots.html">Automatizaciones</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <a href="contacto.html" class="btn-nav">Cotizar</a>
+    <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <a href="index.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Inicio</a>
+    <a href="servicios/desarrollo-web.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Desarrollo</a>
+    <a href="servicios/auditoria-seo.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">SEO</a>
+    <a href="servicios/meta-ads.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Marketing</a>
+    <a href="servicios/chatbots.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Automatizaciones</a>
+    <a href="proyectos.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Proyectos</a>
+    <a href="contacto.html" style="font-size:18px;font-weight:800;color:#fff;text-decoration:none">Contacto</a>
+    <a href="contacto.html" class="btn-p" style="margin-top:8px;justify-content:center">Cotizar proyecto</a>
+  </div>
+</div>
+<main class="legal-wrap" id="main">
+  <div class="legal-eyebrow">Legal</div>
+  <h1 class="legal-title">Políticas de Privacidad</h1>
+  <p class="legal-updated">Última actualización: enero 2026</p>
+  
+<div class="legal-section">
+  <p>En Sley Growth respetamos tu privacidad y nos comprometemos a proteger los datos personales que compartís con nosotros. Esta política explica qué información recopilamos, cómo la usamos y cuáles son tus derechos.</p>
+</div>
+<div class="legal-section">
+  <h2>1. Información que recopilamos</h2>
+  <p>Cuando usás nuestro sitio o solicitás una cotización, podemos recopilar:</p>
+  <ul>
+    <li>Datos de contacto: nombre, correo electrónico, número de teléfono y nombre de empresa.</li>
+    <li>Información del proyecto: el servicio que te interesa, los complementos seleccionados y cualquier mensaje que nos envíes.</li>
+    <li>Datos técnicos: tipo de navegador y la página desde la que llegaste, usados solo para mejorar el sitio.</li>
+  </ul>
+</div>
+<div class="legal-section">
+  <h2>2. Cómo usamos tu información</h2>
+  <ul>
+    <li>Para responder a tus solicitudes de cotización y contacto.</li>
+    <li>Para enviarte propuestas, presupuestos y seguimiento de tu proyecto.</li>
+    <li>Para mejorar nuestros servicios y la experiencia del sitio.</li>
+  </ul>
+  <p>Nunca vendemos ni alquilamos tus datos a terceros.</p>
+</div>
+<div class="legal-section">
+  <h2>3. Almacenamiento y seguridad</h2>
+  <p>Tus datos se almacenan en servicios seguros (bases de datos cifradas) y solo el equipo de Sley Growth tiene acceso a ellos. Aplicamos medidas técnicas razonables para protegerlos contra accesos no autorizados.</p>
+</div>
+<div class="legal-section">
+  <h2>4. Tus derechos</h2>
+  <p>Podés solicitar en cualquier momento acceder, corregir o eliminar tus datos personales escribiéndonos a <a href="mailto:sleygrowth@gmail.com">sleygrowth@gmail.com</a>.</p>
+</div>
+<div class="legal-section">
+  <h2>5. Cookies</h2>
+  <p>Este sitio puede usar cookies básicas para funcionamiento y análisis. Podés desactivarlas desde la configuración de tu navegador sin afectar el uso del sitio.</p>
+</div>
+<div class="legal-box">
+  <p style="margin:0">¿Tenés dudas sobre tu privacidad? Escribinos a <a href="mailto:sleygrowth@gmail.com">sleygrowth@gmail.com</a> o por WhatsApp al <a href="https://wa.me/50660336062" target="_blank">+506 6033-6062</a>.</p>
+</div>
+
+</main>
+<footer class="sg-footer">
+  <div class="sgf-inner">
+    <div class="sgf-top">
+
+      <!-- Col 1: Logo + contacto -->
+      <div class="sgf-col sgf-col-brand">
+        <a href="index.html" class="sgf-logo">SLEY<span>GROWTH.</span></a>
+        <p class="sgf-tagline">Listos para llevar tu marca al siguiente nivel.</p>
+        <div class="sgf-contacts">
+          <a href="tel:+50660336062" class="sgf-contact-item">
+            <span class="sgf-ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            </span>
+            +506 6033-6062
+          </a>
+          <a href="mailto:sleygrowth@gmail.com" class="sgf-contact-item">
+            <span class="sgf-ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            sleygrowth@gmail.com
+          </a>
+          <a href="https://maps.google.com/?q=San+Jose+Costa+Rica" target="_blank" class="sgf-contact-item">
+            <span class="sgf-ci-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            San Jose, Costa Rica
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Links rapidos -->
+      <div class="sgf-col">
+        <div class="sgf-col-title">Enlaces rapidos</div>
+        <ul class="sgf-links">
+          <li><a href="servicios/desarrollo-web.html">Desarrollo Web</a></li>
+          <li><a href="servicios/auditoria-seo.html">Auditoria SEO</a></li>
+          <li><a href="servicios/meta-ads.html">Meta Ads</a></li>
+          <li><a href="servicios/chatbots.html">ChatBots IA</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Trabajemos juntos + redes -->
+      <div class="sgf-col sgf-col-cta">
+        <div class="sgf-col-title">Trabajemos juntos</div>
+        <p class="sgf-cta-text">Somos aliados estrategicos para marcas que buscan crecer. Escribenos y demos el primer paso.</p>
+        <div class="sgf-col-title" style="margin-top:28px">Siguenos</div>
+        <div class="sgf-social">
+          <a href="https://www.facebook.com/sleygrowth" target="_blank" class="sgf-soc" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/50660336062" target="_blank" class="sgf-soc" title="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/sleygrowth/" target="_blank" class="sgf-soc" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" class="sgf-soc" title="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div class="sgf-bottom">
+      <p class="sgf-copy">© 2026 Sley Growth. Todos los derechos reservados.</p>
+      <div class="sgf-legal"><a href="privacidad.html">Politicas de Privacidad</a><a href="terminos.html">Terminos de Servicio</a></div>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="22" height="22"><path fill="white" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50));
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');let open=false;
+ham.addEventListener('click',()=>{open=!open;mob.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});
+</script>
+<script src="assets/animations.js"></script>
+</body>
+</html>

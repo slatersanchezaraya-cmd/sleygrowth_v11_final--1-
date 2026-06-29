@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════════════════════
+   SLEY GROWTH — Animaciones premium (CSS)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── TEXTO QUE SE RELLENA (tipo batería/carga) ───────────────
+   El texto arranca apagado (gris) y se "llena" con un gradiente
+   que avanza de izquierda a derecha cuando entra en pantalla. */
+.sg-fill{
+  background-image: linear-gradient(90deg,
+    var(--fill-c1, #00D4FF) 0%,
+    var(--fill-c2, #8B5CF6) 50%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.18) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 1.4s cubic-bezier(0.22,1,0.36,1);
+}
+.sg-fill-go{ background-position: 0% 0; }
+
+/* Variantes de color de relleno por pilar (heredan --ac si existe) */
+.ht.sg-fill, .ctt.sg-fill{ --fill-c1: var(--ac, #00D4FF); --fill-c2: var(--ac, #8B5CF6); }
+
+/* No romper títulos que ya usan gradiente propio en un <span> */
+.sg-fill .grad{ -webkit-text-fill-color: transparent; }
+
+/* ── REVEAL POR LÍNEA (para títulos con spans de color) ──────
+   No usa background-clip, así respeta .grad y .muted internos.
+   El título arranca con leve subida+blur y se asienta. */
+.sg-lines{
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(4px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+              transform 0.8s cubic-bezier(0.22,1,0.36,1),
+              filter 0.8s ease;
+}
+.sg-lines.sg-lines-go{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ── REVEAL MEJORADO (blur + escala + subida) ────────────────
+   Se combina con las clases .rev/.rv ya existentes sin pisarlas. */
+.sg-reveal{
+  opacity: 0;
+  transform: translateY(34px) scale(0.985);
+  filter: blur(6px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1),
+              filter 0.7s ease;
+  will-change: opacity, transform, filter;
+}
+.sg-reveal.sg-in{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Stagger automático para grids (retrasos escalonados) */
+.pillars-grid .pilar:nth-child(1),.pgrid .pilar:nth-child(1){transition-delay:0s}
+.pillars-grid .pilar:nth-child(2),.pgrid .pilar:nth-child(2){transition-delay:.08s}
+.pillars-grid .pilar:nth-child(3),.pgrid .pilar:nth-child(3){transition-delay:.16s}
+.pillars-grid .pilar:nth-child(4),.pgrid .pilar:nth-child(4){transition-delay:.24s}
+.proj-grid .pcard:nth-child(1){transition-delay:0s}
+.proj-grid .pcard:nth-child(2){transition-delay:.07s}
+.proj-grid .pcard:nth-child(3){transition-delay:.14s}
+.proj-grid .pcard:nth-child(4){transition-delay:.07s}
+.proj-grid .pcard:nth-child(5){transition-delay:.14s}
+.proj-grid .pcard:nth-child(6){transition-delay:.21s}
+.cfg-addons-grid .cfg-addon:nth-child(1){transition-delay:0s}
+.cfg-addons-grid .cfg-addon:nth-child(2){transition-delay:.06s}
+.cfg-addons-grid .cfg-addon:nth-child(3){transition-delay:.12s}
+.cfg-addons-grid .cfg-addon:nth-child(4){transition-delay:.18s}
+.cfg-addons-grid .cfg-addon:nth-child(5){transition-delay:.24s}
+.cfg-addons-grid .cfg-addon:nth-child(6){transition-delay:.30s}
+
+/* ── TILT 3D ──────────────────────────────────────────────── */
+.sg-tilt{
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+}
+.sg-tilt:hover{
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  z-index: 2;
+}
+/* Brillo que sigue el tilt en cards de pilar */
+.pilar.sg-tilt::after{
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06), transparent 60%);
+  opacity:0; transition:opacity .3s; pointer-events:none;
+}
+.pilar.sg-tilt:hover::after{ opacity:1; }
+
+/* ── CONTADORES (estabiliza ancho para que no salte) ───────── */
+.sn, .dnt, .fm, .rn, .fsn, .mn2, .stat-num, .wcard-num{
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── GLOW PULSANTE en botones primarios ──────────────────── */
+@keyframes sgGlowPulse{
+  0%,100%{ box-shadow: 0 8px 30px rgba(0,212,255,0.18); }
+  50%{ box-shadow: 0 8px 44px rgba(139,92,246,0.34); }
+}
+.btn-p:hover, .btn-primary:hover, .cfg-btn-primary:hover, .bp:hover{
+  animation: sgGlowPulse 2.2s ease-in-out infinite;
+}
+
+/* ── FLOTACIÓN suave para elementos decorativos ───────────── */
+@keyframes sgFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-12px); }
+}
+.sg-float{ animation: sgFloat 6s ease-in-out infinite; }
+
+/* ── ENTRADA del badge/eyebrow (deslizar+aparecer) ────────── */
+@keyframes sgSlideIn{
+  from{ opacity:0; transform: translateX(-12px); }
+  to{ opacity:1; transform: translateX(0); }
+}
+
+/* ── Magnetismo sutil en links de servicio (pilar-link) ───── */
+.plink, .pilar-link{ transition: transform 0.2s ease, color 0.2s, border-color 0.2s, background 0.2s; }
+.plink:hover, .pilar-link:hover{ transform: translateY(-2px); }
+
+/* ── Línea de progreso de scroll (barra superior) ─────────── */
+#sg-scroll-progress{
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, #00D4FF, #8B5CF6);
+  z-index: 200; transition: width 0.1s linear;
+  box-shadow: 0 0 12px rgba(0,212,255,0.5);
+}
+
+/* ── Respeto a usuarios con motion reducido ──────────────── */
+@media (prefers-reduced-motion: reduce){
+  .sg-reveal{ opacity:1 !important; transform:none !important; filter:none !important; }
+  .sg-fill{ background-position: 0 0 !important; }
+  .sg-tilt{ transform:none !important; }
+  .btn-p:hover, .btn-primary:hover, .cfg-btn-primary:hover, .bp:hover{ animation:none; }
+  .sg-float{ animation:none; }
+}

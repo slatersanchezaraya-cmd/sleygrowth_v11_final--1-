@@ -1,0 +1,120 @@
+{
+  "name": "Sley Growth - Cotizaciones Web",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cotizacion-sley",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "id": "webhook-cotizacion",
+      "name": "Webhook Cotización",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "cotizacion-sley"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normaliza el payload entrante y arma el resumen de add-ons\nconst body = $input.first().json.body || $input.first().json;\n\nconst addons = Array.isArray(body.addons) ? body.addons : [];\nconst addonsTexto = addons.length\n  ? addons.map(a => `${a.nombre}${a.cantidad > 1 ? ' x'+a.cantidad : ''} ($${a.precio * (a.cantidad||1)})`).join(', ')\n  : 'Ninguno';\n\nreturn [{\n  json: {\n    nombre: body.nombre || '',\n    email: body.email || '',\n    telefono: body.telefono || '',\n    empresa: body.empresa || '',\n    mensaje: body.mensaje || '',\n    servicio: body.servicio || '',\n    servicio_slug: body.servicio_slug || '',\n    precio_base: body.precio_base || 0,\n    addons_json: JSON.stringify(addons),\n    addons_texto: addonsTexto,\n    total: body.total || 0,\n    origen: body.origen || 'web',\n    url_origen: body.url_origen || '',\n    fecha: new Date().toLocaleString('es-CR', { timeZone: 'America/Costa_Rica' })\n  }\n}];"
+      },
+      "id": "normaliza",
+      "name": "Normalizar Datos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "TU_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Cotizaciones",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.fecha }}",
+            "Nombre": "={{ $json.nombre }}",
+            "Email": "={{ $json.email }}",
+            "Telefono": "={{ $json.telefono }}",
+            "Empresa": "={{ $json.empresa }}",
+            "Servicio": "={{ $json.servicio }}",
+            "Precio Base": "={{ $json.precio_base }}",
+            "Add-ons": "={{ $json.addons_texto }}",
+            "Total": "={{ $json.total }}",
+            "Mensaje": "={{ $json.mensaje }}",
+            "Origen": "={{ $json.url_origen }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "google-sheets",
+      "name": "Guardar en Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [700, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Z8D517qIRY92rU4c",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://TU-PROYECTO.supabase.co/rest/v1/cotizaciones",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "TU_SERVICE_ROLE_KEY" },
+            { "name": "Authorization", "value": "Bearer TU_SERVICE_ROLE_KEY" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=minimal" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"nombre\": \"{{ $json.nombre }}\",\n  \"email\": \"{{ $json.email }}\",\n  \"telefono\": \"{{ $json.telefono }}\",\n  \"empresa\": \"{{ $json.empresa }}\",\n  \"mensaje\": \"{{ $json.mensaje }}\",\n  \"servicio\": \"{{ $json.servicio }}\",\n  \"servicio_slug\": \"{{ $json.servicio_slug }}\",\n  \"precio_base\": {{ $json.precio_base }},\n  \"total\": {{ $json.total }},\n  \"origen\": \"{{ $json.origen }}\",\n  \"url_origen\": \"{{ $json.url_origen }}\"\n}",
+        "options": {}
+      },
+      "id": "supabase-backup",
+      "name": "Backup Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 380]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"ok\": true, \"mensaje\": \"Cotización recibida\" }",
+        "options": {}
+      },
+      "id": "respond",
+      "name": "Responder OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [940, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Cotización": { "main": [[{ "node": "Normalizar Datos", "type": "main", "index": 0 }]] },
+    "Normalizar Datos": { "main": [[
+      { "node": "Guardar en Google Sheets", "type": "main", "index": 0 },
+      { "node": "Backup Supabase", "type": "main", "index": 0 }
+    ]] },
+    "Guardar en Google Sheets": { "main": [[{ "node": "Responder OK", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

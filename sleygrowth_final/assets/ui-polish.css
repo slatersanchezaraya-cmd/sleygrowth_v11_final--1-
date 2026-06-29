@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════════════════════════════════
+   SLEY GROWTH — UI/UX Polish
+   Aplica reglas de prioridad CRITICAL y HIGH (ui-ux-pro-max):
+   #1 Accessibility · #2 Touch & Interaction · #4 Style · #5 Layout
+   #6 Typography · #7 Animation
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── #1 ACCESSIBILITY · focus-states ──────────────────────────
+   Focus ring visible solo con teclado (no roba estética al mouse). */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* Quitar outline al click de mouse pero conservarlo en teclado */
+:where(a, button):focus:not(:focus-visible) { outline: none; }
+
+/* skip-link para usuarios de teclado */
+.sg-skip {
+  position: absolute; left: -9999px; top: 0; z-index: 9999;
+  background: #00D4FF; color: #050816; padding: 12px 20px;
+  border-radius: 0 0 10px 0; font-weight: 800; font-size: 13px;
+  text-decoration: none;
+}
+.sg-skip:focus { left: 0; }
+
+/* ── #2 TOUCH & INTERACTION ───────────────────────────────────
+   tap-delay: eliminar el retardo de 300ms en móvil
+   touch-target: asegurar 44x44 mínimo en elementos interactivos */
+a, button, input, select, textarea, .filter-btn, .cfg-qty-btn {
+  touch-action: manipulation;
+}
+.plink, .pilar-link, .sgf-links a, .flinks a, .footer-links a {
+  /* expandir área táctil sin cambiar lo visual */
+  position: relative;
+}
+.cfg-qty-btn { min-width: 44px; min-height: 44px; }
+.sgf-soc, .ci-soc, .social-btn { min-width: 44px; min-height: 44px; }
+/* press feedback: scale sutil al tocar (scale-feedback) */
+.btn-p:active, .btn-primary:active, .cfg-btn-primary:active,
+.bp:active, .btn-submit:active, .filter-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── #5 LAYOUT · viewport-units & no-horizontal-scroll ───────── */
+html, body { max-width: 100%; overflow-x: hidden; }
+.hero, .page-hero { min-height: 100dvh; }   /* dvh > vh en móvil */
+img, svg, video { max-width: 100%; height: auto; }
+
+/* ── #6 TYPOGRAPHY · readable-font-size & number-tabular ─────── */
+@media (max-width: 768px) {
+  body { font-size: 16px; }          /* evita auto-zoom iOS */
+  input, select, textarea { font-size: 16px; }  /* idem */
+}
+.sn, .dnt, .fm, .rn, .fsn, .mn2, .stat-num, .wcard-num,
+.cfg-price-big, .pmn, [data-total] {
+  font-variant-numeric: tabular-nums;  /* números no saltan al animar */
+  font-feature-settings: "tnum";
+}
+
+/* ── #7 ANIMATION · easing & state-transition consistente ────── */
+a, button, .pilar, .pcard, .proy-card, .wcard, .cfg-addon,
+.filter-btn, .ci-card, .btn-p, .btn-g, .btn-primary {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* loading state del botón del formulario (submit-feedback) */
+button[disabled], .btn-submit:disabled, .sqm-submit:disabled {
+  opacity: 0.55; cursor: not-allowed; transform: none !important;
+}
+
+/* ── #4 STYLE · elevation-consistent (escala de sombras) ─────── */
+:root {
+  --sg-shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --sg-shadow-md: 0 8px 24px rgba(0,0,0,0.3);
+  --sg-shadow-lg: 0 24px 60px rgba(0,0,0,0.4);
+  --sg-shadow-glow: 0 14px 40px rgba(0,212,255,0.25);
+}
+
+/* ── Hover states más claros en cards (state-clarity) ────────── */
+.pilar:hover, .pcard:hover, .proy-card:hover, .ci-card:hover {
+  box-shadow: var(--sg-shadow-lg);
+}
+
+/* ── Iconos de pilar: alineación y tamaño consistente ────────── */
+.picon svg { display: block; }
+
+/* ── Selección de texto on-brand ─────────────────────────────── */
+::selection { background: rgba(0,212,255,0.25); color: #fff; }
+
+/* ── Scrollbar sutil on-brand (desktop) ──────────────────────── */
+@media (hover: hover) {
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: #050816; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.12); border-radius: 6px;
+    border: 3px solid #050816;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0,212,255,0.4); }
+}
+
+/* ── Mejora de contraste en textos secundarios (color-accessible) ─
+   Sube ligeramente la opacidad mínima de textos tenues para
+   acercarse a 4.5:1 sin perder la estética. */
+.hdesc, .ph-sub, .pdesc, .pilar-desc, .cfg-desc, .ci-intro {
+  color: rgba(255,255,255,0.55);
+}
+.sl, .stat-label, .ml, .wcard-lbl, .fdc {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── #2 cursor-pointer en todo lo clickeable ─────────────────── */
+.pilar, .pcard, .proy-card, .ci-card, .cfg-addon,
+[data-quote], [data-clear], .filter-btn, .cfg-qty-btn {
+  cursor: pointer;
+}
+
+/* ── reduced-motion (refuerzo global) ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

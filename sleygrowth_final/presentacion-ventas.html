@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sley Growth — Propuesta Comercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#050816;color:#fff;overflow:hidden;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#050816;--bg2:#07091a;
+  --cyan:#00D4FF;--green:#22C55E;--orange:#F97316;--purple:#8B5CF6;
+  --w1:#fff;--w2:rgba(255,255,255,.6);--w3:rgba(255,255,255,.3);--w4:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.1);
+  --mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;
+  --grad:linear-gradient(135deg,#00D4FF,#8B5CF6);
+}
+.deck{position:relative;width:100vw;height:100vh}
+#bgScene{position:fixed;inset:0;z-index:0;perspective:1400px;overflow:hidden}
+#bgScene .float-layer{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .3s ease-out}
+.fcube{position:absolute;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(139,92,246,.04));backdrop-filter:blur(2px);transform-style:preserve-3d;animation:floatCube ease-in-out infinite}
+@keyframes floatCube{0%,100%{transform:translate3d(0,0,0) rotateX(0deg) rotateY(0deg)}50%{transform:translate3d(0,-34px,60px) rotateX(10deg) rotateY(12deg)}}
+@media(prefers-reduced-motion:reduce){.fcube{animation:none}}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:60px 90px;background:transparent;overflow:hidden;z-index:1}
+.slide.active{display:flex}
+.slide::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.07),transparent 70%);top:-200px;right:-150px;pointer-events:none}
+.slide::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.06),transparent 70%);bottom:-180px;left:-120px;pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.eyebrow::before{content:'';width:22px;height:1px;background:currentColor}
+h1.s-title{font-family:var(--display);font-size:clamp(34px,4.4vw,58px);font-weight:800;letter-spacing:-0.04em;line-height:1.04;margin-bottom:18px;position:relative;z-index:2}
+h1.s-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s-sub{font-size:16px;color:var(--w2);font-weight:300;line-height:1.7;max-width:680px;position:relative;z-index:2}
+.logo-cover{font-family:var(--display);font-size:15px;font-weight:800;letter-spacing:-0.03em;position:absolute;top:40px;left:90px;z-index:3}
+.logo-cover em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.pager{position:absolute;bottom:34px;left:90px;font-family:var(--mono);font-size:11px;color:var(--w3);letter-spacing:.1em;z-index:3}
+.nav-btns{position:fixed;bottom:28px;right:36px;display:flex;gap:10px;z-index:50}
+.nbtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.04);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:16px}
+.nbtn:hover{border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.08)}
+
+/* COVER */
+#s0{justify-content:center;align-items:flex-start}
+.cover-word{font-family:var(--display);font-size:clamp(56px,9vw,108px);font-weight:800;letter-spacing:-0.05em;line-height:.95}
+.cover-word em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.cover-tag{font-family:var(--mono);font-size:13px;color:var(--w2);letter-spacing:.14em;text-transform:uppercase;margin-top:22px}
+.cover-meta{position:absolute;bottom:50px;left:90px;display:flex;gap:40px;font-size:13px;color:var(--w2)}
+
+/* BENEFICIOS GRID */
+.ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 50px;margin-top:38px;max-width:780px;position:relative;z-index:2}
+.ben{display:flex;gap:14px;align-items:flex-start}
+.ben-check{width:26px;height:26px;border-radius:50%;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700}
+.ben-t{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+.ben-d{font-size:12.5px;color:var(--w2);font-weight:300}
+
+/* PRICE BAND */
+.price-band{margin-top:36px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:30px 36px;position:relative;z-index:2;max-width:780px}
+.price-band::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);border-radius:16px 16px 0 0}
+.pb-tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--w2);margin-bottom:8px}
+.pb-price{font-family:var(--display);font-size:clamp(32px,4vw,48px);font-weight:800;letter-spacing:-0.03em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.pb-note{font-size:12px;color:var(--w3);margin-top:8px}
+
+/* SERVICE PRICE CARDS */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;position:relative;z-index:2}
+.svc-card{border:1px solid var(--border);border-radius:14px;padding:22px 20px;background:rgba(255,255,255,.02)}
+.svc-cat{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.svc-name{font-family:var(--display);font-size:16px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-0.02em}
+.svc-price{font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-0.02em}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;position:relative;z-index:2}
+.proc-card{border:1px solid var(--border);border-radius:14px;padding:24px 20px;background:rgba(255,255,255,.02)}
+.proc-n{font-family:var(--display);font-size:13px;color:var(--w3);margin-bottom:14px}
+.proc-t{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+.proc-d{font-size:12px;color:var(--w2);font-weight:300;line-height:1.6}
+
+/* CTA SLIDE */
+.cta-grid{display:flex;gap:20px;margin-top:36px;position:relative;z-index:2}
+.cta-box{border:1px solid var(--border);border-radius:14px;padding:26px 28px;background:rgba(255,255,255,.02);flex:1}
+.cta-box-t{font-size:10px;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.cta-box-v{font-size:16px;font-weight:700;color:#fff}
+
+/* RESULTADOS */
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;position:relative;z-index:2}
+.res-card{border:1px solid var(--border);border-radius:16px;padding:30px 22px;background:rgba(255,255,255,.03);text-align:center}
+.res-num{font-family:var(--display);font-size:clamp(34px,4.4vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.res-label{font-size:12px;color:var(--w2);font-weight:300;margin-top:10px;line-height:1.5}
+.res-case{margin-top:30px;border:1px solid var(--border);border-radius:14px;padding:22px 26px;background:rgba(255,255,255,.02);max-width:780px;position:relative;z-index:2}
+.res-case-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.res-case-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.res-case-d{font-size:12.5px;color:var(--w2);font-weight:300;line-height:1.6}
+
+/* SPIN — situación / problema / implicación / payoff */
+.spin-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:22px;position:relative;z-index:2}
+.spin-list{margin-top:30px;display:flex;flex-direction:column;gap:0;max-width:760px;position:relative;z-index:2}
+.spin-item{display:grid;grid-template-columns:30px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.spin-item:last-child{border-bottom:none}
+.spin-mark{font-family:var(--display);font-size:14px;color:var(--w3);padding-top:2px}
+.spin-t{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:4px}
+.spin-d{font-size:12.5px;color:var(--w2);font-weight:300;line-height:1.6}
+.spin-quote{margin-top:30px;font-family:var(--display);font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-0.03em;line-height:1.25;max-width:740px;position:relative;z-index:2}
+.spin-quote span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.edit-field{border-bottom:1px dashed rgba(0,212,255,.5);cursor:text;outline:none;padding:0 2px}
+.edit-field:focus{background:rgba(0,212,255,.08);border-bottom-style:solid}
+.edit-hint{position:fixed;top:18px;right:24px;font-family:var(--mono);font-size:9px;color:var(--w3);letter-spacing:.1em;z-index:60;text-transform:uppercase}
+
+/* NEXT STEPS */
+.next-list{margin-top:34px;display:flex;flex-direction:column;gap:0;max-width:680px;position:relative;z-index:2}
+.next-item{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);align-items:baseline}
+.next-item:last-child{border-bottom:none}
+.next-when{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
+.next-t{font-size:14.5px;font-weight:600;color:#fff}
+
+@media print{
+  body{overflow:visible}
+  .nav-btns{display:none}
+  .slide{display:flex !important;position:relative;height:100vh;page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<div id="bgScene">
+  <div class="float-layer" id="floatLayer">
+    <div class="fcube" style="width:160px;height:160px;top:8%;left:6%;animation-duration:11s;animation-delay:0s;border-color:rgba(0,212,255,.14)"></div>
+    <div class="fcube" style="width:110px;height:110px;top:62%;left:12%;animation-duration:9s;animation-delay:1.2s;border-color:rgba(139,92,246,.16)"></div>
+    <div class="fcube" style="width:200px;height:140px;top:14%;left:78%;animation-duration:13s;animation-delay:.6s;border-color:rgba(34,197,94,.12)"></div>
+    <div class="fcube" style="width:90px;height:90px;top:74%;left:68%;animation-duration:8s;animation-delay:2s;border-color:rgba(249,115,22,.14)"></div>
+    <div class="fcube" style="width:130px;height:170px;top:40%;left:88%;animation-duration:12s;animation-delay:1.6s;border-color:rgba(0,212,255,.12)"></div>
+    <div class="fcube" style="width:150px;height:100px;top:42%;left:2%;animation-duration:10s;animation-delay:.3s;border-color:rgba(139,92,246,.14)"></div>
+    <div class="fcube" style="width:80px;height:80px;top:84%;left:38%;animation-duration:9.5s;animation-delay:2.4s;border-color:rgba(34,197,94,.14)"></div>
+  </div>
+</div>
+
+<div class="deck" id="deck">
+
+<!-- SLIDE 0 — COVER -->
+<section class="slide active" id="s0">
+  <div class="cover-word">SLEY<em>GROWTH.</em></div>
+  <div class="cover-tag">Propuesta comercial para <span class="edit-field" contenteditable="true" data-placeholder="[nombre del negocio]">[nombre del negocio]</span></div>
+  <div class="cover-meta">
+    <span>San José, Costa Rica</span>
+    <span>+506 6033-6062</span>
+    <span>sleygrowth@gmail.com</span>
+  </div>
+</section>
+
+<!-- SLIDE 1 — SPIN: SITUACIÓN -->
+<section class="slide" id="s1situ">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="spin-tag" style="background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);color:var(--cyan)">Situación</div>
+  <h1 class="s-title">Así está el<br>terreno <span>hoy</span>.</h1>
+  <p class="s-sub">Antes de hablar de soluciones, pongamos el panorama sobre la mesa — esto aplica a casi cualquier negocio en Costa Rica hoy.</p>
+  <div class="spin-list">
+    <div class="spin-item"><div class="spin-mark">01</div><div><div class="spin-t">9 de cada 10 personas buscan en Google antes de comprar o visitar un negocio.</div><div class="spin-d">Tu cliente ya está buscando <span class="edit-field" contenteditable="true">lo que ofrecés</span>, ahora mismo, en este momento.</div></div></div>
+    <div class="spin-item"><div class="spin-mark">02</div><div><div class="spin-t">¿Tu negocio aparece cuando te buscan por nombre o por servicio?</div><div class="spin-d">¿Tu sitio carga rápido, se ve bien en el celular, y deja claro cómo contactarte? <span class="edit-field" contenteditable="true">(anotá lo que viste al revisar su sitio/redes antes de la llamada)</span></div></div></div>
+    <div class="spin-item"><div class="spin-mark">03</div><div><div class="spin-t">¿Cuánto de tu trabajo diario depende de responder mensajes uno por uno?</div><div class="spin-d">Cotizar, agendar, contestar las mismas preguntas — manualmente, todos los días.</div></div></div>
+  </div>
+</section>
+
+<!-- SLIDE 1B — SPIN: PROBLEMA -->
+<section class="slide" id="s1prob">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="spin-tag" style="background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25);color:var(--orange)">Problema</div>
+  <h1 class="s-title">Lo que eso<br>te está <span>costando</span>.</h1>
+  <div class="spin-list">
+    <div class="spin-item"><div class="spin-mark">→</div><div><div class="spin-t">Sin presencia digital fuerte, el cliente no te encuentra a vos — encuentra al competidor que sí invirtió en esto.</div><div class="spin-d">No es que no haya demanda. Es que la demanda está aterrizando en otro lado.</div></div></div>
+    <div class="spin-item"><div class="spin-mark">→</div><div><div class="spin-t">Mensajes fuera de horario, cotizaciones lentas, seguimiento manual.</div><div class="spin-d">Cada hora de respuesta tardía es una oportunidad que se enfría o se va.</div></div></div>
+    <div class="spin-item"><div class="spin-mark">→</div><div><div class="spin-t">Un sitio lento o desactualizado transmite poca confianza, aunque el servicio detrás sea excelente.</div><div class="spin-d">La gente decide en segundos si confía o se va — y ese juicio rara vez es justo, pero es real.</div></div></div>
+  </div>
+</section>
+
+<!-- SLIDE 1C — SPIN: IMPLICACIÓN -->
+<section class="slide" id="s1impl">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="spin-tag" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.28);color:#EF4444">Implicación</div>
+  <h1 class="s-title">Si esto sigue<br>igual <span>6 meses más</span>...</h1>
+  <div class="spin-list">
+    <div class="spin-item"><div class="spin-mark">⚠</div><div><div class="spin-t">Cada cliente que no te encuentra hoy, probablemente ya está comprando con otro.</div><div class="spin-d">Y ese competidor empieza a acumular reseñas, posicionamiento y reputación — terreno que después cuesta mucho más recuperar.</div></div></div>
+    <div class="spin-item"><div class="spin-mark">⚠</div><div><div class="spin-t">El SEO y el posicionamiento toman tiempo — cuanto más tarde empezás, más tarde ves resultado.</div><div class="spin-d">No es un gasto que se pueda "después" sin costo: el costo es la ventaja que le regalás a la competencia mientras esperás.</div></div></div>
+  </div>
+  <div class="spin-quote">El costo real no es invertir ahora.<br>Es <span>seguir perdiendo clientes</span> que ni te enterás que perdiste.</div>
+</section>
+
+<!-- SLIDE 1D — SPIN: NEED-PAYOFF -->
+<section class="slide" id="s1pay">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="spin-tag" style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:var(--green)">Beneficio de resolverlo</div>
+  <h1 class="s-title">Ahora imaginá<br>lo <span>contrario</span>.</h1>
+  <div class="ben-grid">
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Te encuentran primero</div><div class="ben-d">Apareces cuando buscan justo lo que ofrecés.</div></div></div>
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Trabaja 24/7 por vos</div><div class="ben-d">Captura y responde aunque estés durmiendo.</div></div></div>
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Confianza desde el primer segundo</div><div class="ben-d">Un sitio rápido y profesional cierra dudas antes de que aparezcan.</div></div></div>
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Menos trabajo manual repetitivo</div><div class="ben-d">Automatización para cotizar, agendar y responder.</div></div></div>
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Resultados medibles, no promesas</div><div class="ben-d">Datos reales de tráfico, conversión y ROI.</div></div></div>
+    <div class="ben"><div class="ben-check">✓</div><div><div class="ben-t">Ventaja sobre quien todavía no hizo esto</div><div class="ben-d">Cada mes que pasa, esa ventaja se vuelve más difícil de alcanzar para ellos.</div></div></div>
+  </div>
+</section>
+
+<!-- SLIDE 2 — DESARROLLO WEB -->
+<section class="slide" id="s2">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--cyan)">Desarrollo de software</div>
+  <h1 class="s-title">Web, apps <span>y sistemas</span><br>a medida.</h1>
+  <p class="s-sub"><strong style="color:#fff">Problema:</strong> un sitio lento o sin sitio = clientes que dudan o se van a la competencia. <strong style="color:var(--green)">Solución:</strong> sitios construidos desde cero, rápidos, optimizados para convertir.</p>
+  <div class="price-band">
+    <div class="pb-tag">Desarrollo Web profesional</div>
+    <div class="pb-price">Desde $500</div>
+    <div class="pb-note">Según funcionalidades incluidas · Diseño responsivo · Optimización · Contacto integrado</div>
+  </div>
+  <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);max-width:780px">
+    <div class="svc-card"><div class="svc-cat" style="color:var(--green)">Rediseño Web</div><div class="svc-name">Modernizá sin perder tu SEO</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $250</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--orange)">Landing Page</div><div class="svc-name">Una página, un objetivo: convertir</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $300</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--purple)">E-commerce</div><div class="svc-name">Tienda online robusta, lista para vender</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $800</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--cyan)">App de Escritorio</div><div class="svc-name">Sistema local a medida</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cotización a medida</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 3 — SEO -->
+<section class="slide" id="s3">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--green)">SEO y posicionamiento</div>
+  <h1 class="s-title">Que te encuentren<br><span>primero en Google</span>.</h1>
+  <p class="s-sub"><strong style="color:#fff">Problema:</strong> no sirve tener el mejor negocio si aparecés en la página 2 de Google. <strong style="color:var(--green)">Solución:</strong> diagnóstico técnico, posicionamiento local y velocidad — todo medible.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-cat" style="color:var(--green)">Auditoría SEO</div><div class="svc-name">Diagnóstico técnico completo</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $200</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--cyan)">SEO Local</div><div class="svc-name">Posicionamiento geolocalizado</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $150/mes</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--orange)">SEO Técnico</div><div class="svc-name">Velocidad y rastreo correcto</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $200</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 4 — MARKETING -->
+<section class="slide" id="s4">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--orange)">Marketing digital</div>
+  <h1 class="s-title">Campañas con<br><span>retorno real</span>.</h1>
+  <p class="s-sub"><strong style="color:#fff">Problema:</strong> plata invertida en ads sin estructura es plata perdida. <strong style="color:var(--green)">Solución:</strong> campañas con segmentación correcta, creativos que comunican y resultado medible en ROAS. El presupuesto de campaña se cotiza según objetivo e inversión mensual.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-cat" style="color:var(--orange)">Meta Ads</div><div class="svc-name">Facebook e Instagram con resultados medibles</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cotización a medida</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--cyan)">Google Ads</div><div class="svc-name">Alta conversión en búsqueda y display</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cotización a medida</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--purple)">Logo y Marca</div><div class="svc-name">Identidad visual que impacta</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cotización a medida</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 5 — IA -->
+<section class="slide" id="s5">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--purple)">IA y automatizaciones</div>
+  <h1 class="s-title">Sistemas que<br><span>trabajan por vos</span>.</h1>
+  <p class="s-sub"><strong style="color:#fff">Problema:</strong> horas diarias respondiendo lo mismo, cotizando a mano, agendando uno por uno. <strong style="color:var(--green)">Solución:</strong> chatbots que atienden 24/7, integraciones entre tus apps y flujos que eliminan ese trabajo manual.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-cat" style="color:var(--purple)">ChatBots IA</div><div class="svc-name">Atención automática 24/7</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $300</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--cyan)">Integraciones</div><div class="svc-name">Conectá todas tus apps</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $400</div></div>
+    <div class="svc-card"><div class="svc-cat" style="color:var(--green)">Flujos de Trabajo</div><div class="svc-name">Automatización de procesos internos</div><div class="svc-price" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Desde $300</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 6 — PROCESO -->
+<section class="slide" id="s6">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--cyan)">Cómo trabajamos</div>
+  <h1 class="s-title">De la idea al<br><span>lanzamiento</span>.</h1>
+  <p class="s-sub">Nada de "te aviso cuando esté" — vas viendo el avance real, en etapas, desde el día uno.</p>
+  <div class="proc-grid">
+    <div class="proc-card"><div class="proc-n">01</div><div class="proc-t">Diagnóstico gratuito</div><div class="proc-d">45 min para entender tu negocio. Sin presión, sin compromiso.</div></div>
+    <div class="proc-card"><div class="proc-n">02</div><div class="proc-t">Propuesta técnica</div><div class="proc-d">Alcance, cronograma y cotización detallada en 48 horas.</div></div>
+    <div class="proc-card"><div class="proc-n">03</div><div class="proc-t">Ejecución con visibilidad</div><div class="proc-d">Demos funcionales y actualizaciones semanales reales.</div></div>
+    <div class="proc-card"><div class="proc-n">04</div><div class="proc-t">Lanzamiento y soporte</div><div class="proc-d">Deploy en producción + 30 días de soporte prioritario.</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 7 — RESULTADOS -->
+<section class="slide" id="s7r">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--green)">Resultados reales</div>
+  <h1 class="s-title">No prometemos.<br><span>Medimos.</span></h1>
+  <div class="res-grid">
+    <div class="res-card"><div class="res-num" data-target="98" data-suf="">0</div><div class="res-label">PageSpeed promedio en sitios entregados</div></div>
+    <div class="res-card"><div class="res-num" data-target="4.8" data-dec="1" data-suf="×">0</div><div class="res-label">ROAS promedio en campañas activas</div></div>
+    <div class="res-card"><div class="res-num" data-target="340" data-pre="+" data-suf="%">0</div><div class="res-label">Tráfico orgánico en 90 días (caso SEO local)</div></div>
+    <div class="res-card"><div class="res-num" data-target="74" data-pre="-" data-suf="%">0</div><div class="res-label">Tiempo de respuesta al cliente (caso ChatBot IA)</div></div>
+  </div>
+  <div class="res-case">
+    <div class="res-case-tag">Caso real 2025</div>
+    <div class="res-case-t">ChatBot IA para clínica dental</div>
+    <div class="res-case-d">IA conectada a WhatsApp que atiende consultas y agenda citas 24/7. Eliminó 3 horas diarias de trabajo manual y subió las citas agendadas +180%.</div>
+  </div>
+</section>
+
+<!-- SLIDE 7B — PRÓXIMOS PASOS -->
+<section class="slide" id="s7next">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow" style="color:var(--cyan)">Si decidimos avanzar</div>
+  <h1 class="s-title">Esto pasa<br><span>esta misma semana</span>.</h1>
+  <div class="next-list">
+    <div class="next-item"><div class="next-when">Hoy</div><div class="next-t">Confirmamos alcance y servicio exacto que necesitás.</div></div>
+    <div class="next-item"><div class="next-when">+48h</div><div class="next-t">Recibís la propuesta técnica y cotización por escrito.</div></div>
+    <div class="next-item"><div class="next-when">Al aprobar</div><div class="next-t">Arrancamos con el primer avance — sin esperar semanas.</div></div>
+  </div>
+  <p class="s-sub" style="margin-top:30px;font-size:13px">Este mes tengo <span class="edit-field" contenteditable="true">[N]</span> cupos de proyecto disponibles — lo digo para que decidás con esa info real, no para presionar.</p>
+</section>
+
+<!-- SLIDE 7 — CIERRE -->
+<section class="slide" id="s7">
+  <div class="logo-cover">SLEY<em>GROWTH.</em></div>
+  <div class="eyebrow">Siguiente paso</div>
+  <h1 class="s-title">¿Listo para crecer<br>de <span>verdad</span>?</h1>
+  <p class="s-sub">Cada mes que pasa sin resolver esto, es terreno que le regalás a tu competencia. Empecemos con un diagnóstico estratégico gratuito de 45 minutos — sin compromiso, con claridad total sobre qué necesitás y cuánto cuesta realmente.</p>
+  <div class="cta-grid">
+    <div class="cta-box"><div class="cta-box-t" style="color:var(--green)">WhatsApp</div><div class="cta-box-v">+506 6033-6062</div></div>
+    <div class="cta-box"><div class="cta-box-t" style="color:var(--cyan)">Email</div><div class="cta-box-v">sleygrowth@gmail.com</div></div>
+    <div class="cta-box"><div class="cta-box-t" style="color:var(--purple)">Respuesta</div><div class="cta-box-v">Menos de 24h hábiles</div></div>
+  </div>
+</section>
+
+</div>
+
+<div class="edit-hint">Líneas punteadas = click y escribís encima (no se guarda al cerrar)</div>
+
+<div class="nav-btns">
+  <button class="nbtn" onclick="go(-1)" aria-label="Anterior">←</button>
+  <button class="nbtn" onclick="go(1)" aria-label="Siguiente">→</button>
+</div>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+let i=0;
+function animateCounters(slide){
+  slide.querySelectorAll('[data-target]').forEach(el=>{
+    const target=parseFloat(el.dataset.target);
+    const dec=parseInt(el.dataset.dec||'0');
+    const pre=el.dataset.pre||'';
+    const suf=el.dataset.suf||'';
+    const dur=1400,start=performance.now();
+    function step(now){
+      const p=Math.min((now-start)/dur,1);
+      const e=1-Math.pow(1-p,3);
+      const v=target*e;
+      el.textContent=pre+(dec?v.toFixed(dec):Math.floor(v))+suf;
+      if(p<1)requestAnimationFrame(step);
+      else el.textContent=pre+(dec?target.toFixed(dec):target)+suf;
+    }
+    requestAnimationFrame(step);
+  });
+}
+function render(){
+  slides.forEach((s,n)=>s.classList.toggle('active',n===i));
+  animateCounters(slides[i]);
+}
+function go(d){i=Math.min(Math.max(0,i+d),slides.length-1);render();}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' ')go(1);
+  if(e.key==='ArrowLeft')go(-1);
+});
+animateCounters(slides[0]);
+
+// ── FONDO 3D — cuadros flotando con perspectiva, parallax al mouse ──
+(function(){
+  const layer=document.getElementById('floatLayer');
+  if(!layer)return;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced)return;
+  let targetX=0,targetY=0,curX=0,curY=0;
+  window.addEventListener('mousemove',e=>{
+    const rx=(e.clientX/window.innerWidth-.5);
+    const ry=(e.clientY/window.innerHeight-.5);
+    targetX=ry*-10;targetY=rx*14;
+  },{passive:true});
+  function tick(){
+    curX+=(targetX-curX)*.04;
+    curY+=(targetY-curY)*.04;
+    layer.style.transform=`rotateX(${curX}deg) rotateY(${curY}deg)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

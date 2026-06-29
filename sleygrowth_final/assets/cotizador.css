@@ -1,0 +1,104 @@
+/* ═══════════════════════════════════════════════════════════════
+   SLEY GROWTH — Estilos del configurador de cotización + modal
+   Usa la variable --ac (color de acento del pilar) si existe.
+   ═══════════════════════════════════════════════════════════════ */
+
+.sley-config{--cfg-ac:var(--ac,#00D4FF)}
+
+/* Layout: panel info + panel precio */
+.cfg-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+.cfg-panel{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:38px}
+.cfg-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:100px;background:rgba(255,255,255,0.05);border:1px solid var(--cfg-ac);color:var(--cfg-ac);font-size:11px;font-weight:800;letter-spacing:0.04em;margin-bottom:20px}
+.cfg-title{font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:-0.03em;line-height:1.1;color:#fff;margin-bottom:18px}
+.cfg-desc{font-size:14px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.7}
+
+/* Panel de precio */
+.cfg-price-panel{background:linear-gradient(160deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:32px;position:sticky;top:90px}
+.cfg-price-label{font-size:12px;color:rgba(255,255,255,0.4);font-weight:500;margin-bottom:6px}
+.cfg-price-big{font-size:clamp(40px,5vw,56px);font-weight:900;letter-spacing:-0.04em;color:#fff;line-height:1;margin-bottom:24px}
+.cfg-btn-primary{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;background:linear-gradient(135deg,var(--cfg-ac),var(--cfg-ac));border:none;border-radius:12px;color:#050816;font-size:13px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+.cfg-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,212,255,0.25);filter:brightness(1.05)}
+.cfg-btn-clear{width:100%;margin-top:10px;padding:13px;background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:rgba(255,255,255,0.4);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif}
+.cfg-btn-clear:hover{color:#fff;border-color:rgba(255,255,255,0.25)}
+.cfg-price-note{font-size:11.5px;color:rgba(255,255,255,0.3);font-weight:300;line-height:1.6;margin-top:18px}
+.cfg-price-note strong{color:rgba(255,255,255,0.55);font-weight:600}
+
+/* Incluido list */
+.cfg-included{margin-top:48px}
+.cfg-inc-head{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.cfg-inc-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.cfg-inc-tag{font-size:11px;font-weight:700;color:var(--cfg-ac);background:rgba(0,212,255,0.08);border:1px solid var(--cfg-ac);border-radius:100px;padding:4px 12px}
+.cfg-inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 32px}
+.cfg-inc-item{display:flex;align-items:flex-start;gap:12px}
+.cfg-inc-check{width:24px;height:24px;border-radius:50%;background:var(--cfg-ac);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.cfg-inc-text{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.5}
+
+/* Add-ons */
+.cfg-addons{margin-top:56px}
+.cfg-addons-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.cfg-addons-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.cfg-addons-tag{font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 12px}
+.cfg-addons-sub{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;margin-bottom:28px}
+.cfg-addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cfg-addon{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px;cursor:pointer;transition:all 0.2s;position:relative}
+.cfg-addon:hover{border-color:rgba(255,255,255,0.18);background:rgba(255,255,255,0.035)}
+.cfg-addon.selected{border-color:var(--cfg-ac);background:rgba(0,212,255,0.04)}
+.cfg-addon-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.cfg-radio{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);flex-shrink:0;position:relative;transition:all 0.2s}
+.cfg-addon.selected .cfg-radio{border-color:var(--cfg-ac);background:var(--cfg-ac)}
+.cfg-addon.selected .cfg-radio::after{content:'';position:absolute;inset:5px;border-radius:50%;background:#050816}
+.cfg-addon-name{font-size:14.5px;font-weight:700;color:#fff;letter-spacing:-0.01em}
+.cfg-addon-anual{font-size:9px;font-weight:800;color:#FBBF24;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:4px;padding:2px 7px;letter-spacing:0.05em;text-transform:uppercase}
+.cfg-addon-desc{font-size:12.5px;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.55;margin-bottom:14px;min-height:38px}
+.cfg-addon-price{font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.02em}
+.cfg-addon-price span{font-size:13px;font-weight:400;color:rgba(255,255,255,0.3)}
+.cfg-addon input[type=checkbox]{position:absolute;opacity:0;pointer-events:none}
+
+/* Qty stepper */
+.cfg-qty{display:flex;align-items:center;gap:0;margin-top:6px}
+.cfg-qty-btn{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;font-family:'Inter',sans-serif}
+.cfg-qty-btn:hover{background:rgba(255,255,255,0.1);border-color:var(--cfg-ac)}
+.cfg-qty-value{min-width:44px;text-align:center;font-size:15px;font-weight:700;color:#fff}
+.cfg-qty-unit{font-size:11px;color:rgba(255,255,255,0.3);margin-left:10px}
+
+/* ── MODAL ── */
+#sley-quote-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+#sley-quote-modal.open{display:flex}
+.sqm-overlay{position:absolute;inset:0;background:rgba(2,4,12,0.8);backdrop-filter:blur(8px)}
+.sqm-box{position:relative;background:#0b1020;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 40px 100px rgba(0,0,0,0.6);animation:sqmIn 0.3s ease}
+@keyframes sqmIn{from{opacity:0;transform:translateY(20px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.sqm-close{position:absolute;top:18px;right:20px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:28px;cursor:pointer;line-height:1;transition:color 0.2s}
+.sqm-close:hover{color:#fff}
+.sqm-title{font-size:24px;font-weight:900;letter-spacing:-0.03em;color:#fff;margin-bottom:8px}
+.sqm-sub{font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.6;margin-bottom:24px}
+.sqm-summary{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;margin-bottom:24px}
+.sqm-line{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,0.55);padding:5px 0}
+.sqm-line.sqm-addon{font-size:12.5px;color:rgba(255,255,255,0.4);padding-left:12px}
+.sqm-line.sqm-total{border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;padding-top:12px;font-size:16px;font-weight:800;color:#fff}
+.sqm-line.sqm-total strong{color:var(--ac,#00D4FF);font-size:20px}
+.sqm-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.sqm-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.sqm-field label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.5)}
+.sqm-field input,.sqm-field textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:9px;padding:11px 14px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;transition:border 0.2s}
+.sqm-field input:focus,.sqm-field textarea:focus{outline:none;border-color:var(--ac,#00D4FF)}
+.sqm-row .sqm-field{margin-bottom:0}
+.sqm-status{font-size:13px;margin:14px 0;min-height:18px}
+.sqm-status.ok{color:#34d399}
+.sqm-status.err{color:#f87171}
+.sqm-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--ac,#00D4FF),#8B5CF6);border:none;border-radius:12px;color:#fff;font-size:13px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+.sqm-submit:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,212,255,0.25)}
+.sqm-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+@media(max-width:980px){
+  .cfg-hero{grid-template-columns:1fr}
+  .cfg-price-panel{position:static}
+  .cfg-inc-grid{grid-template-columns:1fr 1fr}
+  .cfg-addons-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .cfg-panel{padding:26px}
+  .cfg-inc-grid{grid-template-columns:1fr}
+  .cfg-addons-grid{grid-template-columns:1fr}
+  .sqm-row{grid-template-columns:1fr}
+  .sqm-box{padding:26px 22px}
+}
