@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sley Growth — Agencia digital en Costa Rica. Desarrollo web, SEO técnico, marketing digital y automatizaciones con IA. Resultados reales.">
-<title>Sley Growth — Agencia Digital Costa Rica</title>
+<meta name="description" content="Sley Growth AI — Agencia digital en Costa Rica. Desarrollo web, SEO técnico y automatizaciones con IA. Resultados reales.">
+<title>Sley Growth AI — Agencia Digital Costa Rica</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta property="og:title" content="Sley Growth — Agencia Digital Costa Rica">
-<meta property="og:description" content="Agencia digital en Costa Rica. Desarrollo web, SEO técnico, marketing digital y automatizaciones con IA. Resultados reales.">
+<meta property="og:title" content="Sley Growth AI — Agencia Digital Costa Rica">
+<meta property="og:description" content="Agencia digital en Costa Rica. Desarrollo web, SEO técnico y automatizaciones con IA. Resultados reales.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +61,7 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .hero{min-height:100dvh;position:relative;overflow:hidden;display:flex;align-items:center}
 /* Video BG */
 .hero-video{position:absolute;inset:0;z-index:0}
-.hero-video video{width:100%;height:100%;object-fit:cover;opacity:.18}
+.hero-video img{width:100%;height:100%;object-fit:cover;opacity:.18}
 .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,8,22,.92) 0%,rgba(5,8,22,.7) 50%,rgba(5,8,22,.88) 100%)}
 /* Floating particles canvas */
 #particles{position:absolute;inset:0;z-index:1;pointer-events:none}
@@ -94,14 +94,28 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .hero-title .line-grad{display:block;overflow:hidden}
 .hero-title .line-grad span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 /* each line animates in */
-.tline{display:block;transform:translateY(110%);animation:slideUp .8s cubic-bezier(.22,1,.36,1) forwards}
-.tline:nth-child(1){animation-delay:.1s}
-.tline:nth-child(2){animation-delay:.22s}
-.tline:nth-child(3){animation-delay:.34s}
+.tline{display:block;position:relative;height:1em;transform:translateY(110%)}
+.rl-txt{position:absolute;left:0;top:0;white-space:nowrap}
+.rl-txt.rl-b{display:none}
+.hero-title.hero-ready .tline{transform:none;transition:none}
 @keyframes slideUp{to{transform:translateY(0)}}
 
 .hero-desc{font-size:17px;color:var(--w2);font-weight:300;line-height:1.8;max-width:480px;margin-bottom:44px;opacity:0;animation:fadeIn .8s ease .7s forwards}
 @keyframes fadeIn{to{opacity:1}}
+@keyframes devPulse{0%,100%{opacity:.35;box-shadow:0 0 8px rgba(0,212,255,.2)}50%{opacity:1;box-shadow:0 0 18px rgba(0,212,255,.6)}}
+@keyframes devPulseGreen{0%,100%{opacity:.5;box-shadow:0 0 8px rgba(34,197,94,.2)}50%{opacity:1;box-shadow:0 0 20px rgba(34,197,94,.7)}}
+@keyframes devFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes devScan{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+@keyframes devScanGreen{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+@keyframes devBlink{0%,100%{opacity:1}45%,55%{opacity:0}}
+@keyframes seoFill1{0%,4%{width:0}25%,96%{width:100%}100%{width:0}}
+@keyframes seoFill2{0%,20%{width:0}40%,96%{width:65%}100%{width:0}}
+@keyframes seoFill3{0%,37%{width:0}55%,96%{width:42%}100%{width:0}}
+@keyframes seoFill4{0%,52%{width:0}70%,96%{width:28%}100%{width:0}}
+@keyframes seoTip1{0%,4%{left:0}25%,96%{left:calc(100% - 3px)}100%{left:0}}
+@keyframes seoTip2{0%,20%{left:0}40%,96%{left:calc(65% - 3px)}100%{left:0}}
+@keyframes seoTip3{0%,37%{left:0}55%,96%{left:calc(42% - 3px)}100%{left:0}}
+@keyframes seoTip4{0%,52%{left:0}70%,96%{left:calc(28% - 3px)}100%{left:0}}
 .hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeIn .8s ease .9s forwards}
 .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:var(--grad);color:#fff;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s;box-shadow:0 8px 30px rgba(0,212,255,.25)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(0,212,255,.35)}
@@ -119,6 +133,7 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 
 /* ══ SERVICIOS — horizontal scroll carousel ══ */
 #servicios{border-top:1px solid var(--border)}
+.srv-page{flex:0 0 100%;width:100%;height:100%;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:0 5%}
 .srv-track-card{width:400px;min-width:400px;height:480px;border-radius:16px;position:relative;overflow:hidden;flex-shrink:0;border:1px solid var(--border2);display:flex;flex-direction:column;justify-content:flex-end;transition:transform .3s,box-shadow .3s}
 .srv-track-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .srv-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
@@ -177,13 +192,10 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .proj-sec{padding:110px 40px;border-top:1px solid var(--border)}
 /* Bento grid */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:16px;margin-bottom:40px}
-.bento-card{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;border:1px solid var(--border);background:var(--bg3)}
-.bento-card:nth-child(1){grid-column:span 2;aspect-ratio:16/9}
-.bento-card:nth-child(2){aspect-ratio:1/1}
-.bento-card:nth-child(3){aspect-ratio:1/1}
-.bento-card:nth-child(4){aspect-ratio:16/9}
-.bento-card:nth-child(5){grid-column:span 2;aspect-ratio:16/9}
-.bento-card:nth-child(6){display:none}
+.bento-card{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;border:1px solid var(--border);background:var(--bg3);aspect-ratio:4/3}
+.bento-placeholder{position:relative;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1.5px dashed var(--border2);background:rgba(255,255,255,.015);aspect-ratio:4/3}
+.bento-placeholder .bp-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--w3)}
+.bento-placeholder .bp-name{font-family:var(--display);font-size:18px;font-weight:800;color:var(--w2);letter-spacing:-0.02em}
 .bento-img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s;filter:brightness(.6) saturate(.8)}
 .bento-card:hover .bento-img{transform:scale(1.06);filter:brightness(.8) saturate(1)}
 .bento-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,.95) 0%,rgba(5,8,22,.3) 60%,transparent 100%);transition:opacity .3s}
@@ -222,22 +234,13 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .video-sec{padding:110px 40px;border-top:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
 .video-in{max-width:1280px;margin:0 auto}
 .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
-.vid-card{border-radius:4px;overflow:hidden;border:1px solid var(--border);position:relative;cursor:pointer;background:#000}
-.vid-card video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:opacity .3s}
-.vid-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,.85),transparent 60%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;transition:background .3s}
-.vid-card:hover .vid-overlay{background:linear-gradient(to top,rgba(5,8,22,.7),transparent 60%)}
-.vid-play{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;backdrop-filter:blur(8px);transition:all .3s;transform:scale(.95)}
-.vid-card:hover .vid-play{transform:scale(1);background:rgba(0,212,255,.2);border-color:rgba(0,212,255,.4)}
-.vid-info{position:absolute;bottom:0;left:0;right:0;padding:20px 24px}
+.vid-card{border-radius:4px;overflow:hidden;border:1px solid var(--border);position:relative;background:#000;transition:border-color .3s}
+.vid-card:hover{border-color:var(--border2)}
+.vid-card img{transition:transform .5s,filter .5s;filter:brightness(.7) saturate(.9)}
+.vid-card:hover img{transform:scale(1.04);filter:brightness(.85) saturate(1)}
+.vid-info{position:absolute;bottom:0;left:0;right:0;padding:32px 24px 20px;background:linear-gradient(to top,rgba(5,8,22,.9),transparent)}
 .vid-tag{font-family:var(--mono);font-size:9px;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
 .vid-title{font-family:var(--display);font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
-/* Modal */
-.vid-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);align-items:center;justify-content:center}
-.vid-modal.open{display:flex}
-.vid-modal-inner{width:min(860px,95vw);position:relative}
-.vid-modal video{width:100%;border-radius:4px;display:block}
-.vid-modal-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--w2);font-size:28px;cursor:pointer;transition:color .2s;line-height:1}
-.vid-modal-close:hover{color:#fff}
 
 /* ══ PROCESO ══ */
 .proc{padding:110px 40px;border-top:1px solid var(--border);position:relative;overflow:hidden}
@@ -304,6 +307,11 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 .foot-links a:hover{color:#fff}
 .foot-social{display:flex;gap:8px;margin-top:20px}
 .fsoc{width:42px;height:42px;border-radius:9px;border:1px solid var(--border);background:var(--w4);display:flex;align-items:center;justify-content:center;color:var(--w2);text-decoration:none;transition:all .2s}
+
+.fsoc-fb:hover,.fsoc-fb:active{color:#1877F2!important;border-color:rgba(24,119,242,.45)!important;background:rgba(24,119,242,.1)!important}
+.fsoc-wa:hover,.fsoc-wa:active{color:#25D366!important;border-color:rgba(37,211,102,.45)!important;background:rgba(37,211,102,.1)!important}
+.fsoc-ig:hover,.fsoc-ig:active{color:#E1306C!important;border-color:rgba(225,48,108,.45)!important;background:rgba(225,48,108,.1)!important}
+.fsoc-tt:hover,.fsoc-tt:active{color:#FF0050!important;border-color:rgba(255,0,80,.45)!important;background:rgba(255,0,80,.1)!important}
 .fsoc:hover{border-color:rgba(0,212,255,.35);color:var(--cyan);transform:translateY(-2px)}
 .foot-bot{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .fcopy{font-size:12px;color:var(--w3)}
@@ -346,13 +354,19 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
   .why-in{grid-template-columns:1fr;gap:48px}
   .cta-in{grid-template-columns:1fr;gap:48px}
   .bento{grid-template-columns:1fr 1fr}
-  .bento-card:nth-child(1){grid-column:span 2}
-  .bento-card:nth-child(5){grid-column:span 2}
   .foot-top{grid-template-columns:1fr 1fr;gap:36px}
   .proc-grid{grid-template-columns:1fr 1fr}
   .video-grid{grid-template-columns:1fr}
 }
+@media(min-width:769px) and (max-width:1100px){
+  .srv-track-card{width:340px;min-width:340px;height:430px}
+}
 @media(max-width:768px){
+  .seo-chart,.seo-row-34{display:none!important}
+  .seo-serp{top:12px!important}
+  .seo-row{margin-bottom:4px!important;padding:6px 8px!important}
+  .srv-phone-frame,.srv-phone-line,.srv-dev-cards{display:none!important}
+  .srv-browser-frame{right:12px!important}
   nav{padding:0 20px}
   .nav-links,.btn-nav{display:none!important}
   .ham{display:flex}
@@ -378,8 +392,6 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
   .foot-top{grid-template-columns:1fr;gap:28px}
   .foot-bot{flex-direction:column;text-align:center}
   .bento{grid-template-columns:1fr}
-  .bento-card:nth-child(1),.bento-card:nth-child(5){grid-column:span 1}
-  .bento-card{aspect-ratio:4/3 !important}
   .hero-cta{flex-direction:column;align-items:flex-start}
   .btn-primary,.btn-ghost{width:100%;justify-content:center}
   .cstats{grid-template-columns:repeat(2,1fr)}
@@ -443,7 +455,7 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 <div id="sg-loader" aria-hidden="true">
   <div class="sgl-inner">
     <div class="sgl-word">
-      <span class="sgl-letter">S</span><span class="sgl-letter">L</span><span class="sgl-letter">E</span><span class="sgl-letter">Y</span><span class="sgl-letter sgl-accent">G</span><span class="sgl-letter sgl-accent">R</span><span class="sgl-letter sgl-accent">O</span><span class="sgl-letter sgl-accent">W</span><span class="sgl-letter sgl-accent">T</span><span class="sgl-letter sgl-accent">H</span><span class="sgl-letter sgl-accent">.</span>
+      <span class="sgl-letter">S</span><span class="sgl-letter">L</span><span class="sgl-letter">E</span><span class="sgl-letter">Y</span><span class="sgl-letter sgl-accent">G</span><span class="sgl-letter sgl-accent">R</span><span class="sgl-letter sgl-accent">O</span><span class="sgl-letter sgl-accent">W</span><span class="sgl-letter sgl-accent">T</span><span class="sgl-letter sgl-accent">H</span><span class="sgl-letter" style="width:.35em;display:inline-block"> </span><span class="sgl-letter sgl-accent">A</span><span class="sgl-letter sgl-accent">I</span>
     </div>
     <div class="sgl-bar"><span class="sgl-bar-fill"></span></div>
     <div class="sgl-tag">
@@ -465,7 +477,7 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 .sgl-letter:nth-child(5){animation-delay:.39s}.sgl-letter:nth-child(6){animation-delay:.47s}
 .sgl-letter:nth-child(7){animation-delay:.55s}.sgl-letter:nth-child(8){animation-delay:.63s}
 .sgl-letter:nth-child(9){animation-delay:.71s}.sgl-letter:nth-child(10){animation-delay:.79s}
-.sgl-letter:nth-child(11){animation-delay:.88s}
+.sgl-letter:nth-child(11){animation-delay:.88s}.sgl-letter:nth-child(12){animation-delay:.97s}.sgl-letter:nth-child(13){animation-delay:1.06s}
 @keyframes sglBounce{
   0%{opacity:0;transform:translateY(-140px) scaleY(1.4) scaleX(0.7)}
   50%{opacity:1;transform:translateY(0) scaleY(0.75) scaleX(1.2)}
@@ -498,17 +510,27 @@ body.sgl-active{overflow:hidden}
   var seen = false;
   try { seen = sessionStorage.getItem('sg_loader_seen') === '1'; } catch(e){}
   var loader = document.getElementById('sg-loader');
-  if(!loader) return;
+  function revealHero(){
+    var ht = document.querySelector('.hero-title');
+    if(ht) ht.classList.add('hero-ready');
+    setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 40);
+    setTimeout(function(){ if(window._startHeroRotation) window._startHeroRotation(); }, 3000);
+  }
+  if(!loader) { revealHero(); return; }
   if(seen || reduced){
     loader.parentNode && loader.parentNode.removeChild(loader);
+    revealHero();
     return;
   }
   document.body.classList.add('sgl-active');
   try { sessionStorage.setItem('sg_loader_seen','1'); } catch(e){}
   function done(){
+    revealHero();
     loader.classList.add('sgl-out');
     document.body.classList.remove('sgl-active');
-    setTimeout(function(){ loader.parentNode && loader.parentNode.removeChild(loader); }, 750);
+    setTimeout(function(){
+      loader.parentNode && loader.parentNode.removeChild(loader);
+    }, 700);
   }
   var minTime = new Promise(function(r){ setTimeout(r, 3000); });
   var loaded = new Promise(function(r){
@@ -525,7 +547,7 @@ body.sgl-active{overflow:hidden}
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="index.html" class="nav-logo">SLEY<em>GROWTH.</em></a>
+  <a href="index.html" class="nav-logo">SLEY<em>GROWTH</em><span style="background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.6em;letter-spacing:.14em;margin-left:3px;font-style:normal;font-weight:800">AI</span></a>
   <ul class="nav-links" style="display:flex">
     <li><a href="index.html">Inicio</a></li>
     <li class="dd"><button>Desarrollo <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -542,15 +564,6 @@ body.sgl-active{overflow:hidden}
         <a href="servicios/auditoria-seo.html" class="di"><strong>Auditoría SEO</strong><span>Diagnóstico técnico completo.</span></a>
         <a href="servicios/seo-local.html" class="di"><strong>SEO Local</strong><span>Posicionamiento geolocalizado.</span></a>
         <a href="servicios/seo-tecnico.html" class="di"><strong>SEO Técnico</strong><span>Velocidad y que Google te encuentre.</span></a>
-      </div>
-    </li>
-    <li class="dd"><button>Marketing <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-      <div class="ddm" style="min-width:260px">
-        <a href="servicios/meta-ads.html" class="di"><strong>Meta Ads</strong><span>Facebook e Instagram con resultados medibles.</span></a>
-        <a href="servicios/google-ads.html" class="di"><strong>Google Ads</strong><span>Alta conversión en búsqueda y display.</span></a>
-        <a href="servicios/creacion-contenido.html" class="di"><strong>Creación de Contenido</strong><span>Estrategia multimedia completa.</span></a>
-        <a href="servicios/diseno-logo.html" class="di"><strong>Logo y Marca</strong><span>Identidad visual que impacta.</span></a>
-        <a href="servicios/libro-marca.html" class="di"><strong>Libro de Marca</strong><span>Manual de identidad completo.</span></a>
       </div>
     </li>
     <li class="dd"><button>IA &amp; Auto. <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -586,13 +599,6 @@ body.sgl-active{overflow:hidden}
       </div>
     </div>
     <div>
-      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px">Marketing</div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
-        <a href="servicios/meta-ads.html" style="color:var(--w2);text-decoration:none;font-size:14px">Meta Ads</a>
-        <a href="servicios/google-ads.html" style="color:var(--w2);text-decoration:none;font-size:14px">Google Ads</a>
-        <a href="servicios/creacion-contenido.html" style="color:var(--w2);text-decoration:none;font-size:14px">Contenido</a>
-        <a href="servicios/diseno-logo.html" style="color:var(--w2);text-decoration:none;font-size:14px">Logo y Marca</a>
-      </div>
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:14px">IA &amp; Auto.</div>
       <div style="display:flex;flex-direction:column;gap:10px">
         <a href="servicios/chatbots.html" style="color:var(--w2);text-decoration:none;font-size:14px">ChatBots IA</a>
@@ -610,11 +616,9 @@ body.sgl-active{overflow:hidden}
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="main">
-  <!-- Video background (tech/code feel from Pexels free) -->
+  <!-- Background image (tech/code feel) -->
   <div class="hero-video">
-    <video autoplay muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80&auto=format&fit=crop">
-      <source src="https://www.pexels.com/download/video/3130284/?fps=25.0&h=1080&w=1920" type="video/mp4">
-    </video>
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80&auto=format&fit=crop" alt="" loading="eager">
   </div>
   <!-- Floating bg elements -->
   <div class="gblob gb1"></div>
@@ -625,7 +629,7 @@ body.sgl-active{overflow:hidden}
   <span class="float-tag" style="top:20%;left:8%;animation-duration:7s;animation-delay:0s">&lt;growth /&gt;</span>
   <span class="float-tag" style="top:60%;left:5%;animation-duration:9s;animation-delay:2s">{results: true}</span>
   <span class="float-tag" style="top:30%;right:6%;animation-duration:8s;animation-delay:1s">// Costa Rica</span>
-  <span class="float-tag" style="top:70%;right:8%;animation-duration:11s;animation-delay:3s">const roas = 4.8x</span>
+  <span class="float-tag" style="top:70%;right:8%;animation-duration:11s;animation-delay:3s">npm run deploy</span>
 
   <div class="hero-in">
     <div class="hero-left">
@@ -634,11 +638,11 @@ body.sgl-active{overflow:hidden}
         <span class="badge-text">Agencia Digital — Costa Rica</span>
       </div>
       <h1 class="hero-title" id="h1">
-        <span class="line-white"><span class="tline" id="rl0">Crecimiento</span></span>
-        <span class="line-dim"><span class="tline" id="rl1">digital real,</span></span>
-        <span class="line-grad"><span class="tline" id="rl2">sin excusas.</span></span>
+        <span class="line-white"><span class="tline" id="rl0"><span class="rl-txt rl-a">Crecimiento</span><span class="rl-txt rl-b"></span></span></span>
+        <span class="line-dim"><span class="tline" id="rl1"><span class="rl-txt rl-a">digital real,</span><span class="rl-txt rl-b"></span></span></span>
+        <span class="line-grad"><span class="tline" id="rl2"><span class="rl-txt rl-a">sin excusas.</span><span class="rl-txt rl-b"></span></span></span>
       </h1>
-      <p class="hero-desc" id="h2">Desarrollo web, SEO técnico, marketing con datos y automatizaciones con IA. Resultados medibles para empresas que van en serio.</p>
+      <p class="hero-desc" id="h2">Desarrollo web, SEO técnico y automatizaciones con IA. Resultados medibles para empresas que van en serio.</p>
       <div class="hero-cta" id="h3">
         <a href="contacto.html" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -649,7 +653,7 @@ body.sgl-active{overflow:hidden}
     </div>
     <div class="hero-right">
       <div class="hstat"><div class="hstat-num">98</div><div class="hstat-label">PageSpeed promedio en sitios entregados</div></div>
-      <div class="hstat"><div class="hstat-num">4.8×</div><div class="hstat-label">ROAS promedio en campañas activas</div></div>
+      <div class="hstat"><div class="hstat-num">3</div><div class="hstat-label">Áreas de servicio en un solo equipo</div></div>
       <div class="hstat"><div class="hstat-num">24/7</div><div class="hstat-label">Disponibilidad con automatización IA</div></div>
     </div>
   </div>
@@ -658,52 +662,106 @@ body.sgl-active{overflow:hidden}
 <!-- ══ MARCAS QUE CONFIARON ══ -->
 <section class="trustbar" aria-label="Clientes">
   <div class="trustbar-in">
-    <span class="trustbar-tag">Marcas que ya crecieron con nosotros</span>
+    <span class="trustbar-tag">Negocios que ya crecieron con nosotros</span>
     <div class="trustbar-row">
-      <a href="https://kaumastudio.com/" target="_blank" rel="noopener">Kauma Studio</a>
-      <a href="https://ceibacapitalgroup.com/" target="_blank" rel="noopener">Ceiba Capital</a>
-      <a href="https://alunajaco.com/" target="_blank" rel="noopener">Aluna Jaco</a>
-      <a href="https://inknationcr.com/" target="_blank" rel="noopener">INK Nation</a>
-      <a href="https://tropikasa.com/" target="_blank" rel="noopener">Tropikasa Realty</a>
-      <span>Webb Legal CR</span>
-      <span>Clínica Dental San José</span>
+      <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener">Barbería</a>
+      <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener">Studio Nails Mady</a>
+      <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener">Clínica Dental</a>
+      <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener">Bufete de Abogados</a>
     </div>
   </div>
 </section>
 
 <!-- ══ SERVICIOS — horizontal scroll carousel ══ -->
-<section id="servicios" style="height:380vh;position:relative;border-top:1px solid var(--border)">
+<section id="servicios" style="height:320vh;position:relative;border-top:1px solid var(--border)">
   <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;background:#050816">
     <!-- header row -->
     <div style="padding:3rem 5% 0;flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-end">
       <div>
         <div class="eyebrow reveal" style="color:var(--w2)">Servicios</div>
-        <h2 class="sec-title reveal" style="margin-bottom:0;font-size:clamp(28px,4vw,52px)">Cuatro áreas.<br><span>Un equipo.</span></h2>
+        <h2 class="sec-title reveal" style="margin-bottom:0;font-size:clamp(28px,4vw,52px)">Tres áreas.<br><span>Un equipo.</span></h2>
       </div>
+      <div style="font-family:var(--mono);font-size:10px;color:var(--w3);letter-spacing:.1em;flex-shrink:0;padding-bottom:4px">Scrolleá para ver cada una ↓</div>
     </div>
-    <!-- track viewport -->
+    <!-- track viewport: cada "página" ocupa el ancho completo y centra su tarjeta -->
     <div style="flex:1;overflow:hidden;display:flex;align-items:center;position:relative">
-      <div id="srvTrack" style="display:flex;gap:2rem;padding:2rem 5%;will-change:transform;align-items:center">
+      <div id="srvTrack" style="display:flex;width:100%;will-change:transform;height:100%">
 
-        <!-- 01 DESARROLLO — IDE window -->
-        <div class="srv-track-card stc-cyan" style="background:#030d17">
-          <div style="position:absolute;top:24px;left:18px;right:18px;border-radius:10px;overflow:hidden;background:#0d1117;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 60px rgba(0,0,0,.7)">
-            <div style="background:#161b22;padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.06)">
-              <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
-              <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block"></span>
-              <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block"></span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.22);margin-left:10px">proyecto.config.ts</span>
+        <!-- 01 DESARROLLO — wireframe animado responsive -->
+        <div class="srv-page"><div class="srv-track-card stc-cyan" style="background:#030d17">
+
+          <!-- browser frame -->
+          <div class="srv-browser-frame" style="position:absolute;top:22px;left:18px;right:80px;border-radius:10px;overflow:hidden;background:#080f1a;border:1px solid rgba(0,212,255,.18);box-shadow:0 20px 50px rgba(0,0,0,.7)">
+            <!-- title bar -->
+            <div style="background:#0d1520;padding:9px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(0,212,255,.08)">
+              <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;flex-shrink:0"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;flex-shrink:0"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#28c840;flex-shrink:0"></span>
+              <div style="flex:1;margin:0 8px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.12);border-radius:4px;height:16px;display:flex;align-items:center;padding:0 7px;gap:5px">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(0,212,255,.5)" stroke-width="2"/><path d="M12 8v4l2 2" stroke="rgba(0,212,255,.5)" stroke-width="2" stroke-linecap="round"/></svg>
+                <span id="srvTypeUrl" style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(0,212,255,.55);letter-spacing:.04em"></span><span style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(0,212,255,.7);animation:devBlink 1.1s step-end infinite">|</span>
+              </div>
             </div>
-            <div style="padding:16px 18px;font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:2.1;color:rgba(255,255,255,.6)">
-              <span style="color:#569cd6">const</span> <span style="color:#9cdcfe">proyecto</span> <span style="color:rgba(255,255,255,.45)">=</span> {<br>
-              &nbsp;&nbsp;<span style="color:#9cdcfe">pagespeed</span>: <span style="color:#b5cea8">98</span>,<br>
-              &nbsp;&nbsp;<span style="color:#9cdcfe">responsive</span>: <span style="color:#569cd6">true</span>,<br>
-              &nbsp;&nbsp;<span style="color:#9cdcfe">stack</span>: <span style="color:#ce9178">"React / Next.js"</span>,<br>
-              &nbsp;&nbsp;<span style="color:#9cdcfe">entrega</span>: <span style="color:#ce9178">"6 semanas"</span><br>
-              }
+            <!-- page wireframe -->
+            <div style="padding:8px;background:#04080f">
+              <!-- nav -->
+              <div style="height:16px;background:rgba(0,212,255,.04);border-radius:3px;margin-bottom:6px;display:flex;align-items:center;padding:0 7px;gap:5px">
+                <div style="width:32px;height:6px;background:rgba(0,212,255,.45);border-radius:2px"></div>
+                <div style="flex:1"></div>
+                <div style="width:22px;height:5px;background:rgba(255,255,255,.1);border-radius:2px"></div>
+                <div style="width:22px;height:5px;background:rgba(255,255,255,.1);border-radius:2px"></div>
+                <div style="width:22px;height:5px;background:rgba(255,255,255,.1);border-radius:2px"></div>
+                <div style="width:30px;height:12px;background:rgba(0,212,255,.3);border-radius:2px;animation:devPulse 2.4s ease-in-out infinite"></div>
+              </div>
+              <!-- hero -->
+              <div style="height:68px;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(0,212,255,.03));border-radius:5px;margin-bottom:6px;position:relative;overflow:hidden">
+                <!-- shimmer sweep -->
+                <div style="position:absolute;inset:0;overflow:hidden;border-radius:5px"><div style="position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(0,212,255,.06),transparent);animation:devScan 3s ease-in-out 1s infinite"></div></div>
+                <div style="position:relative;z-index:1;padding:10px">
+                  <div style="width:55%;height:8px;background:rgba(255,255,255,.5);border-radius:3px;margin-bottom:5px"></div>
+                  <div style="width:38%;height:6px;background:rgba(255,255,255,.2);border-radius:3px;margin-bottom:9px"></div>
+                  <div style="width:36px;height:13px;background:rgba(0,212,255,.6);border-radius:3px;box-shadow:0 0 12px rgba(0,212,255,.35);animation:devPulse 2.4s ease-in-out .4s infinite"></div>
+                </div>
+                <!-- cursor blink -->
+                <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:1.5px;height:16px;background:rgba(0,212,255,.7);animation:devBlink 1.1s step-end infinite"></div>
+              </div>
+              <!-- 3 cards -->
+              <div class="srv-dev-cards" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+                <div style="height:32px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:5px">
+                  <div style="width:55%;height:4px;background:rgba(255,255,255,.18);border-radius:2px;margin-bottom:4px"></div>
+                  <div style="width:75%;height:3px;background:rgba(255,255,255,.07);border-radius:2px"></div>
+                </div>
+                <div style="height:32px;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);border-radius:3px;padding:5px">
+                  <div style="width:55%;height:4px;background:rgba(0,212,255,.5);border-radius:2px;margin-bottom:4px"></div>
+                  <div style="width:75%;height:3px;background:rgba(0,212,255,.12);border-radius:2px"></div>
+                </div>
+                <div style="height:32px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:5px">
+                  <div style="width:55%;height:4px;background:rgba(255,255,255,.18);border-radius:2px;margin-bottom:4px"></div>
+                  <div style="width:75%;height:3px;background:rgba(255,255,255,.07);border-radius:2px"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,13,23,.99) 0%,rgba(3,13,23,.12) 55%,transparent 100%);pointer-events:none"></div>
+
+          <!-- phone frame floating -->
+          <div class="srv-phone-frame" style="position:absolute;top:22px;right:14px;width:56px;border-radius:10px;background:#080f1a;border:1.5px solid rgba(0,212,255,.25);box-shadow:0 12px 30px rgba(0,0,0,.6);overflow:hidden;animation:devFloat 2.6s ease-in-out infinite">
+            <div style="height:10px;background:#0d1520;display:flex;align-items:center;justify-content:center"><div style="width:14px;height:3px;background:rgba(255,255,255,.15);border-radius:2px"></div></div>
+            <div style="padding:4px;background:#04080f">
+              <div style="height:8px;background:rgba(0,212,255,.06);border-radius:2px;margin-bottom:3px;display:flex;align-items:center;justify-content:center"><div style="width:20px;height:3px;background:rgba(0,212,255,.3);border-radius:1px"></div></div>
+              <div style="height:28px;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(0,212,255,.02));border-radius:2px;margin-bottom:3px"></div>
+              <div style="height:5px;background:rgba(255,255,255,.04);border-radius:2px;margin-bottom:2px"></div>
+              <div style="height:5px;background:rgba(255,255,255,.04);border-radius:2px;margin-bottom:3px"></div>
+              <div style="width:60%;height:9px;background:rgba(0,212,255,.25);border-radius:2px;margin:0 auto;animation:devPulse 2.4s ease-in-out .8s infinite"></div>
+            </div>
+          </div>
+
+          <!-- SVG: connecting line desktop → phone -->
+          <svg class="srv-phone-line" style="position:absolute;top:22px;right:14px;width:80px;height:160px;pointer-events:none;overflow:visible" viewBox="0 0 80 160" fill="none">
+            <path d="M 0,80 C -10,80 -20,50 -24,40" stroke="rgba(0,212,255,0.2)" stroke-width="1" stroke-dasharray="3 4"/>
+            <circle r="2.5" fill="#00D4FF" opacity=".9"><animateMotion dur="2.6s" repeatCount="indefinite" path="M -24,40 C -20,50 -10,80 0,80"/></circle>
+          </svg>
+
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,13,23,.99) 0%,rgba(3,13,23,.1) 58%,transparent 100%);pointer-events:none"></div>
           <div class="srv-card-num" style="opacity:.04">01</div>
           <div class="srv-card-body">
             <div class="srv-card-eyebrow">Desarrollo de Software</div>
@@ -716,35 +774,63 @@ body.sgl-active{overflow:hidden}
             </div>
             <a href="servicios/desarrollo-web.html" class="srv-card-link">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
           </div>
-        </div>
+        </div></div>
 
-        <!-- 02 SEO — SERP ranking visual -->
-        <div class="srv-track-card stc-green" style="background:#020c05">
-          <div style="position:absolute;top:26px;left:18px;right:18px">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;color:rgba(34,197,94,.5);text-transform:uppercase;margin-bottom:14px">SERP · Google.com · CR</div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;padding:10px 12px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.22);border-radius:8px">
-              <span style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--green);width:24px;flex-shrink:0">#1</span>
-              <div style="flex:1;height:5px;background:var(--green);border-radius:3px;box-shadow:0 0 12px rgba(34,197,94,.45)"></div>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--green);flex-shrink:0">Tu negocio ✦</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:8px 12px">
-              <span style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:rgba(255,255,255,.18);width:24px;flex-shrink:0">#2</span>
-              <div style="flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="height:100%;background:rgba(255,255,255,.12);width:65%"></div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:8px 12px">
-              <span style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:rgba(255,255,255,.1);width:24px;flex-shrink:0">#3</span>
-              <div style="flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden"><div style="height:100%;background:rgba(255,255,255,.08);width:42%"></div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:8px 12px">
-              <span style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:rgba(255,255,255,.06);width:24px;flex-shrink:0">#4</span>
-              <div style="flex:1;height:5px;background:rgba(255,255,255,.04);border-radius:3px;overflow:hidden"><div style="height:100%;background:rgba(255,255,255,.05);width:28%"></div></div>
-            </div>
-            <div style="margin-top:14px;padding:14px 12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px">Tráfico orgánico / 90d</div>
-                <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--green);letter-spacing:-0.04em">+340%</div>
+        <!-- 02 SEO — SERP ranking visual animado -->
+        <div class="srv-page"><div class="srv-track-card stc-green" style="background:#020c05">
+          <div class="seo-serp" style="position:absolute;top:18px;left:18px;right:18px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;color:rgba(34,197,94,.5);text-transform:uppercase;margin-bottom:9px">SERP · Google.com · CR</div>
+
+            <!-- #1 — barra con línea de recarga -->
+            <div class="seo-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:8px 10px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.22);border-radius:8px">
+              <span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;flex-shrink:0">#1</span>
+              <div style="flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;position:relative">
+                <div style="position:absolute;top:0;left:0;height:100%;background:rgba(34,197,94,.35);border-radius:3px;animation:seoFill1 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+                <div style="position:absolute;top:-1px;height:calc(100% + 2px);width:3px;background:#22C55E;border-radius:2px;box-shadow:0 0 6px #22C55E,0 0 12px rgba(34,197,94,.8);animation:seoTip1 5s cubic-bezier(.4,0,.2,1) infinite"></div>
               </div>
-              <svg width="72" height="38" viewBox="0 0 72 38" fill="none"><path d="M4 34C14 34 18 26 28 20C38 14 42 8 52 4C58 2 64 2 68 2" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/><path d="M4 34C14 34 18 26 28 20C38 14 42 8 52 4C58 2 64 2 68 2L68 38L4 38Z" fill="rgba(34,197,94,0.07)"/></svg>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--green);flex-shrink:0">Tu negocio ✦</span>
+            </div>
+
+            <!-- #2 -->
+            <div class="seo-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:6px 10px">
+              <span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:rgba(255,255,255,.18);width:20px;flex-shrink:0">#2</span>
+              <div style="flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;position:relative">
+                <div style="position:absolute;top:0;left:0;height:100%;background:rgba(255,255,255,.15);animation:seoFill2 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+                <div style="position:absolute;top:-1px;height:calc(100% + 2px);width:3px;background:rgba(255,255,255,.7);border-radius:2px;box-shadow:0 0 6px rgba(255,255,255,.5);animation:seoTip2 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+              </div>
+            </div>
+
+            <!-- #3 -->
+            <div class="seo-row seo-row-34" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:6px 10px">
+              <span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:rgba(255,255,255,.1);width:20px;flex-shrink:0">#3</span>
+              <div style="flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;position:relative">
+                <div style="position:absolute;top:0;left:0;height:100%;background:rgba(255,255,255,.1);animation:seoFill3 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+                <div style="position:absolute;top:-1px;height:calc(100% + 2px);width:3px;background:rgba(255,255,255,.5);border-radius:2px;box-shadow:0 0 5px rgba(255,255,255,.4);animation:seoTip3 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+              </div>
+            </div>
+
+            <!-- #4 -->
+            <div class="seo-row-34" style="display:flex;align-items:center;gap:8px;padding:6px 10px">
+              <span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:rgba(255,255,255,.06);width:20px;flex-shrink:0">#4</span>
+              <div style="flex:1;height:5px;background:rgba(255,255,255,.04);border-radius:3px;overflow:hidden;position:relative">
+                <div style="position:absolute;top:0;left:0;height:100%;background:rgba(255,255,255,.07);animation:seoFill4 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+                <div style="position:absolute;top:-1px;height:calc(100% + 2px);width:3px;background:rgba(255,255,255,.35);border-radius:2px;box-shadow:0 0 4px rgba(255,255,255,.3);animation:seoTip4 5s cubic-bezier(.4,0,.2,1) infinite"></div>
+              </div>
+            </div>
+
+            <!-- chart widget con shimmer y punto animado -->
+            <div class="seo-chart" style="margin-top:10px;padding:10px 10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:8px;display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden">
+              <div style="position:absolute;inset:0;overflow:hidden;border-radius:8px;pointer-events:none"><div style="position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(34,197,94,.07),transparent);animation:devScanGreen 3.5s ease-in-out .5s infinite"></div></div>
+              <div style="position:relative;z-index:1">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:7px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px">Tráfico orgánico / 90d</div>
+                <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--green);letter-spacing:-0.04em;animation:devPulseGreen 2.8s ease-in-out 1s infinite">+340%</div>
+              </div>
+              <svg width="68" height="34" viewBox="0 0 72 38" fill="none" style="position:relative;z-index:1">
+                <path d="M4 34C14 34 18 26 28 20C38 14 42 8 52 4C58 2 64 2 68 2" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/>
+                <path d="M4 34C14 34 18 26 28 20C38 14 42 8 52 4C58 2 64 2 68 2L68 38L4 38Z" fill="rgba(34,197,94,0.07)"/>
+                <circle r="3" fill="#22C55E" opacity=".95"><animateMotion dur="2.5s" repeatCount="indefinite" path="M4 34C14 34 18 26 28 20C38 14 42 8 52 4C58 2 64 2 68 2"/></circle>
+                <circle cx="68" cy="2" r="5" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.6)" stroke-width="1"><animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite"/></circle>
+              </svg>
             </div>
           </div>
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,12,5,.99) 0%,rgba(2,12,5,.1) 58%,transparent 100%);pointer-events:none"></div>
@@ -759,84 +845,61 @@ body.sgl-active{overflow:hidden}
             </div>
             <a href="servicios/auditoria-seo.html" class="srv-card-link">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
           </div>
-        </div>
+        </div></div>
 
-        <!-- 03 MARKETING — live metrics dashboard -->
-        <div class="srv-track-card stc-orange" style="background:#0c0500">
-          <div style="position:absolute;top:24px;left:18px;right:18px">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.2em;color:rgba(249,115,22,.5);text-transform:uppercase;margin-bottom:14px">Ads Dashboard · Live</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-              <div style="background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.18);border-radius:10px;padding:16px 14px">
-                <div style="font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--orange);letter-spacing:-0.05em;line-height:1">4.8×</div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.12em;margin-top:7px">ROAS</div>
-              </div>
-              <div style="background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.12);border-radius:10px;padding:16px 14px">
-                <div style="font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--green);letter-spacing:-0.05em;line-height:1">+220%</div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.12em;margin-top:7px">Conv.</div>
-              </div>
-            </div>
-            <div style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:14px">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.28);letter-spacing:.1em">Alcance · 30 días</div>
-                <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#fff">3.2M</div>
-              </div>
-              <div style="display:flex;align-items:flex-end;gap:4px;height:34px">
-                <div style="flex:1;background:rgba(249,115,22,.18);border-radius:2px;height:38%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.24);border-radius:2px;height:52%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.2);border-radius:2px;height:44%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.36);border-radius:2px;height:68%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.3);border-radius:2px;height:57%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.44);border-radius:2px;height:78%"></div>
-                <div style="flex:1;background:rgba(249,115,22,.38);border-radius:2px;height:72%"></div>
-                <div style="flex:1;background:var(--orange);border-radius:2px;height:100%;box-shadow:0 0 10px rgba(249,115,22,.5)"></div>
-              </div>
-            </div>
-          </div>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(12,5,0,.99) 0%,rgba(12,5,0,.1) 58%,transparent 100%);pointer-events:none"></div>
-          <div class="srv-card-num" style="opacity:.03">03</div>
-          <div class="srv-card-body">
-            <div class="srv-card-eyebrow">Marketing Digital</div>
-            <h3 class="srv-card-title">Campañas con<br>retorno real.</h3>
-            <div class="srv-card-chips">
-              <a href="servicios/meta-ads.html" class="srv-card-chip">Meta Ads</a>
-              <a href="servicios/google-ads.html" class="srv-card-chip">Google Ads</a>
-              <a href="servicios/creacion-contenido.html" class="srv-card-chip">Contenido</a>
-              <a href="servicios/diseno-logo.html" class="srv-card-chip">Logo y Marca</a>
-            </div>
-            <a href="servicios/meta-ads.html" class="srv-card-link">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          </div>
-        </div>
-
-        <!-- 04 IA — neural network SVG -->
-        <div class="srv-track-card stc-purple" style="background:#050212;overflow:hidden">
-          <svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:62%;opacity:.75">
+        <!-- 03 IA — red neuronal → plataformas -->
+        <div class="srv-page"><div class="srv-track-card stc-purple" style="background:#050212;overflow:hidden">
+          <svg viewBox="0 0 390 265" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:65%;opacity:.88">
+            <!-- INPUT → HIDDEN lines -->
             <line x1="36" y1="52" x2="150" y2="90" stroke="rgba(139,92,246,0.28)" stroke-width="1"/>
             <line x1="36" y1="130" x2="150" y2="90" stroke="rgba(139,92,246,0.28)" stroke-width="1"/>
             <line x1="36" y1="208" x2="150" y2="170" stroke="rgba(139,92,246,0.22)" stroke-width="1"/>
             <line x1="36" y1="130" x2="150" y2="170" stroke="rgba(139,92,246,0.22)" stroke-width="1"/>
+            <!-- HIDDEN → RELAY lines -->
             <line x1="150" y1="90" x2="250" y2="66" stroke="rgba(139,92,246,0.35)" stroke-width="1"/>
             <line x1="150" y1="90" x2="250" y2="150" stroke="rgba(139,92,246,0.28)" stroke-width="1"/>
             <line x1="150" y1="170" x2="250" y2="150" stroke="rgba(139,92,246,0.35)" stroke-width="1"/>
             <line x1="150" y1="170" x2="250" y2="234" stroke="rgba(139,92,246,0.22)" stroke-width="1"/>
-            <line x1="250" y1="66" x2="344" y2="130" stroke="rgba(0,212,255,0.45)" stroke-width="1.5"/>
-            <line x1="250" y1="150" x2="344" y2="130" stroke="rgba(0,212,255,0.45)" stroke-width="1.5"/>
-            <line x1="250" y1="234" x2="344" y2="130" stroke="rgba(0,212,255,0.28)" stroke-width="1"/>
+            <!-- RELAY → PLATAFORMAS lines -->
+            <line x1="250" y1="66" x2="340" y2="44" stroke="rgba(37,211,102,0.5)" stroke-width="1.2"/>
+            <line x1="250" y1="66" x2="340" y2="104" stroke="rgba(225,48,108,0.4)" stroke-width="1.2"/>
+            <line x1="250" y1="150" x2="340" y2="104" stroke="rgba(225,48,108,0.35)" stroke-width="1"/>
+            <line x1="250" y1="150" x2="340" y2="164" stroke="rgba(0,136,204,0.5)" stroke-width="1.2"/>
+            <line x1="250" y1="234" x2="340" y2="164" stroke="rgba(0,136,204,0.3)" stroke-width="1"/>
+            <line x1="250" y1="234" x2="340" y2="224" stroke="rgba(24,119,242,0.5)" stroke-width="1.2"/>
+            <!-- INPUT nodes -->
             <circle cx="36" cy="52" r="5" fill="rgba(139,92,246,0.25)" stroke="rgba(139,92,246,0.55)" stroke-width="1.5"/>
             <circle cx="36" cy="130" r="6" fill="rgba(139,92,246,0.4)" stroke="rgba(139,92,246,0.8)" stroke-width="1.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
             <circle cx="36" cy="208" r="5" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.45)" stroke-width="1.5"/>
+            <!-- HIDDEN nodes -->
             <circle cx="150" cy="90" r="8" fill="rgba(139,92,246,0.35)" stroke="rgba(139,92,246,0.75)" stroke-width="1.5"><animate attributeName="r" values="8;10;8" dur="2.8s" repeatCount="indefinite"/></circle>
             <circle cx="150" cy="170" r="7" fill="rgba(139,92,246,0.28)" stroke="rgba(139,92,246,0.6)" stroke-width="1.5"/>
+            <!-- RELAY nodes -->
             <circle cx="250" cy="66" r="6" fill="rgba(0,212,255,0.18)" stroke="rgba(0,212,255,0.45)" stroke-width="1.5"/>
             <circle cx="250" cy="150" r="9" fill="rgba(0,212,255,0.28)" stroke="rgba(0,212,255,0.65)" stroke-width="1.5"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.9s" repeatCount="indefinite"/></circle>
             <circle cx="250" cy="234" r="6" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.38)" stroke-width="1.5"/>
-            <circle cx="344" cy="130" r="14" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.85)" stroke-width="2"><animate attributeName="r" values="14;17;14" dur="2.1s" repeatCount="indefinite"/></circle>
-            <circle cx="344" cy="130" r="5.5" fill="rgba(139,92,246,0.9)"/>
-            <circle r="3" fill="#00D4FF" opacity=".85"><animateMotion dur="2.2s" repeatCount="indefinite" path="M 36,130 C 90,110 120,95 150,90 C 200,82 230,66 250,66 L 344,130"/></circle>
-            <circle r="2.5" fill="#8B5CF6" opacity=".9"><animateMotion dur="3s" repeatCount="indefinite" begin="0.9s" path="M 36,52 C 90,68 120,82 150,90 C 200,100 230,130 250,150 L 344,130"/></circle>
+            <!-- PLATAFORMAS -->
+            <!-- WhatsApp -->
+            <circle cx="340" cy="44" r="14" fill="rgba(18,140,126,0.2)" stroke="#25D366" stroke-width="1.8"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/></circle>
+            <text x="340" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#25D366">WA</text>
+            <!-- Instagram -->
+            <circle cx="340" cy="104" r="14" fill="rgba(225,48,108,0.2)" stroke="#E1306C" stroke-width="1.8"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.1s" begin="0.6s" repeatCount="indefinite"/></circle>
+            <text x="340" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#E1306C">IG</text>
+            <!-- Telegram -->
+            <circle cx="340" cy="164" r="14" fill="rgba(0,136,204,0.2)" stroke="#0088CC" stroke-width="1.8"><animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="1.2s" repeatCount="indefinite"/></circle>
+            <text x="340" y="168" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#0088CC">TG</text>
+            <!-- Facebook -->
+            <circle cx="340" cy="224" r="14" fill="rgba(24,119,242,0.2)" stroke="#1877F2" stroke-width="1.8"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" begin="1.8s" repeatCount="indefinite"/></circle>
+            <text x="340" y="228" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#1877F2">FB</text>
+            <!-- PUNTOS ANIMADOS viajando a cada plataforma -->
+            <circle r="2.8" fill="#25D366" opacity=".95"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0s" path="M 36,130 C 90,110 130,92 150,90 C 200,82 230,72 250,66 L 340,44"/></circle>
+            <circle r="2.8" fill="#E1306C" opacity=".95"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.6s" path="M 36,52 C 90,68 130,84 150,90 C 200,96 230,120 250,150 L 340,104"/></circle>
+            <circle r="2.8" fill="#0088CC" opacity=".95"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s" path="M 36,208 C 90,190 130,178 150,170 C 200,164 230,156 250,150 L 340,164"/></circle>
+            <circle r="2.8" fill="#1877F2" opacity=".95"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.8s" path="M 36,208 C 90,215 130,228 150,170 C 200,185 230,218 250,234 L 340,224"/></circle>
           </svg>
           <div style="position:absolute;top:0;left:0;right:0;height:65%;background:radial-gradient(ellipse at 65% 35%,rgba(139,92,246,.1),transparent 70%);pointer-events:none"></div>
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,2,18,.99) 0%,rgba(5,2,18,.08) 55%,transparent 100%);pointer-events:none"></div>
-          <div class="srv-card-num" style="opacity:.03">04</div>
+          <div class="srv-card-num" style="opacity:.03">03</div>
           <div class="srv-card-body">
             <div class="srv-card-eyebrow">IA y Automatizaciones</div>
             <h3 class="srv-card-title">Sistemas que<br>trabajan por vos.</h3>
@@ -848,7 +911,7 @@ body.sgl-active{overflow:hidden}
             </div>
             <a href="servicios/chatbots.html" class="srv-card-link">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
           </div>
-        </div>
+        </div></div>
 
       </div>
     </div>
@@ -859,11 +922,11 @@ body.sgl-active{overflow:hidden}
 
 <!-- ══ POR QUÉ NOSOTROS ══ -->
 <section class="why" id="nosotros">
-  <div class="why-bg-text">SLEY GROWTH</div>
+  <div class="why-bg-text">SLEY GROWTH AI</div>
   <div class="why-in">
     <div>
       <div class="reveal">
-        <div class="eyebrow" style="color:var(--purple)">Por qué Sley Growth</div>
+        <div class="eyebrow" style="color:var(--purple)">Por qué Sley Growth AI</div>
         <h2 class="sec-title" style="margin-bottom:0">No somos la más grande.<br><span>Somos la más honesta.</span></h2>
       </div>
       <div class="why-list">
@@ -905,36 +968,32 @@ body.sgl-active{overflow:hidden}
       <h2 class="sec-title">Proyectos que<br><span>hablan por sí solos.</span></h2>
     </div>
     <div class="bento">
-      <a href="https://kaumastudio.com/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://logolabstudiocr.com/clientes/kauma/portada.avif" alt="Kauma Studio" loading="lazy">
+      <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fleafy-frangollo-9abe5c.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Barbería" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--cyan)">Arquitectura</div><div class="bento-name">Kauma Studio</div><div class="bento-domain">kaumastudio.com</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--cyan)">Landing Page</div><div class="bento-name">Barbería</div><div class="bento-domain">leafy-frangollo-9abe5c.netlify.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://ceibacapitalgroup.com/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://logolabstudiocr.com/clientes/ceiba/portada.avif" alt="Ceiba Capital" loading="lazy">
+      <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Ftaupe-rabanadas-c1791d.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Studio Nails Mady" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--green)">Real Estate</div><div class="bento-name">Ceiba Capital</div><div class="bento-domain">ceibacapitalgroup.com</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--orange)">Landing Page</div><div class="bento-name">Studio Nails Mady</div><div class="bento-domain">taupe-rabanadas-c1791d.netlify.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://alunajaco.com/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80&auto=format&fit=crop" alt="Aluna Jaco" loading="lazy">
+      <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fclinicadental-omega.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Clínica Dental" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--orange)">Real Estate</div><div class="bento-name">Aluna Jaco</div><div class="bento-domain">alunajaco.com</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--green)">Sitio Web</div><div class="bento-name">Clínica Dental</div><div class="bento-domain">clinicadental-omega.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://inknationcr.com/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://images.unsplash.com/photo-1524593166156-312f362cada0?w=900&q=80&auto=format&fit=crop" alt="INK Nation" loading="lazy">
+      <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fbufeteherediaa.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Bufete de Abogados" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--red)">E-Commerce</div><div class="bento-name">INK Nation</div><div class="bento-domain">inknationcr.com</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Bufete de Abogados</div><div class="bento-domain">bufeteherediaa.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://tropikasa.com/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80&auto=format&fit=crop" alt="Tropikasa" loading="lazy">
-        <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Real Estate</div><div class="bento-name">Tropikasa Realty</div><div class="bento-domain">tropikasa.com</div></div>
-        <div class="bento-arrow">↗</div>
-      </a>
+      <div class="bento-placeholder reveal"><span class="bp-tag">Próximamente</span><span class="bp-name">Veterinaria Mr. Patitas</span></div>
+      <div class="bento-placeholder reveal"><span class="bp-tag">Próximamente</span><span class="bp-name">Residencial</span></div>
     </div>
     <div class="reveal" style="text-align:center">
       <a href="proyectos.html" class="btn-ghost">Ver todos los proyectos</a>
@@ -943,7 +1002,7 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ TESTIMONIOS ══ -->
-<section id="testiSection" style="height:420vh;position:relative;border-top:1px solid var(--border)">
+<section id="testiSection" style="height:280vh;position:relative;border-top:1px solid var(--border)">
   <div class="tc-wrap">
     <div class="tc-header">
       <div class="eyebrow reveal" style="color:var(--green)">Testimonios</div>
@@ -951,72 +1010,31 @@ body.sgl-active{overflow:hidden}
     </div>
     <div class="tc-stage">
 
+      <!-- TESTIMONIOS DE EJEMPLO: reemplazá cada cita por la reseña real del cliente cuando la tengas -->
       <div class="tc-card" style="background:rgba(7,9,26,.98)">
         <div class="tc-stars">
           <span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span>
         </div>
-        <p class="tc-quote">"En 6 semanas lanzamos un sitio que superó en rendimiento a todo lo que teníamos con la agencia anterior en 2 años. El PageSpeed de 98 no es marketing, es real y verificable."</p>
+        <p class="tc-quote">"Desde que tenemos la página, los clientes agendan directo por WhatsApp sin tantas llamadas. Se ve profesional y carga rápido."</p>
         <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--cyan),var(--purple))">MV</div>
+          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--cyan),var(--purple))">B</div>
           <div>
-            <div class="tc-name">Mariana Vargas</div>
-            <div class="tc-role">CEO · Kauma Studio, Costa Rica</div>
+            <div class="tc-name">Barbería</div>
+            <div class="tc-role">Cliente · Landing Page</div>
           </div>
         </div>
       </div>
 
       <div class="tc-card" style="background:rgba(11,14,34,.98)">
-        <div class="tc-stars">
-          <span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span>
-        </div>
-        <p class="tc-quote">"Nuestras propiedades en Jaco empezaron a aparecer en el top 3 de Google Maps en menos de 3 meses. El SEO local que implementaron cambió por completo cómo conseguimos clientes."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--green),var(--cyan))">RC</div>
-          <div>
-            <div class="tc-name">Roberto Calderón</div>
-            <div class="tc-role">Director · Aluna Jaco Real Estate</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tc-card" style="background:rgba(5,8,22,.99)">
-        <div class="tc-stars">
-          <span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span>
-        </div>
-        <p class="tc-quote">"El chatbot con IA que construyeron para nuestra clínica atiende más de 200 consultas por semana sin intervención humana. El ahorro en tiempo del equipo fue inmediato y medible desde el día 1."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--purple),var(--orange))">DM</div>
-          <div>
-            <div class="tc-name">Dra. Diana Morales</div>
-            <div class="tc-role">Directora · Clínica Dental San José</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tc-card" style="background:rgba(7,9,26,.98)">
         <div class="tc-stars">
           <span class="tc-star" style="color:var(--orange)">★</span><span class="tc-star" style="color:var(--orange)">★</span><span class="tc-star" style="color:var(--orange)">★</span><span class="tc-star" style="color:var(--orange)">★</span><span class="tc-star" style="color:var(--orange)">★</span>
         </div>
-        <p class="tc-quote">"Pasamos de un ROAS de 1.8x a 4.6x en Meta Ads en el primer mes. Sin magia, solo con estructura de campañas correcta y creativos que realmente comunican la marca."</p>
+        <p class="tc-quote">"La página refleja exactamente el estilo del negocio. Las clientas nuevas ya llegan viendo los servicios y precios antes de escribir."</p>
         <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--orange),var(--green))">JH</div>
+          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--orange),var(--cyan))">SM</div>
           <div>
-            <div class="tc-name">Jorge Herrera</div>
-            <div class="tc-role">Fundador · INK Nation CR</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tc-card" style="background:rgba(11,14,34,.98)">
-        <div class="tc-stars">
-          <span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span><span class="tc-star" style="color:var(--cyan)">★</span>
-        </div>
-        <p class="tc-quote">"Lo que más valoramos es que no hubo intermediarios. Hablábamos directamente con quien construía el sistema. La transparencia en el proceso es algo que no habíamos encontrado antes."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--cyan),var(--green))">PW</div>
-          <div>
-            <div class="tc-name">Patricia Webb</div>
-            <div class="tc-role">Socia · Webb Legal CR</div>
+            <div class="tc-name">Studio Nails Mady</div>
+            <div class="tc-role">Cliente · Landing Page</div>
           </div>
         </div>
       </div>
@@ -1025,12 +1043,26 @@ body.sgl-active{overflow:hidden}
         <div class="tc-stars">
           <span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span>
         </div>
-        <p class="tc-quote">"Los flujos de n8n que implementaron conectaron nuestro CRM, WhatsApp y sistema de reservas. Automatizamos 12 horas semanales de trabajo operativo. El ROI se recuperó en el primer mes."</p>
+        <p class="tc-quote">"Pacientes nuevos nos encuentran por Google y agendan consulta directo desde el sitio. Antes todo era por referidos."</p>
         <div class="tc-author">
-          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--green),var(--purple))">LN</div>
+          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--green),var(--purple))">CD</div>
           <div>
-            <div class="tc-name">Luis Núñez</div>
-            <div class="tc-role">CEO · Ceiba Capital Group</div>
+            <div class="tc-name">Clínica Dental</div>
+            <div class="tc-role">Cliente · Sitio Web</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-card" style="background:rgba(7,9,26,.98)">
+        <div class="tc-stars">
+          <span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span><span class="tc-star" style="color:var(--purple)">★</span>
+        </div>
+        <p class="tc-quote">"El sitio le da seriedad al despacho desde el primer clic. Los casos que llegan por la web ya vienen con expectativas claras."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,var(--purple),var(--green))">BA</div>
+          <div>
+            <div class="tc-name">Bufete de Abogados</div>
+            <div class="tc-role">Cliente · Sitio Web</div>
           </div>
         </div>
       </div>
@@ -1048,27 +1080,17 @@ body.sgl-active{overflow:hidden}
       <h2 class="sec-title">Así construimos<br><span>los resultados.</span></h2>
     </div>
     <div class="video-grid">
-      <!-- Video 1: n8n workflow -->
-      <div class="vid-card reveal" onclick="openVideo('https://www.pexels.com/download/video/3129671/?fps=25.0&h=1080&w=1920')">
-        <video autoplay muted loop playsinline preload="none" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
-          <source src="https://www.pexels.com/download/video/3129671/?fps=25.0&h=540&w=960" type="video/mp4">
-        </video>
-        <div class="vid-overlay">
-          <div class="vid-play">▶</div>
-        </div>
+      <!-- Tarjeta 1: automatizaciones IA -->
+      <div class="vid-card reveal">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop" alt="Automatizaciones IA" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
         <div class="vid-info">
           <div class="vid-tag" style="color:var(--purple)">Automatizaciones IA</div>
           <div class="vid-title">Flujos n8n en producción</div>
         </div>
       </div>
-      <!-- Video 2: web dev -->
-      <div class="vid-card reveal" onclick="openVideo('https://www.pexels.com/download/video/3130284/?fps=25.0&h=1080&w=1920')">
-        <video autoplay muted loop playsinline preload="none" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
-          <source src="https://www.pexels.com/download/video/3130284/?fps=25.0&h=540&w=960" type="video/mp4">
-        </video>
-        <div class="vid-overlay">
-          <div class="vid-play">▶</div>
-        </div>
+      <!-- Tarjeta 2: desarrollo web -->
+      <div class="vid-card reveal">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=80&auto=format&fit=crop" alt="Desarrollo Web" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
         <div class="vid-info">
           <div class="vid-tag" style="color:var(--cyan)">Desarrollo Web</div>
           <div class="vid-title">Código limpio y arquitectura escalable</div>
@@ -1077,14 +1099,6 @@ body.sgl-active{overflow:hidden}
     </div>
   </div>
 </section>
-
-<!-- Video Modal -->
-<div class="vid-modal" id="vidModal">
-  <div class="vid-modal-inner">
-    <button class="vid-modal-close" onclick="closeVideo()" aria-label="Cerrar video">✕</button>
-    <video id="modalVideo" controls style="width:100%;border-radius:4px"></video>
-  </div>
-</div>
 
 <!-- ══ PROCESO — SPLIT SCREEN SCROLL ══ -->
 <section id="proSection" style="height:500vh;position:relative;border-top:1px solid var(--border)">
@@ -1175,7 +1189,7 @@ body.sgl-active{overflow:hidden}
     <div class="faq-list reveal">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">¿Cuánto cuesta un proyecto con Sley Growth?</span>
+          <span class="faq-q-text">¿Cuánto cuesta un proyecto con Sley Growth AI?</span>
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner"><p>Depende del alcance: una landing page no cuesta lo mismo que un e-commerce o un sistema con IA. Por eso el diagnóstico de 45 minutos es gratis — ahí definimos exactamente qué necesitás y recibís una cotización detallada en 48 horas, sin letras pequeñas ni costos ocultos.</p></div></div>
@@ -1250,18 +1264,18 @@ body.sgl-active{overflow:hidden}
   <div class="foot-in">
     <div class="foot-top">
       <div>
-        <a href="index.html" class="foot-logo">SLEY<em>GROWTH.</em></a>
+        <a href="index.html" class="foot-logo">SLEY<em>GROWTH</em><span style="background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.6em;letter-spacing:.14em;margin-left:3px;font-style:normal;font-weight:800">AI</span></a>
         <p class="foot-tag">Listos para llevar tu marca al siguiente nivel.</p>
         <div class="foot-contacts">
           <a href="tel:+50660336062" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></span>+506 6033-6062</a>
           <a href="mailto:sleygrowth@gmail.com" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>sleygrowth@gmail.com</a>
-          <a href="https://maps.google.com/?q=San+Jose+Costa+Rica" target="_blank" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>San José, Costa Rica</a>
+          
         </div>
         <div class="foot-social">
-          <a href="https://www.facebook.com/sleygrowth" target="_blank" class="fsoc" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://wa.me/50660336062" target="_blank" class="fsoc" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
-          <a href="https://www.instagram.com/sleygrowth/" target="_blank" class="fsoc" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" class="fsoc" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="https://www.facebook.com/sleygrowth" target="_blank" class="fsoc fsoc-fb" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/50660336062" target="_blank" class="fsoc fsoc-wa" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.instagram.com/sleygrowth/" target="_blank" class="fsoc fsoc-ig" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" class="fsoc fsoc-tt" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
         </div>
       </div>
       <div>
@@ -1269,8 +1283,6 @@ body.sgl-active{overflow:hidden}
         <ul class="foot-links">
           <li><a href="servicios/desarrollo-web.html">Desarrollo Web</a></li>
           <li><a href="servicios/auditoria-seo.html">Auditoría SEO</a></li>
-          <li><a href="servicios/meta-ads.html">Meta Ads</a></li>
-          <li><a href="servicios/google-ads.html">Google Ads</a></li>
           <li><a href="servicios/chatbots.html">ChatBots IA</a></li>
           <li><a href="servicios/landing-page.html">Landing Pages</a></li>
         </ul>
@@ -1291,7 +1303,7 @@ body.sgl-active{overflow:hidden}
       </div>
     </div>
     <div class="foot-bot">
-      <p class="fcopy">© 2026 Sley Growth. Todos los derechos reservados.</p>
+      <p class="fcopy">© 2026 Sley Growth AI. Todos los derechos reservados.</p>
       <div class="flegal"><a href="privacidad.html">Política de Privacidad</a><a href="terminos.html">Términos de Servicio</a></div>
     </div>
   </div>
@@ -1336,7 +1348,7 @@ ham.addEventListener('click',()=>{mopen=!mopen;mob.classList.toggle('open',mopen
   draw();
 })();
 
-// ── HERO ROLLING SLOGAN ──
+// ── HERO ROLLING SLOGAN (crossfade real, nunca se corta el texto) ──
 (function(){
   const lines=[
     ['Crecimiento','digital real,','sin excusas.'],
@@ -1344,33 +1356,48 @@ ham.addEventListener('click',()=>{mopen=!mopen;mob.classList.toggle('open',mopen
     ['Tu marca lista','para crecer','de verdad.'],
     ['Menos promesas,','más resultados','reales.']
   ];
-  const els=[document.getElementById('rl0'),document.getElementById('rl1'),document.getElementById('rl2')];
-  if(!els[0]||!els[1]||!els[2])return;
+  const layers=['rl0','rl1','rl2'].map(id=>{
+    const wrap=document.getElementById(id);
+    if(!wrap) return null;
+    return {wrap:wrap,a:wrap.querySelector('.rl-a'),b:wrap.querySelector('.rl-b')};
+  });
+  if(layers.some(l=>!l||!l.a||!l.b))return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  function fit(el,wrap){
+    el.style.fontSize='';
+    const avail=wrap.clientWidth;
+    const needed=el.scrollWidth;
+    if(avail>0&&needed>avail){
+      const curPx=parseFloat(getComputedStyle(el).fontSize);
+      el.style.fontSize=(curPx*(avail/needed)*0.96)+'px';
+    }
+  }
+  function fitAll(){ layers.forEach(l=>fit(l.a.style.opacity!=='0'?l.a:l.b,l.wrap)); }
+  // Run after fonts ready so Syne measurements are correct
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitAll); else fitAll();
+  window.addEventListener('resize',fitAll,{passive:true});
+  // Una sola capa activa (rl-a) — fade out, cambia texto, fade in
+  // Así cada frase dura exactamente el mismo tiempo sin alternancia
   let idx=0;
-  setInterval(()=>{
+  const FADE=1100; // ms de fade out/in
+  const HOLD=5500; // ms visible por frase
+  function rotate(){
     idx=(idx+1)%lines.length;
-    els.forEach(el=>{
-      el.style.transition='transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease';
-      el.style.transform='translateY(-100%)';
-      el.style.opacity='0';
-    });
+    layers.forEach(l=>{l.a.style.transition='opacity '+FADE+'ms ease';l.a.style.opacity='0';});
     setTimeout(()=>{
-      els.forEach((el,i)=>{
-        el.textContent=lines[idx][i];
-        el.style.transition='none';
-        el.style.transform='translateY(100%)';
-        el.style.opacity='0';
+      layers.forEach((l,i)=>{
+        l.a.textContent=lines[idx][i];
+        fit(l.a,l.wrap);
       });
       requestAnimationFrame(()=>requestAnimationFrame(()=>{
-        els.forEach(el=>{
-          el.style.transition='transform .5s cubic-bezier(.22,1,.36,1),opacity .5s ease';
-          el.style.transform='translateY(0)';
-          el.style.opacity='1';
-        });
+        layers.forEach(l=>{l.a.style.opacity='1';});
       }));
-    },420);
-  },3500);
+    },FADE);
+  }
+  window._startHeroRotation=function(){
+    rotate();
+    setInterval(rotate,HOLD+FADE*2);
+  };
 })();
 
 // ── COUNTER ANIMATION ──
@@ -1408,23 +1435,6 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-scale').forEach(e
 // Also trigger counters when hero stats appear
 setTimeout(()=>{document.querySelectorAll('.count').forEach(c=>animateCounter(c))},1200);
 
-// ── VIDEO MODAL ──
-function openVideo(src){
-  const modal=document.getElementById('vidModal');
-  const vid=document.getElementById('modalVideo');
-  vid.src=src;vid.play();
-  modal.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeVideo(){
-  const modal=document.getElementById('vidModal');
-  const vid=document.getElementById('modalVideo');
-  vid.pause();vid.src='';
-  modal.classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('vidModal').addEventListener('click',function(e){if(e.target===this)closeVideo()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
 
 // ── PARALLAX on gblobs ──
 window.addEventListener('mousemove',e=>{
@@ -1444,20 +1454,22 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// ── SERVICES HORIZONTAL SCROLL CAROUSEL ──
+// ── SERVICES HORIZONTAL SCROLL CAROUSEL: una tarjeta a la vez ──
 (function(){
   var sec=document.getElementById('servicios');
   var track=document.getElementById('srvTrack');
   var fill=document.getElementById('srvFill');
-  if(!sec||!track) return;
+  var viewport=track&&track.parentElement;
+  var pages=track?track.querySelectorAll('.srv-page'):[];
+  if(!sec||!track||!viewport||!pages.length) return;
   var t=false;
   function upd(){
     var r=sec.getBoundingClientRect();
     var total=sec.offsetHeight-window.innerHeight;
     if(total<=0) return;
     var prog=Math.min(Math.max(0,-r.top)/total,1);
-    var maxShift=track.scrollWidth-window.innerWidth+track.parentElement.offsetLeft;
-    if(maxShift<0) maxShift=0;
+    var step=viewport.clientWidth;
+    var maxShift=step*(pages.length-1);
     track.style.transform='translateX(-'+(maxShift*prog)+'px)';
     if(fill) fill.style.width=(prog*100)+'%';
   }
@@ -1549,6 +1561,29 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item.faq-open').forEach(function(el){el.classList.remove('faq-open');});
   if(!wasOpen) item.classList.add('faq-open');
 }
+
+// ── TYPEWRITER URL BAR card 01 ──
+(function(){
+  var el=document.getElementById('srvTypeUrl');
+  if(!el) return;
+  var names=['Barbería','Studio Nails Mady','Clínica Dental','Bufete de Abogados'];
+  var i=0,ci=0,deleting=false;
+  function tick(){
+    var cur=names[i];
+    if(!deleting){
+      ci++;
+      el.textContent=cur.slice(0,ci);
+      if(ci>=cur.length){deleting=true;setTimeout(tick,1600);return;}
+    } else {
+      ci--;
+      el.textContent=cur.slice(0,ci);
+      if(ci<=0){deleting=false;i=(i+1)%names.length;setTimeout(tick,380);return;}
+    }
+    setTimeout(tick,deleting?45:80);
+  }
+  setTimeout(tick,800);
+})();
 </script>
+<script src="cookies.js"></script>
 </body>
 </html>
