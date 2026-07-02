@@ -233,14 +233,20 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 /* ══ VIDEO SECTION ══ */
 .video-sec{padding:110px 40px;border-top:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
 .video-in{max-width:1280px;margin:0 auto}
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.video-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:56px}
 .vid-card{border-radius:4px;overflow:hidden;border:1px solid var(--border);position:relative;background:#000;transition:border-color .3s}
 .vid-card:hover{border-color:var(--border2)}
-.vid-card img{transition:transform .5s,filter .5s;filter:brightness(.7) saturate(.9)}
-.vid-card:hover img{transform:scale(1.04);filter:brightness(.85) saturate(1)}
+.vid-card img,.vid-card video{transition:transform .5s,filter .5s;filter:brightness(.7) saturate(.9)}
+.vid-card:hover img,.vid-card:hover video{transform:scale(1.04);filter:brightness(.85) saturate(1)}
 .vid-info{position:absolute;bottom:0;left:0;right:0;padding:32px 24px 20px;background:linear-gradient(to top,rgba(5,8,22,.9),transparent)}
 .vid-tag{font-family:var(--mono);font-size:9px;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
 .vid-title{font-family:var(--display);font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.vid-card-playable{cursor:pointer}
+.vid-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,3,10,.92);align-items:center;justify-content:center;padding:40px}
+.vid-modal.open{display:flex}
+.vid-modal video{max-width:90vw;max-height:88vh;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.vid-modal-close{position:absolute;top:28px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vid-modal-close:hover{background:rgba(255,255,255,.18)}
 
 /* ══ PROCESO ══ */
 .proc{padding:110px 40px;border-top:1px solid var(--border);position:relative;overflow:hidden}
@@ -992,7 +998,12 @@ body.sgl-active{overflow:hidden}
         <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Bufete de Abogados</div><div class="bento-domain">bufeteherediaa.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <div class="bento-placeholder reveal"><span class="bp-tag">Próximamente</span><span class="bp-name">Veterinaria Mr. Patitas</span></div>
+      <a href="https://veterinaria-2026-silk.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fveterinaria-2026-silk.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Veterinaria Mr. Patitas" loading="lazy">
+        <div class="bento-overlay"></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Veterinaria Mr. Patitas</div><div class="bento-domain">veterinaria-2026-silk.vercel.app</div></div>
+        <div class="bento-arrow">↗</div>
+      </a>
       <div class="bento-placeholder reveal"><span class="bp-tag">Próximamente</span><span class="bp-name">Residencial</span></div>
     </div>
     <div class="reveal" style="text-align:center">
@@ -1081,22 +1092,26 @@ body.sgl-active{overflow:hidden}
     </div>
     <div class="video-grid">
       <!-- Tarjeta 1: automatizaciones IA -->
-      <div class="vid-card reveal">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop" alt="Automatizaciones IA" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+      <div class="vid-card vid-card-playable reveal" onclick="openVideoModal('assets/videos/video-project.mp4')">
+        <video src="assets/videos/video-project.mp4" autoplay loop muted playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block"></video>
         <div class="vid-info">
           <div class="vid-tag" style="color:var(--purple)">Automatizaciones IA</div>
           <div class="vid-title">Flujos n8n en producción</div>
         </div>
       </div>
       <!-- Tarjeta 2: desarrollo web -->
-      <div class="vid-card reveal">
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=80&auto=format&fit=crop" alt="Desarrollo Web" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+      <div class="vid-card vid-card-playable reveal" onclick="openVideoModal('assets/videos/video-project-n8n.mp4')">
+        <video src="assets/videos/video-project-n8n.mp4" autoplay loop muted playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block"></video>
         <div class="vid-info">
           <div class="vid-tag" style="color:var(--cyan)">Desarrollo Web</div>
           <div class="vid-title">Código limpio y arquitectura escalable</div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="vid-modal" id="vidModal" onclick="if(event.target===this) closeVideoModal()">
+    <div class="vid-modal-close" onclick="closeVideoModal()">✕</div>
+    <video id="vidModalPlayer" controls playsinline></video>
   </div>
 </section>
 
@@ -1553,6 +1568,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   },{passive:true});
   update();
 })();
+
+// ── VIDEO MODAL ──
+function openVideoModal(src){
+  var modal=document.getElementById('vidModal');
+  var player=document.getElementById('vidModalPlayer');
+  player.src=src;
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+  player.play();
+}
+function closeVideoModal(){
+  var modal=document.getElementById('vidModal');
+  var player=document.getElementById('vidModalPlayer');
+  modal.classList.remove('open');
+  document.body.style.overflow='';
+  player.pause();
+  player.src='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeVideoModal();
+});
 
 // ── FAQ TOGGLE ──
 function toggleFaq(btn){
