@@ -418,11 +418,15 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 @media(max-width:768px){
   #proSection{height:auto!important}
   .pro-sticky-wrap{position:relative!important;height:auto!important;flex-direction:column!important;overflow:visible!important}
-  .pro-sticky-wrap>div{width:100%!important;border-left:none!important}
+  .pro-sticky-wrap>div{display:contents}
   #proStepCounter,#proDots{display:none!important}
   .pro-text-panel{position:relative!important;inset:auto!important;transform:none!important;transition:none!important;padding:36px 20px 16px!important;display:flex!important;border-bottom:1px solid var(--border)}
   .pro-text-panel>div:first-child{display:none!important}
   .pro-vis-panel{position:relative!important;inset:auto!important;transform:none!important;transition:none!important;height:220px!important;border-bottom:1px solid var(--border)}
+  #pt0{order:1}#pv0{order:2}
+  #pt1{order:3}#pv1{order:4}
+  #pt2{order:5}#pv2{order:6}
+  #pt3{order:7}#pv3{order:8}
 }
 
 /* ══ FAQ ══ */
@@ -1111,7 +1115,7 @@ body.sgl-active{overflow:hidden}
   </div>
   <div class="vid-modal" id="vidModal" onclick="if(event.target===this) closeVideoModal()">
     <div class="vid-modal-close" onclick="closeVideoModal()">✕</div>
-    <video id="vidModalPlayer" controls playsinline></video>
+    <video id="vidModalPlayer" controls playsinline muted></video>
   </div>
 </section>
 
