@@ -420,6 +420,7 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
   .pro-sticky-wrap{position:relative!important;height:auto!important;flex-direction:column!important;overflow:visible!important}
   .pro-sticky-wrap>div{display:contents}
   #proStepCounter,#proDots{display:none!important}
+  #proHeader{position:relative!important;top:auto!important;left:auto!important;padding:24px 20px 0!important;order:0}
   .pro-text-panel{position:relative!important;inset:auto!important;transform:none!important;transition:none!important;padding:36px 20px 16px!important;display:flex!important;border-bottom:1px solid var(--border)}
   .pro-text-panel>div:first-child{display:none!important}
   .pro-vis-panel{position:relative!important;inset:auto!important;transform:none!important;transition:none!important;height:220px!important;border-bottom:1px solid var(--border)}
@@ -1125,7 +1126,7 @@ body.sgl-active{overflow:hidden}
 
     <!-- LEFT: text panels (slide from bottom) -->
     <div style="width:50%;position:relative;background:#050816;overflow:hidden">
-      <div style="position:absolute;top:40px;left:6%;z-index:10;display:flex;align-items:center;gap:20px">
+      <div id="proHeader" style="position:absolute;top:40px;left:6%;z-index:10;display:flex;align-items:center;gap:20px">
         <div class="eyebrow" style="color:var(--cyan);margin-bottom:0">Proceso</div>
         <div id="proStepCounter" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.22);letter-spacing:.12em">01 / 04</div>
       </div>
@@ -1172,25 +1173,21 @@ body.sgl-active{overflow:hidden}
       <div class="pro-vis-panel" id="pv0">
         <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.55) saturate(.8)"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(0,212,255,.07),transparent 60%)"></div>
-        <div style="position:absolute;bottom:36px;right:36px;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.12em">// free · 45 min</div>
       </div>
 
       <div class="pro-vis-panel" id="pv1" style="transform:translateY(-100%)">
         <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(34,197,94,.07),transparent 60%)"></div>
-        <div style="position:absolute;bottom:36px;right:36px;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.12em">// 48h turnaround</div>
       </div>
 
       <div class="pro-vis-panel" id="pv2" style="transform:translateY(-100%)">
         <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(249,115,22,.07),transparent 60%)"></div>
-        <div style="position:absolute;bottom:36px;right:36px;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.12em">// weekly demos</div>
       </div>
 
       <div class="pro-vis-panel" id="pv3" style="transform:translateY(-100%)">
         <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(139,92,246,.07),transparent 60%)"></div>
-        <div style="position:absolute;bottom:36px;right:36px;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.12em">// shipped & supported</div>
       </div>
 
     </div>
