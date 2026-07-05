@@ -44,12 +44,10 @@ async function submitForm(e) {
     user_agent: navigator.userAgent
   };
 
-  let supabaseOk = false;
-  let gasOk = false;
-
-  // ── Supabase ──
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/contactos`, {
+  // Las 3 llamadas se disparan en paralelo (antes iban una tras otra,
+  // sumando sus tiempos y dejando al cliente esperando varios segundos).
+  const [supabaseResult, gasResult, dashResult] = await Promise.allSettled([
+    fetch(`${SUPABASE_URL}/rest/v1/contactos`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -58,32 +56,13 @@ async function submitForm(e) {
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify(payload)
-    });
-    if (!res.ok) {
-      const detalle = await res.text();
-      console.error('Supabase 400 detalle:', detalle);   // 👈 te dice qué columna falla
-    }
-    supabaseOk = res.ok;
-  } catch (err) {
-    console.error('Supabase error:', err);
-  }
-
-  // ── Google Sheets via Apps Script ──
-  try {
-    await fetch(GAS_URL, {
+    }),
+    fetch(GAS_URL, {
       method: 'POST',
       mode: 'no-cors',
       body: JSON.stringify(payload)
-    });
-    gasOk = true;
-  } catch (err) {
-    console.error('Google Sheets error:', err);
-  }
-
-  // ── Dashboard: crea el prospecto en la pestana Prospectos ──
-  let dashOk = false;
-  try {
-    const res = await fetch(`${DASHBOARD_SUPABASE_URL}/rest/v1/rpc/prospect_intake`, {
+    }),
+    fetch(`${DASHBOARD_SUPABASE_URL}/rest/v1/rpc/prospect_intake`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -100,11 +79,34 @@ async function submitForm(e) {
         p_budget: presupuesto,
         p_origin: 'formulario web (' + location.href + ')'
       })
-    });
-    dashOk = res.ok;
-    if (!res.ok) console.error('Dashboard detalle:', await res.text());
-  } catch (err) {
-    console.error('Dashboard error:', err);
+    })
+  ]);
+
+  let supabaseOk = false;
+  if (supabaseResult.status === 'fulfilled') {
+    supabaseOk = supabaseResult.value.ok;
+    if (!supabaseOk) {
+      supabaseResult.value.text().then(detalle => console.error('Supabase 400 detalle:', detalle));
+    }
+  } else {
+    console.error('Supabase error:', supabaseResult.reason);
+  }
+
+  let gasOk = false;
+  if (gasResult.status === 'fulfilled') {
+    gasOk = true;
+  } else {
+    console.error('Google Sheets error:', gasResult.reason);
+  }
+
+  let dashOk = false;
+  if (dashResult.status === 'fulfilled') {
+    dashOk = dashResult.value.ok;
+    if (!dashOk) {
+      dashResult.value.text().then(detalle => console.error('Dashboard detalle:', detalle));
+    }
+  } else {
+    console.error('Dashboard error:', dashResult.reason);
   }
 
   if (supabaseOk || gasOk || dashOk) {
