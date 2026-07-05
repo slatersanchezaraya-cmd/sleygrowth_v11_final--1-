@@ -9,6 +9,12 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbyg2NzszXg6lrFHA6EF9v0bqdgPZ5sj3_HvhCpjO-euQhYmyjtQ-hsQWjpS4nePIzLS/exec';
 const WHATSAPP_NUMBER = '50660336062';
 
+// ── Dashboard interno de Sley Growth (dashboard-dley.vercel.app) ──
+// Crea el prospecto automaticamente en la pestana Prospectos.
+// La anon key es publica por diseno; el dashboard valida por RPC.
+const DASHBOARD_SUPABASE_URL = 'https://clwxxvjchrjjxudtdnei.supabase.co';
+const DASHBOARD_ANON_KEY     = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsd3h4dmpjaHJqanh1ZHRkbmVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxNzM0NDEsImV4cCI6MjA5ODc0OTQ0MX0.fae9cQ3VnhcRirWI1kVNududv-wVrPnVO3FTi2d9Gmc';
+
 async function submitForm(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -74,7 +80,34 @@ async function submitForm(e) {
     console.error('Google Sheets error:', err);
   }
 
-  if (supabaseOk || gasOk) {
+  // ── Dashboard: crea el prospecto en la pestana Prospectos ──
+  let dashOk = false;
+  try {
+    const res = await fetch(`${DASHBOARD_SUPABASE_URL}/rest/v1/rpc/prospect_intake`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': DASHBOARD_ANON_KEY,
+        'Authorization': `Bearer ${DASHBOARD_ANON_KEY}`
+      },
+      body: JSON.stringify({
+        p_name: nombre,
+        p_company: empresa,
+        p_email: email,
+        p_phone: tel,
+        p_service: servicio,
+        p_message: mensaje,
+        p_budget: presupuesto,
+        p_origin: 'formulario web (' + location.href + ')'
+      })
+    });
+    dashOk = res.ok;
+    if (!res.ok) console.error('Dashboard detalle:', await res.text());
+  } catch (err) {
+    console.error('Dashboard error:', err);
+  }
+
+  if (supabaseOk || gasOk || dashOk) {
     const waMsg = encodeURIComponent(`Hola, me llamo ${nombre}${empresa ? ' de ' + empresa : ''}. Quiero consultar sobre: ${servicio}. Presupuesto: ${presupuesto || 'No especificado'}. ${mensaje} Mi email: ${email}${tel ? ' Tel: ' + tel : ''}`);
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
