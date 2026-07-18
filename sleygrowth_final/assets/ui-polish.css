@@ -18,7 +18,7 @@
 /* skip-link para usuarios de teclado */
 .sg-skip {
   position: absolute; left: -9999px; top: 0; z-index: 9999;
-  background: #00D4FF; color: #050816; padding: 12px 20px;
+  background: #00D4FF; color: #0B1030; padding: 12px 20px;
   border-radius: 0 0 10px 0; font-weight: 800; font-size: 13px;
   text-decoration: none;
 }
@@ -42,8 +42,10 @@ a, button, input, select, textarea, .filter-btn, .cfg-qty-btn {
   transform: scale(0.97);
 }
 
-/* ── #5 LAYOUT · viewport-units & no-horizontal-scroll ───────── */
-html, body { max-width: 100%; overflow-x: hidden; }
+/* ── #5 LAYOUT · viewport-units & no-horizontal-scroll ─────────
+   Solo en body: ponerlo en html rompe position:sticky (las
+   secciones fijadas de Servicios/Testimonios/Proceso). */
+body { max-width: 100%; overflow-x: hidden; }
 .hero, .page-hero { min-height: 100dvh; }   /* dvh > vh en móvil */
 img, svg, video { max-width: 100%; height: auto; }
 
@@ -90,10 +92,10 @@ button[disabled], .btn-submit:disabled, .sqm-submit:disabled {
 /* ── Scrollbar sutil on-brand (desktop) ──────────────────────── */
 @media (hover: hover) {
   ::-webkit-scrollbar { width: 11px; height: 11px; }
-  ::-webkit-scrollbar-track { background: #050816; }
+  ::-webkit-scrollbar-track { background: #0B1030; }
   ::-webkit-scrollbar-thumb {
     background: rgba(255,255,255,0.12); border-radius: 6px;
-    border: 3px solid #050816;
+    border: 3px solid #0B1030;
   }
   ::-webkit-scrollbar-thumb:hover { background: rgba(0,212,255,0.4); }
 }
@@ -114,6 +116,88 @@ button[disabled], .btn-submit:disabled, .sqm-submit:disabled {
   cursor: pointer;
 }
 
+/* ── Fondo de grid técnico (reemplaza fotos stock de hero) ───── */
+.ph-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 42%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 42%, #000 35%, transparent 100%);
+}
+
+/* ── Visual de feature: mockup de navegador teñido por --accent-hex
+      (reemplaza fotos stock en páginas de servicio) ───────────── */
+.fiv {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse at 75% 15%, color-mix(in srgb, var(--accent-hex, #00D4FF) 10%, transparent), transparent 60%),
+    radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: auto, 26px 26px;
+  background-color: #060a18;
+}
+.fiv-frame {
+  width: 74%; background: #080c1c;
+  border: 1px solid rgba(255,255,255,.1); border-radius: 10px;
+  overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.55);
+  transform: rotate(-1.2deg); position: relative;
+}
+.fiv-frame::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.035), transparent);
+  animation: fivSweep 3.4s ease-in-out 1s infinite;
+}
+@keyframes fivSweep { 0% { transform: translateX(-120%); } 100% { transform: translateX(430%); } }
+.fiv-bar {
+  display: flex; gap: 6px; padding: 10px 12px;
+  background: rgba(255,255,255,.03); border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.fiv-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.12); }
+.fiv-bar i:nth-child(1) { background: rgba(255,95,87,.8); }
+.fiv-bar i:nth-child(2) { background: rgba(254,188,46,.8); }
+.fiv-bar i:nth-child(3) { background: rgba(40,200,64,.8); }
+.fiv-page { padding: 12px; }
+.fiv-nav { height: 14px; border-radius: 3px; background: rgba(255,255,255,.05); margin-bottom: 8px; position: relative; }
+.fiv-nav::before {
+  content: ''; position: absolute; left: 6px; top: 4px; width: 34px; height: 6px;
+  border-radius: 2px; background: var(--accent-hex, #00D4FF); opacity: .6;
+}
+.fiv-hero {
+  height: 64px; border-radius: 5px; margin-bottom: 8px; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-hex, #00D4FF) 12%, transparent), transparent 70%);
+  border: 1px solid rgba(255,255,255,.05);
+}
+.fiv-hero::before {
+  content: ''; position: absolute; top: 13px; left: 11px; width: 55%; height: 8px;
+  border-radius: 3px; background: rgba(255,255,255,.45);
+  box-shadow: 0 14px 0 -1.5px rgba(255,255,255,.16);
+}
+.fiv-hero::after {
+  content: ''; position: absolute; bottom: 11px; left: 11px; width: 42px; height: 13px;
+  border-radius: 3px; background: var(--accent-hex, #00D4FF); opacity: .65;
+  animation: fivPulse 2.4s ease-in-out infinite;
+}
+@keyframes fivPulse {
+  0%, 100% { opacity: .4; box-shadow: 0 0 8px color-mix(in srgb, var(--accent-hex, #00D4FF) 20%, transparent); }
+  50% { opacity: .85; box-shadow: 0 0 18px color-mix(in srgb, var(--accent-hex, #00D4FF) 55%, transparent); }
+}
+.fiv-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.fiv-cards span { height: 30px; border-radius: 4px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); }
+.fiv-cards span:nth-child(2) {
+  border-color: color-mix(in srgb, var(--accent-hex, #00D4FF) 35%, transparent);
+  background: color-mix(in srgb, var(--accent-hex, #00D4FF) 7%, transparent);
+}
+.fiv-chip {
+  position: absolute; right: 7%; bottom: 9%;
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent-hex, #00D4FF);
+  border: 1px solid color-mix(in srgb, var(--accent-hex, #00D4FF) 45%, transparent);
+  border-radius: 100px; padding: 6px 13px;
+  background: rgba(11,16,48,.85); backdrop-filter: blur(6px);
+}
+
 /* ── reduced-motion (refuerzo global) ────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -123,3 +207,51 @@ button[disabled], .btn-submit:disabled, .sqm-submit:disabled {
     scroll-behavior: auto !important;
   }
 }
+
+/* ══ REFRESH 2026: fondo vivo, ondas y FAQ claro ══ */
+.wave-sep{display:block;height:70px;line-height:0;background:var(--prev,#0B1030);margin:0;position:relative;z-index:3}
+.wave-sep svg{display:block;width:100%;height:100%}
+.wave-sep path{fill:var(--next,#0B1030)}
+@media(max-width:720px){.wave-sep{height:44px}}
+section.why{background:linear-gradient(180deg,#151046,#0D1238);border-top:0}
+section.proj-sec{border-top:0}
+section#proSection{background:linear-gradient(180deg,#0A1F3C,#0D1238)}
+section.cta{border-top:0;background:radial-gradient(ellipse 85% 70% at 50% 110%,rgba(139,92,246,.18),transparent 60%),radial-gradient(ellipse 60% 50% at 15% 100%,rgba(0,212,255,.10),transparent 60%)}
+section.cta-sec{border-top:0;padding-top:130px;padding-bottom:130px;background:linear-gradient(180deg,#0D1238,#151046)}
+section.faq-sec{background:#E9EDF5;border-top:0}
+section.faq-sec .eyebrow{color:#6D4FE0!important}
+section.faq-sec .sec-title{color:#0F1430}
+section.faq-sec .sec-title span{color:rgba(15,20,48,.38)}
+section.faq-sec .faq-item{border-bottom:1px solid rgba(15,20,48,.12)}
+section.faq-sec .faq-q-text{color:#131A3F}
+section.faq-sec .faq-q:hover .faq-q-text{color:#4F46E5}
+section.faq-sec .faq-ico{border-color:rgba(79,70,229,.35);background:rgba(139,92,246,.08);color:#4F46E5}
+section.faq-sec .faq-a-inner p{color:rgba(15,20,48,.72)}
+/* ── mas tintes para las ondas nuevas ── */
+section#testiSection{background:linear-gradient(180deg,#151040,#0D1238)}
+section.feat-img-sec{border-top:0}
+section.proc-sec{background:linear-gradient(180deg,#0A1F3C,#0D1238);border-top:0}
+section.editorial-sec{background:linear-gradient(180deg,#10163F,#0B1030);border-top:0}
+section.contact-sec{background:linear-gradient(180deg,#10163F,#0B1030)}
+/* ── boton flotante de WhatsApp ── */
+.wa-flot{position:fixed;bottom:22px;right:22px;z-index:300;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s,box-shadow .25s}
+.wa-flot:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 12px 36px rgba(37,211,102,.6)}
+@media(max-width:720px){.wa-flot{bottom:16px;right:16px;width:52px;height:52px}}
+/* ── estructura del FAQ (compartida) + contraste fuerte sobre gris ── */
+section.faq-sec{padding:96px 40px}
+section.faq-sec .faq-in{max-width:860px;margin:0 auto}
+section.faq-sec .faq-list{margin-top:44px;display:flex;flex-direction:column}
+section.faq-sec .faq-item{border-bottom:1px solid rgba(15,20,48,.16);overflow:hidden}
+section.faq-sec .faq-q{width:100%;background:none;border:none;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;text-align:left}
+section.faq-sec .faq-q-text{font-family:'Syne',sans-serif;font-size:clamp(15px,1.6vw,18px);font-weight:700;letter-spacing:-.02em;line-height:1.35;color:#12172E}
+section.faq-sec .faq-q:hover .faq-q-text{color:#4F46E5}
+section.faq-sec .faq-ico{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(79,70,229,.35);background:rgba(139,92,246,.10);color:#4F46E5;transition:transform .3s}
+section.faq-sec .faq-item.faq-open .faq-ico{transform:rotate(45deg)}
+section.faq-sec .faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease}
+section.faq-sec .faq-item.faq-open .faq-a{max-height:460px}
+section.faq-sec .faq-a-inner{padding:0 52px 26px 0}
+section.faq-sec .faq-a-inner p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(15,20,40,.82)}
+section.faq-sec .sec-title{color:#0B0F26}
+section.faq-sec .sec-title span{color:rgba(11,15,38,.45)}
+section.faq-sec .eyebrow{color:#5B45D6!important}
+@media(max-width:720px){section.faq-sec{padding:72px 20px}section.faq-sec .faq-a-inner{padding-right:0}}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Sley Growth AI — Agencia Digital Costa Rica">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050816"/>
+      <stop offset="1" stop-color="#0b0e22"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00D4FF"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="85%" cy="12%" r="45%">
+      <stop offset="0" stop-color="#00D4FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="8%" cy="92%" r="45%">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 157H1200M0 315H1200M0 472H1200M240 0V630M480 0V630M720 0V630M960 0V630"/>
+  </g>
+  <g transform="translate(90,250)" font-family="'Syne','Segoe UI',sans-serif">
+    <text x="0" y="0" font-size="30" letter-spacing="6" fill="#00D4FF" font-weight="700">AGENCIA DIGITAL · COSTA RICA</text>
+    <text x="0" y="90" font-size="86" font-weight="800" fill="#ffffff" letter-spacing="-2">Sley Growth <tspan fill="url(#grad)">AI</tspan></text>
+    <text x="0" y="160" font-size="34" fill="#ffffff" fill-opacity="0.62" font-weight="400" font-family="'Inter','Segoe UI',sans-serif">Desarrollo web · SEO técnico · Automatización con IA</text>
+  </g>
+  <g transform="translate(90,560)" font-family="'Inter','Segoe UI',sans-serif">
+    <circle cx="9" cy="-6" r="7" fill="#22C55E"/>
+    <text x="30" y="0" font-size="24" fill="#ffffff" fill-opacity="0.55">sleygrowth.com · Resultados reales, no promesas</text>
+  </g>
+</svg>

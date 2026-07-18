@@ -1,0 +1,5 @@
+# robots.txt — Sley Growth AI
+User-agent: *
+Allow: /
+
+Sitemap: https://sleygrowth.com/sitemap.xml

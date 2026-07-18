@@ -3,22 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1030">
 <meta name="description" content="Sley Growth AI — Agencia digital en Costa Rica. Desarrollo web, SEO técnico y automatizaciones con IA. Resultados reales.">
 <title>Sley Growth AI — Agencia Digital Costa Rica</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:title" content="Sley Growth AI — Agencia Digital Costa Rica">
 <meta property="og:description" content="Agencia digital en Costa Rica. Desarrollo web, SEO técnico y automatizaciones con IA. Resultados reales.">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://sleygrowth.com/">
+<meta property="og:url" content="https://sleygrowth.com/">
+<meta property="og:site_name" content="Sley Growth AI">
+<meta property="og:locale" content="es_CR">
+<meta property="og:image" content="https://sleygrowth.com/assets/og-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sley Growth AI — Agencia Digital Costa Rica">
+<meta name="twitter:description" content="Agencia digital en Costa Rica. Desarrollo web, SEO técnico y automatizaciones con IA. Resultados reales.">
+<meta name="twitter:image" content="https://sleygrowth.com/assets/og-cover.svg">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sley Growth AI">
+<meta name="geo.region" content="CR">
+<meta name="geo.placename" content="Costa Rica">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ui-polish.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#050816;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:#0B1030;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 :root{
-  --bg:#050816;--bg2:#07091a;--bg3:#0b0e22;
+  --bg:#0B1030;--bg2:#0D1238;--bg3:#131A4A;
   --cyan:#00D4FF;--green:#22C55E;--orange:#F97316;--purple:#8B5CF6;--red:#EF4444;
   --cyan-dim:rgba(0,212,255,0.08);--green-dim:rgba(34,197,94,0.08);
   --orange-dim:rgba(249,115,22,0.08);--purple-dim:rgba(139,92,246,0.08);
@@ -29,19 +44,19 @@ body{font-family:'Inter',sans-serif;background:#050816;color:#fff;overflow-x:hid
 }
 
 /* SKIP */
-.skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--cyan);color:#050816;padding:12px 20px;font-weight:700;font-size:13px;text-decoration:none;border-radius:0 0 8px 0}
+.skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--cyan);color:#0B1030;padding:12px 20px;font-weight:700;font-size:13px;text-decoration:none;border-radius:0 0 8px 0}
 .skip:focus{left:0}
 
 /* ══ NAV ══ */
-nav{position:fixed;top:0;width:100%;z-index:200;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,22,0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s}
-nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color:var(--border)}
+nav{position:fixed;top:0;width:100%;z-index:200;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,16,48,0);backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all .4s}
+nav.scrolled{background:rgba(11,16,48,.95);backdrop-filter:blur(24px);border-color:var(--border)}
 .nav-logo{font-family:var(--display);font-size:19px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-0.04em}
 .nav-logo em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-links a,.dd>button{color:var(--w2);font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;text-decoration:none;transition:color .2s,background .2s;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px}
 .nav-links a:hover,.dd:hover>button{color:#fff;background:var(--w4)}
 .dd{position:relative}
-.ddm{position:absolute;top:calc(100%+10px);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(9,12,28,.98);border:1px solid var(--border2);border-radius:16px;padding:8px;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;backdrop-filter:blur(20px);box-shadow:0 32px 80px rgba(0,0,0,.7)}
+.ddm{position:absolute;top:calc(100%+10px);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(15,20,58,.98);border:1px solid var(--border2);border-radius:16px;padding:8px;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;backdrop-filter:blur(20px);box-shadow:0 32px 80px rgba(0,0,0,.7)}
 .dd:hover .ddm{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
 .di{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s}
 .di:hover{background:var(--w4)}
@@ -54,15 +69,14 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .btn-nav:hover::before,.btn-primary:hover::before{transform:scaleX(1)}
 .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .ham span{width:22px;height:1.5px;background:#fff;border-radius:2px;transition:all .3s;display:block}
-.mob{display:none;position:fixed;inset:0;background:rgba(5,8,22,.98);backdrop-filter:blur(24px);z-index:199;padding:84px 24px 40px;overflow-y:auto;flex-direction:column}
+.mob{display:none;position:fixed;inset:0;background:rgba(11,16,48,.98);backdrop-filter:blur(24px);z-index:199;padding:84px 24px 40px;overflow-y:auto;flex-direction:column}
 .mob.open{display:flex}
 
 /* ══ HERO ══ */
 .hero{min-height:100dvh;position:relative;overflow:hidden;display:flex;align-items:center}
-/* Video BG */
-.hero-video{position:absolute;inset:0;z-index:0}
-.hero-video img{width:100%;height:100%;object-fit:cover;opacity:.18}
-.hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,8,22,.92) 0%,rgba(5,8,22,.7) 50%,rgba(5,8,22,.88) 100%)}
+/* Grid BG (local, sin dependencias externas) */
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 95% 85% at 50% 42%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 95% 85% at 50% 42%,#000 35%,transparent 100%)}
+.hero-grid::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,16,48,.35) 0%,transparent 50%,rgba(11,16,48,.3) 100%)}
 /* Floating particles canvas */
 #particles{position:absolute;inset:0;z-index:1;pointer-events:none}
 /* Glow blobs */
@@ -72,7 +86,7 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .gb3{width:400px;height:400px;background:radial-gradient(circle,rgba(34,197,94,.06),transparent 70%);top:40%;left:40%;animation:blobFloat 12s ease-in-out infinite 2s}
 @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.95)}}
 
-.hero-in{max-width:1280px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1.35fr .65fr;align-items:center;min-height:100dvh}
+.hero-in{max-width:1280px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr;align-items:center;min-height:100dvh}
 .hero-left{padding:140px 0 100px}
 .hero-right{border-left:1px solid var(--border);padding:0 0 0 56px;display:flex;flex-direction:column}
 .hstat{padding:26px 0;border-bottom:1px solid var(--border);opacity:0;animation:fadeIn .8s ease 1.05s forwards}
@@ -138,7 +152,7 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .srv-track-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .srv-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
 .srv-track-card:hover .srv-card-bg{transform:scale(1.04)}
-.srv-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,.98) 0%,rgba(5,8,22,.5) 55%,rgba(5,8,22,.15) 100%)}
+.srv-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,16,48,.98) 0%,rgba(11,16,48,.5) 55%,rgba(11,16,48,.15) 100%)}
 .srv-card-num{position:absolute;top:24px;right:24px;font-family:var(--display);font-size:88px;font-weight:800;opacity:.07;line-height:1;letter-spacing:-0.06em;color:#fff}
 .srv-card-body{position:relative;z-index:2;padding:32px}
 .srv-card-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
@@ -151,13 +165,13 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .srv-card-link:hover{gap:12px}
 /* Color themes per card */
 .stc-cyan .srv-card-eyebrow,.stc-cyan .srv-card-link{color:var(--cyan)}
-.stc-cyan .srv-card-overlay{background:linear-gradient(to top,rgba(5,8,22,.99) 0%,rgba(0,30,40,.7) 55%,rgba(0,212,255,.04) 100%)}
+.stc-cyan .srv-card-overlay{background:linear-gradient(to top,rgba(11,16,48,.99) 0%,rgba(0,30,40,.7) 55%,rgba(0,212,255,.04) 100%)}
 .stc-green .srv-card-eyebrow,.stc-green .srv-card-link{color:var(--green)}
-.stc-green .srv-card-overlay{background:linear-gradient(to top,rgba(5,8,22,.99) 0%,rgba(0,20,10,.7) 55%,rgba(34,197,94,.04) 100%)}
+.stc-green .srv-card-overlay{background:linear-gradient(to top,rgba(11,16,48,.99) 0%,rgba(0,20,10,.7) 55%,rgba(34,197,94,.04) 100%)}
 .stc-orange .srv-card-eyebrow,.stc-orange .srv-card-link{color:var(--orange)}
-.stc-orange .srv-card-overlay{background:linear-gradient(to top,rgba(5,8,22,.99) 0%,rgba(30,15,0,.7) 55%,rgba(249,115,22,.04) 100%)}
+.stc-orange .srv-card-overlay{background:linear-gradient(to top,rgba(11,16,48,.99) 0%,rgba(30,15,0,.7) 55%,rgba(249,115,22,.04) 100%)}
 .stc-purple .srv-card-eyebrow,.stc-purple .srv-card-link{color:var(--purple)}
-.stc-purple .srv-card-overlay{background:linear-gradient(to top,rgba(5,8,22,.99) 0%,rgba(15,5,30,.7) 55%,rgba(139,92,246,.04) 100%)}
+.stc-purple .srv-card-overlay{background:linear-gradient(to top,rgba(11,16,48,.99) 0%,rgba(15,5,30,.7) 55%,rgba(139,92,246,.04) 100%)}
 
 /* ══ WHY US ══ */
 .why{padding:110px 40px;background:var(--bg2);border-top:1px solid var(--border);position:relative;overflow:hidden}
@@ -192,20 +206,24 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 .proj-sec{padding:110px 40px;border-top:1px solid var(--border)}
 /* Bento grid */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:16px;margin-bottom:40px}
-.bento-card{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;border:1px solid var(--border);background:var(--bg3);aspect-ratio:4/3}
+.bento-card{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;border:1px solid var(--border);aspect-ratio:4/3;background:linear-gradient(110deg,#131A4A 8%,#12163a 18%,#131A4A 33%);background-size:200% 100%;animation:skelShimmer 1.6s linear infinite}
+@keyframes skelShimmer{to{background-position:-200% 0}}
+/* mini barra de navegador (consistencia con tarjeta Desarrollo) */
+.bento-card::before{content:'';position:absolute;top:0;left:0;right:0;height:26px;z-index:3;background-color:rgba(15,20,58,.92);border-bottom:1px solid rgba(255,255,255,.06);background-image:radial-gradient(circle at 15px 13px,rgba(255,95,87,.85) 0 3.5px,transparent 4.5px),radial-gradient(circle at 30px 13px,rgba(254,188,46,.85) 0 3.5px,transparent 4.5px),radial-gradient(circle at 45px 13px,rgba(40,200,64,.85) 0 3.5px,transparent 4.5px)}
+.bento-card:hover{border-color:var(--border2)}
 .bento-placeholder{position:relative;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1.5px dashed var(--border2);background:rgba(255,255,255,.015);aspect-ratio:4/3}
 .bento-placeholder .bp-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--w3)}
 .bento-placeholder .bp-name{font-family:var(--display);font-size:18px;font-weight:800;color:var(--w2);letter-spacing:-0.02em}
-.bento-img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s;filter:brightness(.6) saturate(.8)}
+.bento-img{width:100%;height:calc(100% - 26px);margin-top:26px;object-fit:cover;object-position:top;transition:transform .5s ease,filter .5s;filter:brightness(.6) saturate(.8)}
 .bento-card:hover .bento-img{transform:scale(1.06);filter:brightness(.8) saturate(1)}
-.bento-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,.95) 0%,rgba(5,8,22,.3) 60%,transparent 100%);transition:opacity .3s}
+.bento-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,16,48,.95) 0%,rgba(11,16,48,.3) 60%,transparent 100%);transition:opacity .3s}
 .bento-card:hover .bento-overlay{opacity:.85}
 .bento-info{position:absolute;bottom:0;left:0;right:0;padding:24px;transform:translateY(8px);transition:transform .3s}
 .bento-card:hover .bento-info{transform:translateY(0)}
 .bento-cat{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
 .bento-name{font-family:var(--display);font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1}
 .bento-domain{font-size:11px;color:var(--w3);margin-top:4px}
-.bento-arrow{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--w2);opacity:0;transform:translate(4px,-4px);transition:all .3s}
+.bento-arrow{position:absolute;top:38px;right:14px;width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--w2);opacity:0;transform:translate(4px,-4px);transition:all .3s;z-index:4}
 .bento-card:hover .bento-arrow{opacity:1;transform:translate(0,0)}
 
 /* ══ TESTIMONIALS ══ */
@@ -233,12 +251,12 @@ nav.scrolled{background:rgba(5,8,22,.95);backdrop-filter:blur(24px);border-color
 /* ══ VIDEO SECTION ══ */
 .video-sec{padding:110px 40px;border-top:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
 .video-in{max-width:1280px;margin:0 auto}
-.video-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:56px}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
 .vid-card{border-radius:4px;overflow:hidden;border:1px solid var(--border);position:relative;background:#000;transition:border-color .3s}
 .vid-card:hover{border-color:var(--border2)}
 .vid-card img,.vid-card video{transition:transform .5s,filter .5s;filter:brightness(.7) saturate(.9)}
 .vid-card:hover img,.vid-card:hover video{transform:scale(1.04);filter:brightness(.85) saturate(1)}
-.vid-info{position:absolute;bottom:0;left:0;right:0;padding:32px 24px 20px;background:linear-gradient(to top,rgba(5,8,22,.9),transparent)}
+.vid-info{position:absolute;bottom:0;left:0;right:0;padding:32px 24px 20px;background:linear-gradient(to top,rgba(11,16,48,.9),transparent)}
 .vid-tag{font-family:var(--mono);font-size:9px;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
 .vid-title{font-family:var(--display);font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
 .vid-card-playable{cursor:pointer}
@@ -415,6 +433,41 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 /* ══ SPLIT PROCESS ══ */
 .pro-text-panel{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:5rem 6% 6rem;will-change:transform;transition:transform .95s cubic-bezier(.7,0,.3,1)}
 .pro-vis-panel{position:absolute;inset:0;will-change:transform;transition:transform .95s cubic-bezier(.7,0,.3,1)}
+/* Visuales a medida por paso (sin fotos stock) */
+.pv-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:30px 30px;overflow:hidden}
+.pv-glow{position:absolute;width:65%;height:65%;border-radius:50%;filter:blur(70px);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%)}
+.pv-tag{position:absolute;bottom:18px;right:20px;font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--w3)}
+.pv-card{position:relative;width:min(420px,90%);background:rgba(7,9,26,.94);border:1px solid var(--border2);border-radius:14px;box-shadow:0 30px 70px rgba(0,0,0,.55);overflow:hidden}
+.pv-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)}
+.pv-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.pv-bar-title{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--w3);margin-left:6px}
+.pv-body{padding:18px;display:flex;align-items:center;gap:20px}
+.pv-rows{display:flex;flex-direction:column;gap:11px;min-width:0}
+.pv-row{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--w2);text-transform:uppercase;white-space:nowrap}
+.pv-row i{width:7px;height:7px;border-radius:50%;flex-shrink:0;font-style:normal}
+/* radar (paso 01) */
+.pv-radar{position:relative;width:170px;height:170px;flex-shrink:0}
+.pv-radar svg{position:absolute;inset:0;width:100%;height:100%}
+.pv-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,212,255,.32),transparent 75deg);animation:pvSpin 3.2s linear infinite}
+@keyframes pvSpin{to{transform:rotate(360deg)}}
+.pv-blip{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+.pv-blip::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(0,212,255,.6);animation:pvPing 2.4s ease-out infinite}
+@keyframes pvPing{0%{transform:scale(.4);opacity:1}100%{transform:scale(2.4);opacity:0}}
+/* doc / líneas que se llenan (paso 02) */
+.pv-line{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;position:relative;margin-bottom:10px}
+.pv-line span{position:absolute;inset:0;border-radius:3px;transform-origin:left;transform:scaleX(0);animation:pvFill 4.6s ease-in-out infinite}
+@keyframes pvFill{0%,6%{transform:scaleX(0)}38%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.pv-stamp{position:absolute;right:16px;bottom:14px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--green);border:1.5px solid rgba(34,197,94,.5);border-radius:6px;padding:6px 10px;transform:rotate(-6deg);background:rgba(34,197,94,.07);animation:devPulseGreen 2.8s ease-in-out infinite}
+/* terminal (paso 03) */
+.pv-term{font-family:var(--mono);font-size:9.5px;line-height:2.1;color:var(--w2);width:100%}
+.pv-term>div{opacity:0;animation:pvLineIn 7.5s linear infinite}
+@keyframes pvLineIn{0%{opacity:0}5%,90%{opacity:1}100%{opacity:0}}
+/* ecg / live (paso 04) */
+.pv-ecg{stroke-dasharray:90 640;animation:pvEcg 2.6s linear infinite}
+@keyframes pvEcg{from{stroke-dashoffset:730}to{stroke-dashoffset:0}}
+.pv-live{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--green);border:1px solid rgba(34,197,94,.4);border-radius:100px;padding:6px 14px;background:rgba(34,197,94,.07)}
+.pv-live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.6s ease-in-out infinite}
+@media(max-width:900px){.pv-radar{width:130px;height:130px}.pv-body{gap:14px;padding:14px}.pv-card{width:min(380px,92%)}.pv-rows{gap:8px}}
 @media(max-width:768px){
   #proSection{height:auto!important}
   .pro-sticky-wrap{position:relative!important;height:auto!important;flex-direction:column!important;overflow:visible!important}
@@ -450,15 +503,23 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 .faq-a-inner p{font-size:15px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.8}
 @media(max-width:768px){.faq-sec{padding:72px 20px}.faq-q-text{font-size:15px}.faq-a-inner{padding-right:0}}
 
-/* ══ TRUSTBAR ══ */
-.trustbar{padding:32px 40px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden}
-.trustbar-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center}
+/* ══ TRUSTBAR — marquee infinito ══ */
+.trustbar{padding:26px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden}
+.trustbar-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:0 40px}
 .trustbar-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--w3);flex-shrink:0}
-.trustbar-row{display:flex;align-items:center;gap:36px;flex-wrap:wrap;justify-content:center}
-.trustbar-row a,.trustbar-row span{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:-0.02em;color:var(--w3);text-decoration:none;transition:color .25s;white-space:nowrap}
-.trustbar-row a:hover{color:#fff}
-@media(max-width:768px){.trustbar{padding:24px 20px}.trustbar-in{gap:16px}.trustbar-row{gap:20px}.trustbar-row a,.trustbar-row span{font-size:13px}}
+.tb-marquee{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tb-track{display:flex;align-items:center;width:max-content;animation:tbScroll 30s linear infinite}
+.tb-marquee:hover .tb-track{animation-play-state:paused}
+.tb-track a{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:-0.02em;color:var(--w3);text-decoration:none;transition:color .25s;white-space:nowrap;display:inline-flex;align-items:center;gap:32px;padding-right:32px}
+.tb-track a::after{content:'✦';font-size:9px;color:rgba(255,255,255,.14);font-family:var(--mono)}
+.tb-track a:hover{color:#fff}
+@keyframes tbScroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tb-track{animation:none;flex-wrap:wrap}}
+@media(max-width:768px){.trustbar{padding:20px 0}.trustbar-in{flex-direction:column;gap:14px;padding:0 20px;align-items:flex-start}.tb-marquee{width:100%}.tb-track a{font-size:13px;gap:22px;padding-right:22px}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://sleygrowth.com/#org","name":"Sley Growth AI","description":"Agencia digital en Costa Rica: desarrollo web, SEO técnico y automatizaciones con inteligencia artificial.","url":"https://sleygrowth.com/","email":"sleygrowth@gmail.com","telephone":"+506 6033 6062","image":"https://sleygrowth.com/assets/og-cover.svg","priceRange":"$","areaServed":[{"@type":"Country","name":"Costa Rica"},{"@type":"Place","name":"LATAM"}],"address":{"@type":"PostalAddress","addressCountry":"CR"},"sameAs":["https://www.facebook.com/sleygrowth","https://www.instagram.com/sleygrowth/","https://www.tiktok.com/@sleygrowth"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones de Escritorio"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Auditoría SEO"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Chatbots con IA"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Desarrollo Web a Medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tiendas Online (E-commerce)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Edición de Contenido"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de Flujos de Trabajo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Integraciones y APIs"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Landing Pages de Alta Conversión"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rediseño Web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Local"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Técnico"}}]},{"@type":"WebSite","@id":"https://sleygrowth.com/#website","url":"https://sleygrowth.com/","name":"Sley Growth AI","publisher":{"@id":"https://sleygrowth.com/#org"},"inLanguage":"es"}]}
+</script>
 </head>
 <body>
 
@@ -476,7 +537,7 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 </div>
 
 <style>
-#sg-loader{position:fixed;inset:0;z-index:9999;background:#050816;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#sg-loader{position:fixed;inset:0;z-index:9999;background:#0B1030;display:flex;align-items:center;justify-content:center;overflow:hidden}
 #sg-loader::before{content:'';position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.08),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:sglPulse 2.6s ease-in-out infinite}
 @keyframes sglPulse{0%,100%{opacity:0.5;transform:translate(-50%,-50%) scale(0.9)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
 .sgl-inner{position:relative;z-index:2;text-align:center;padding:0 24px}
@@ -627,21 +688,14 @@ body.sgl-active{overflow:hidden}
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="main">
-  <!-- Background image (tech/code feel) -->
-  <div class="hero-video">
-    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80&auto=format&fit=crop" alt="" loading="eager">
-  </div>
+  <!-- Fondo de grid técnico (local, carga instantánea) -->
+  <div class="hero-grid"></div>
   <!-- Floating bg elements -->
   <div class="gblob gb1"></div>
   <div class="gblob gb2"></div>
   <div class="gblob gb3"></div>
   <canvas id="particles"></canvas>
   <!-- Floating code tags -->
-  <span class="float-tag" style="top:20%;left:8%;animation-duration:7s;animation-delay:0s">&lt;growth /&gt;</span>
-  <span class="float-tag" style="top:60%;left:5%;animation-duration:9s;animation-delay:2s">{results: true}</span>
-  <span class="float-tag" style="top:30%;right:6%;animation-duration:8s;animation-delay:1s">// Costa Rica</span>
-  <span class="float-tag" style="top:70%;right:8%;animation-duration:11s;animation-delay:3s">npm run deploy</span>
-
   <div class="hero-in">
     <div class="hero-left">
       <div class="hero-badge" id="h0">
@@ -662,30 +716,16 @@ body.sgl-active{overflow:hidden}
         <a href="proyectos.html" class="btn-ghost">Ver portafolio</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hstat"><div class="hstat-num">98</div><div class="hstat-label">PageSpeed promedio en sitios entregados</div></div>
-      <div class="hstat"><div class="hstat-num">3</div><div class="hstat-label">Áreas de servicio en un solo equipo</div></div>
-      <div class="hstat"><div class="hstat-num">24/7</div><div class="hstat-label">Disponibilidad con automatización IA</div></div>
-    </div>
+    
   </div>
 </section>
 
 <!-- ══ MARCAS QUE CONFIARON ══ -->
-<section class="trustbar" aria-label="Clientes">
-  <div class="trustbar-in">
-    <span class="trustbar-tag">Negocios que ya crecieron con nosotros</span>
-    <div class="trustbar-row">
-      <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener">Barbería</a>
-      <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener">Studio Nails Mady</a>
-      <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener">Clínica Dental</a>
-      <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener">Bufete de Abogados</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- ══ SERVICIOS — horizontal scroll carousel ══ -->
 <section id="servicios" style="height:320vh;position:relative;border-top:1px solid var(--border)">
-  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;background:#050816">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;background:#0B1030">
     <!-- header row -->
     <div style="padding:3rem 5% 0;flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-end">
       <div>
@@ -932,6 +972,7 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ POR QUÉ NOSOTROS ══ -->
+<div class="wave-sep" style="--prev:#0B1030;--next:#151046" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section class="why" id="nosotros">
   <div class="why-bg-text">SLEY GROWTH AI</div>
   <div class="why-in">
@@ -972,6 +1013,7 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ PROYECTOS ══ -->
+<div class="wave-sep" style="--prev:#0D1238;--next:#0B1030" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section class="proj-sec" id="proyectos">
   <div class="sec-in">
     <div class="reveal">
@@ -979,38 +1021,43 @@ body.sgl-active{overflow:hidden}
       <h2 class="sec-title">Proyectos que<br><span>hablan por sí solos.</span></h2>
     </div>
     <div class="bento">
+      <a href="https://la-promesa-tienda.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fla-promesa-tienda.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Tienda La Promesa — E-commerce completo" loading="lazy">
+        <div class="bento-overlay"></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--red)">E-commerce</div><div class="bento-name">Tienda La Promesa</div><div class="bento-domain">la-promesa-tienda.vercel.app</div></div>
+        <div class="bento-arrow">↗</div>
+      </a>
       <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fleafy-frangollo-9abe5c.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Barbería" loading="lazy">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fleafy-frangollo-9abe5c.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Barbería" loading="lazy">
         <div class="bento-overlay"></div>
         <div class="bento-info"><div class="bento-cat" style="color:var(--cyan)">Landing Page</div><div class="bento-name">Barbería</div><div class="bento-domain">leafy-frangollo-9abe5c.netlify.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
       <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Ftaupe-rabanadas-c1791d.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Studio Nails Mady" loading="lazy">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Ftaupe-rabanadas-c1791d.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Studio Nails Mady" loading="lazy">
         <div class="bento-overlay"></div>
         <div class="bento-info"><div class="bento-cat" style="color:var(--orange)">Landing Page</div><div class="bento-name">Studio Nails Mady</div><div class="bento-domain">taupe-rabanadas-c1791d.netlify.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
       <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fclinicadental-omega.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Clínica Dental" loading="lazy">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fclinicadental-omega.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Clínica Dental" loading="lazy">
         <div class="bento-overlay"></div>
         <div class="bento-info"><div class="bento-cat" style="color:var(--green)">Sitio Web</div><div class="bento-name">Clínica Dental</div><div class="bento-domain">clinicadental-omega.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
       <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fbufeteherediaa.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Bufete de Abogados" loading="lazy">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fbufeteherediaa.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Bufete de Abogados" loading="lazy">
         <div class="bento-overlay"></div>
         <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Bufete de Abogados</div><div class="bento-domain">bufeteherediaa.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
       <a href="https://veterinaria-2026-silk.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
-        <img class="bento-img" src="https://api.microlink.io/?url=https%3A%2F%2Fveterinaria-2026-silk.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Veterinaria Mr. Patitas" loading="lazy">
+        <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fveterinaria-2026-silk.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Veterinaria Mr. Patitas" loading="lazy">
         <div class="bento-overlay"></div>
         <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Veterinaria Mr. Patitas</div><div class="bento-domain">veterinaria-2026-silk.vercel.app</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <div class="bento-placeholder reveal"><span class="bp-tag">Próximamente</span><span class="bp-name">Residencial</span></div>
-    </div>
+      
     <div class="reveal" style="text-align:center">
       <a href="proyectos.html" class="btn-ghost">Ver todos los proyectos</a>
     </div>
@@ -1018,6 +1065,7 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ TESTIMONIOS ══ -->
+<div class="wave-sep" style="--prev:#0B1030;--next:#151040" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section id="testiSection" style="height:280vh;position:relative;border-top:1px solid var(--border)">
   <div class="tc-wrap">
     <div class="tc-header">
@@ -1055,7 +1103,7 @@ body.sgl-active{overflow:hidden}
         </div>
       </div>
 
-      <div class="tc-card" style="background:rgba(5,8,22,.99)">
+      <div class="tc-card" style="background:rgba(11,16,48,.99)">
         <div class="tc-stars">
           <span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span><span class="tc-star" style="color:var(--green)">★</span>
         </div>
@@ -1121,11 +1169,12 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ PROCESO — SPLIT SCREEN SCROLL ══ -->
+<div class="wave-sep" style="--prev:#0D1238;--next:#0A1F3C" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section id="proSection" style="height:500vh;position:relative;border-top:1px solid var(--border)">
   <div class="pro-sticky-wrap" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex">
 
     <!-- LEFT: text panels (slide from bottom) -->
-    <div style="width:50%;position:relative;background:#050816;overflow:hidden">
+    <div style="width:50%;position:relative;background:#0B1030;overflow:hidden">
       <div id="proHeader" style="position:absolute;top:40px;left:6%;z-index:10;display:flex;align-items:center;gap:20px">
         <div class="eyebrow" style="color:var(--cyan);margin-bottom:0">Proceso</div>
         <div id="proStepCounter" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.22);letter-spacing:.12em">01 / 04</div>
@@ -1170,24 +1219,112 @@ body.sgl-active{overflow:hidden}
     <!-- RIGHT: visual panels (slide from top) -->
     <div style="width:50%;position:relative;overflow:hidden;border-left:1px solid rgba(255,255,255,.06)">
 
-      <div class="pro-vis-panel" id="pv0">
-        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.55) saturate(.8)"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(0,212,255,.07),transparent 60%)"></div>
+      <!-- 01 Diagnóstico: radar de auditoría -->
+      <div class="pro-vis-panel" id="pv0" style="background:#03101c">
+        <div class="pv-scene">
+          <div class="pv-glow" style="background:radial-gradient(circle,rgba(0,212,255,.14),transparent 70%)"></div>
+          <div class="pv-card">
+            <div class="pv-bar">
+              <span class="pv-dot" style="background:#ff5f57"></span><span class="pv-dot" style="background:#febc2e"></span><span class="pv-dot" style="background:#28c840"></span>
+              <span class="pv-bar-title">audit_scan — 45 min</span>
+            </div>
+            <div class="pv-body">
+              <div class="pv-radar">
+                <svg viewBox="0 0 170 170" fill="none">
+                  <circle cx="85" cy="85" r="82" stroke="rgba(0,212,255,.14)" stroke-width="1"/>
+                  <circle cx="85" cy="85" r="56" stroke="rgba(0,212,255,.12)" stroke-width="1"/>
+                  <circle cx="85" cy="85" r="30" stroke="rgba(0,212,255,.1)" stroke-width="1"/>
+                  <line x1="85" y1="3" x2="85" y2="167" stroke="rgba(0,212,255,.07)" stroke-width="1"/>
+                  <line x1="3" y1="85" x2="167" y2="85" stroke="rgba(0,212,255,.07)" stroke-width="1"/>
+                </svg>
+                <div class="pv-sweep"></div>
+                <span class="pv-blip" style="top:34%;left:62%"></span>
+                <span class="pv-blip" style="top:66%;left:30%;animation-delay:.8s"></span>
+              </div>
+              <div class="pv-rows">
+                <div class="pv-row"><i style="background:var(--green)"></i>SEO — revisado</div>
+                <div class="pv-row"><i style="background:var(--green)"></i>Velocidad — ok</div>
+                <div class="pv-row"><i style="background:var(--orange);animation:pulse 1.8s ease-in-out infinite"></i>UX — analizando</div>
+                <div class="pv-row"><i style="background:rgba(255,255,255,.2)"></i>Competencia</div>
+              </div>
+            </div>
+          </div>
+          <span class="pv-tag">// paso 01 — diagnóstico</span>
+        </div>
       </div>
 
-      <div class="pro-vis-panel" id="pv1" style="transform:translateY(-100%)">
-        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(34,197,94,.07),transparent 60%)"></div>
+      <!-- 02 Propuesta: cotización que se completa -->
+      <div class="pro-vis-panel" id="pv1" style="transform:translateY(-100%);background:#02120a">
+        <div class="pv-scene">
+          <div class="pv-glow" style="background:radial-gradient(circle,rgba(34,197,94,.13),transparent 70%)"></div>
+          <div class="pv-card">
+            <div class="pv-bar">
+              <span class="pv-dot" style="background:#ff5f57"></span><span class="pv-dot" style="background:#febc2e"></span><span class="pv-dot" style="background:#28c840"></span>
+              <span class="pv-bar-title">propuesta_tecnica.pdf</span>
+            </div>
+            <div class="pv-body" style="display:block;position:relative;padding:20px 18px 46px">
+              <div style="width:45%;height:8px;border-radius:3px;background:rgba(255,255,255,.3);margin-bottom:16px"></div>
+              <div class="pv-line" style="width:92%"><span style="background:rgba(34,197,94,.45)"></span></div>
+              <div class="pv-line" style="width:78%"><span style="background:rgba(34,197,94,.3);animation-delay:.5s"></span></div>
+              <div class="pv-line" style="width:85%"><span style="background:rgba(34,197,94,.3);animation-delay:1s"></span></div>
+              <div class="pv-line" style="width:60%;margin-bottom:0"><span style="background:rgba(34,197,94,.2);animation-delay:1.5s"></span></div>
+              <span class="pv-stamp">48H ✓</span>
+            </div>
+          </div>
+          <span class="pv-tag">// paso 02 — propuesta</span>
+        </div>
       </div>
 
-      <div class="pro-vis-panel" id="pv2" style="transform:translateY(-100%)">
-        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(249,115,22,.07),transparent 60%)"></div>
+      <!-- 03 Ejecución: terminal de sprint -->
+      <div class="pro-vis-panel" id="pv2" style="transform:translateY(-100%);background:#140b03">
+        <div class="pv-scene">
+          <div class="pv-glow" style="background:radial-gradient(circle,rgba(249,115,22,.12),transparent 70%)"></div>
+          <div class="pv-card">
+            <div class="pv-bar">
+              <span class="pv-dot" style="background:#ff5f57"></span><span class="pv-dot" style="background:#febc2e"></span><span class="pv-dot" style="background:#28c840"></span>
+              <span class="pv-bar-title">sprint_02 — en curso</span>
+            </div>
+            <div class="pv-body" style="display:block">
+              <div class="pv-term">
+                <div><span style="color:var(--orange)">→</span> git commit -m "hero + nav responsive"</div>
+                <div style="animation-delay:.9s"><span style="color:var(--green)">✓</span> demo enviada al cliente</div>
+                <div style="animation-delay:1.8s"><span style="color:var(--orange)">→</span> git commit -m "integración WhatsApp"</div>
+                <div style="animation-delay:2.7s"><span style="color:var(--green)">✓</span> feedback aplicado<span style="color:var(--orange);animation:devBlink 1.1s step-end infinite">▌</span></div>
+              </div>
+              <div class="pv-line" style="margin:14px 0 6px"><span style="background:rgba(249,115,22,.5)"></span></div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--w3);text-transform:uppercase"><span>Progreso del sprint</span><span style="color:var(--orange)">68%</span></div>
+            </div>
+          </div>
+          <span class="pv-tag">// paso 03 — ejecución</span>
+        </div>
       </div>
 
-      <div class="pro-vis-panel" id="pv3" style="transform:translateY(-100%)">
-        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.5) saturate(.8)"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(5,8,22,.35),transparent),linear-gradient(135deg,rgba(139,92,246,.07),transparent 60%)"></div>
+      <!-- 04 Lanzamiento: deploy live + uptime -->
+      <div class="pro-vis-panel" id="pv3" style="transform:translateY(-100%);background:#0a0518">
+        <div class="pv-scene">
+          <div class="pv-glow" style="background:radial-gradient(circle,rgba(139,92,246,.14),transparent 70%)"></div>
+          <div class="pv-card">
+            <div class="pv-bar">
+              <span class="pv-dot" style="background:#ff5f57"></span><span class="pv-dot" style="background:#febc2e"></span><span class="pv-dot" style="background:#28c840"></span>
+              <span class="pv-bar-title">deploy — producción</span>
+              <span class="pv-live" style="margin-left:auto;padding:3px 10px;font-size:8px"><span class="pv-live-dot" style="width:6px;height:6px"></span>LIVE</span>
+            </div>
+            <div class="pv-body" style="display:block">
+              <div class="pv-rows" style="flex-direction:row;gap:18px;flex-wrap:wrap;margin-bottom:14px">
+                <div class="pv-row"><i style="background:var(--green)"></i>Build</div>
+                <div class="pv-row"><i style="background:var(--green)"></i>Tests</div>
+                <div class="pv-row"><i style="background:var(--green)"></i>SSL</div>
+                <div class="pv-row"><i style="background:var(--purple);animation:pulse 1.8s ease-in-out infinite"></i>Soporte 30d</div>
+              </div>
+              <svg viewBox="0 0 340 56" fill="none" style="width:100%;display:block">
+                <line x1="0" y1="28" x2="340" y2="28" stroke="rgba(139,92,246,.12)" stroke-width="1"/>
+                <path class="pv-ecg" d="M0 28 H70 L82 12 L94 44 L106 28 H170 L182 8 L194 48 L206 28 H340" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--w3);text-transform:uppercase;margin-top:8px"><span>Uptime</span><span style="color:var(--purple)">99.9%</span></div>
+            </div>
+          </div>
+          <span class="pv-tag">// paso 04 — lanzamiento</span>
+        </div>
       </div>
 
     </div>
@@ -1196,6 +1333,7 @@ body.sgl-active{overflow:hidden}
 </section>
 
 <!-- ══ FAQ ══ -->
+<div class="wave-sep" style="--prev:#0D1238;--next:#E9EDF5" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section class="faq-sec" id="faq">
   <div class="faq-in">
     <div class="reveal" style="text-align:center">
@@ -1208,14 +1346,49 @@ body.sgl-active{overflow:hidden}
           <span class="faq-q-text">¿Cuánto cuesta un proyecto con Sley Growth AI?</span>
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Depende del alcance: una landing page no cuesta lo mismo que un e-commerce o un sistema con IA. Por eso el diagnóstico de 45 minutos es gratis — ahí definimos exactamente qué necesitás y recibís una cotización detallada en 48 horas, sin letras pequeñas ni costos ocultos.</p></div></div>
+        <div class="faq-a"><div class="faq-a-inner"><p>Depende del alcance: una landing page no cuesta lo mismo que un e-commerce o un sistema con IA. Por eso el diagnóstico de 45 minutos es gratis: ahí definimos exactamente qué necesitás y recibís una cotización detallada en 48 horas, sin letras pequeñas ni costos ocultos.</p></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           <span class="faq-q-text">¿Cuánto tiempo tarda en estar listo mi proyecto?</span>
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Una landing page suele tomar 1-2 semanas, un sitio web completo 4-6 semanas, y un e-commerce o sistema con automatizaciones de 6 a 10 semanas. El cronograma exacto queda fijo en la propuesta técnica, antes de empezar — no se mueve a mitad de camino.</p></div></div>
+        <div class="faq-a"><div class="faq-a-inner"><p>Una landing page suele tomar 1-2 semanas, un sitio web completo 4-6 semanas, y un e-commerce o sistema con automatizaciones de 6 a 10 semanas. El cronograma exacto queda fijo en la propuesta técnica, antes de empezar, y no se mueve a mitad de camino.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Pueden hacer una tienda en línea completa, con pagos de Costa Rica?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí, de punta a punta: catálogo, carrito y pagos como compran los ticos (SINPE Móvil, tarjeta, depósito o contra entrega), cuentas de clientes con puntos de fidelidad y descuentos, panel interno para revisar pagos y pedidos desde el teléfono, y seguimiento de envíos por Correos de Costa Rica. Tu tienda, tus reglas, sin mensualidades de plataformas extranjeras.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Cómo usan la inteligencia artificial en los proyectos?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Para lo que sí da resultados: chatbots que atienden y venden 24/7 en tu sitio o WhatsApp, textos de venta y descripciones que convierten, imágenes para anuncios, y automatizaciones que conectan formularios, correos y hojas de cálculo para que el negocio trabaje solo mientras dormís.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Mi página va a aparecer en Google?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>El SEO técnico va incluido en cada proyecto: estructura correcta, datos que Google entiende, sitemap, velocidad y versión móvil impecable. Y si querés competir en serio por tu zona o tus palabras clave, tenemos SEO local y auditorías como servicio aparte.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Qué necesito tener listo para empezar?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Con la idea basta. Si ya tenés logo, fotos y textos, avanzamos más rápido; si no, te ayudamos a crearlos (incluso con IA). En el diagnóstico gratis armamos juntos la lista exacta de lo que hace falta.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿El sitio queda a mi nombre?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí. El código, el dominio, el hosting y todas las cuentas quedan a tu nombre y bajo tu control. Nada queda “secuestrado” con nosotros ni pagás alquiler por tu propia página.</p></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -1243,13 +1416,14 @@ body.sgl-active{overflow:hidden}
           <span class="faq-q-text">Ya tengo un sitio o sistema, ¿pueden mejorarlo en vez de empezar de cero?</span>
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Sí. Hacemos rediseños y migraciones cuidando el SEO y el tráfico que ya generaste, y también nos integramos a sistemas existentes (CRM, WhatsApp, reservas) sin tener que reconstruir todo desde cero.</p></div></div>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí. Hacemos rediseños y migraciones cuidando el SEO y el tráfico que ya generaste, y nos integramos a sistemas existentes (CRM, WhatsApp, reservas, inventarios) sin tener que reconstruir todo desde cero.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ CTA ══ -->
+<div class="wave-sep" style="--prev:#E9EDF5;--next:#0B1030" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
 <section class="cta" id="contacto-sec">
   <div class="cta-glow"></div>
   <div class="cta-in">
@@ -1622,5 +1796,6 @@ function toggleFaq(btn){
 })();
 </script>
 <script src="cookies.js"></script>
+<a href="https://wa.me/50660336062?text=Hola%20Sley%20Growth%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="wa-flot" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></a>
 </body>
 </html>
