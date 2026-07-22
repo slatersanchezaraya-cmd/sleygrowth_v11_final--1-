@@ -22,5 +22,5 @@ window.SLEY_CONFIG = {
   WHATSAPP_NUMBER: "50660336062",   // sin + ni espacios
 
   // ── EMAIL / CONTACTO ──────────────────────────────────────
-  EMAIL: "sleygrowth@gmail.com",
+  EMAIL: "hola@sleygrowthai.com", // apagado hasta activar dominio (ver assets/site.js: SLEY_BRAND.showEmail)
 };

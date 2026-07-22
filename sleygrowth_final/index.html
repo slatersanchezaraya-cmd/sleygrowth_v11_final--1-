@@ -115,6 +115,11 @@ nav.scrolled{background:rgba(11,16,48,.95);backdrop-filter:blur(24px);border-col
 @keyframes slideUp{to{transform:translateY(0)}}
 
 .hero-desc{font-size:17px;color:var(--w2);font-weight:300;line-height:1.8;max-width:480px;margin-bottom:44px;opacity:0;animation:fadeIn .8s ease .7s forwards}
+/* Hero H1 estatico (reemplaza el slogan rotativo): entrada gated por .hero-ready */
+.hero-title.hero-static{opacity:0;transform:translateY(24px);font-size:clamp(34px,4.6vw,64px);line-height:1.03;letter-spacing:-0.03em;max-width:17ch}
+.hero-title.hero-static .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title.hero-static.hero-ready{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.hero-trust{font-size:13px;color:var(--w3);font-weight:300;line-height:1.6;margin-top:26px;max-width:460px;opacity:0;animation:fadeIn .8s ease 1s forwards}
 @keyframes fadeIn{to{opacity:1}}
 @keyframes devPulse{0%,100%{opacity:.35;box-shadow:0 0 8px rgba(0,212,255,.2)}50%{opacity:1;box-shadow:0 0 18px rgba(0,212,255,.6)}}
 @keyframes devPulseGreen{0%,100%{opacity:.5;box-shadow:0 0 8px rgba(34,197,94,.2)}50%{opacity:1;box-shadow:0 0 20px rgba(34,197,94,.7)}}
@@ -157,7 +162,9 @@ nav.scrolled{background:rgba(11,16,48,.95);backdrop-filter:blur(24px);border-col
 .srv-card-body{position:relative;z-index:2;padding:32px}
 .srv-card-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .srv-card-eyebrow::before{content:'';width:16px;height:1px;background:currentColor}
-.srv-card-title{font-family:var(--display);font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#fff;margin-bottom:14px}
+.srv-card-title{font-family:var(--display);font-size:clamp(22px,2.2vw,29px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#fff;margin-bottom:12px}
+.srv-card-desc{font-size:12.5px;color:var(--w2);font-weight:300;line-height:1.55;margin-bottom:16px;max-width:340px}
+.srv-card-stack{font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:var(--w3);margin-top:14px;line-height:1.5}
 .srv-card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .srv-card-chip{font-size:10px;font-weight:500;color:var(--w2);text-decoration:none;padding:4px 12px;border:1px solid var(--border2);border-radius:100px;transition:all .2s}
 .srv-card-chip:hover{color:#fff;border-color:rgba(255,255,255,.3)}
@@ -223,6 +230,7 @@ nav.scrolled{background:rgba(11,16,48,.95);backdrop-filter:blur(24px);border-col
 .bento-cat{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
 .bento-name{font-family:var(--display);font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1}
 .bento-domain{font-size:11px;color:var(--w3);margin-top:4px}
+.bento-result{font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:.04em;margin-top:6px}
 .bento-arrow{position:absolute;top:38px;right:14px;width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--w2);opacity:0;transform:translate(4px,-4px);transition:all .3s;z-index:4}
 .bento-card:hover .bento-arrow{opacity:1;transform:translate(0,0)}
 
@@ -356,7 +364,7 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 .reveal-r.in{opacity:1;transform:translateX(0);transition:opacity .8s ease,transform .8s ease}
 .reveal-scale{opacity:0;transform:scale(.94);transition:none}
 .reveal-scale.in{opacity:1;transform:scale(1);transition:opacity .7s ease,transform .7s ease}
-@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.reveal-scale,.tline{opacity:1;transform:none;transition:none;animation:none}}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.reveal-scale,.tline,.hero-title.hero-static,.hero-trust{opacity:1;transform:none;transition:none;animation:none}}
 
 /* ══ FLOATING ELEMENTS ══ */
 .float-tag{position:absolute;font-family:var(--mono);font-size:10px;color:var(--w3);letter-spacing:.1em;opacity:.4;pointer-events:none;animation:floatAround linear infinite}
@@ -518,7 +526,10 @@ footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 4
 @media(max-width:768px){.trustbar{padding:20px 0}.trustbar-in{flex-direction:column;gap:14px;padding:0 20px;align-items:flex-start}.tb-marquee{width:100%}.tb-track a{font-size:13px;gap:22px;padding-right:22px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://sleygrowth.com/#org","name":"Sley Growth AI","description":"Agencia digital en Costa Rica: desarrollo web, SEO técnico y automatizaciones con inteligencia artificial.","url":"https://sleygrowth.com/","email":"sleygrowth@gmail.com","telephone":"+506 6033 6062","image":"https://sleygrowth.com/assets/og-cover.svg","priceRange":"$","areaServed":[{"@type":"Country","name":"Costa Rica"},{"@type":"Place","name":"LATAM"}],"address":{"@type":"PostalAddress","addressCountry":"CR"},"sameAs":["https://www.facebook.com/sleygrowth","https://www.instagram.com/sleygrowth/","https://www.tiktok.com/@sleygrowth"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones de Escritorio"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Auditoría SEO"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Chatbots con IA"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Desarrollo Web a Medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tiendas Online (E-commerce)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Edición de Contenido"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de Flujos de Trabajo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Integraciones y APIs"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Landing Pages de Alta Conversión"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rediseño Web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Local"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Técnico"}}]},{"@type":"WebSite","@id":"https://sleygrowth.com/#website","url":"https://sleygrowth.com/","name":"Sley Growth AI","publisher":{"@id":"https://sleygrowth.com/#org"},"inLanguage":"es"}]}
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://sleygrowth.com/#org","name":"Sley Growth AI","description":"Agencia digital en Costa Rica: desarrollo web, SEO técnico y automatizaciones con inteligencia artificial.","url":"https://sleygrowth.com/","telephone":"+506 6033 6062","image":"https://sleygrowth.com/assets/og-cover.svg","priceRange":"$","areaServed":[{"@type":"City","name":"San José"},{"@type":"City","name":"Alajuela"},{"@type":"City","name":"Heredia"},{"@type":"City","name":"Cartago"},{"@type":"Country","name":"Costa Rica"}],"address":{"@type":"PostalAddress","addressLocality":"Santa Bárbara","addressRegion":"Heredia","addressCountry":"CR"},"sameAs":["https://www.facebook.com/sleygrowth","https://www.instagram.com/sleygrowth/","https://www.tiktok.com/@sleygrowth"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aplicaciones de Escritorio"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Auditoría SEO"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Chatbots con IA"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Desarrollo Web a Medida"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tiendas Online (E-commerce)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Edición de Contenido"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de Sistemas de Trabajo Automáticos"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Integraciones y APIs"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Landing Pages de Alta Conversión"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rediseño Web"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Local"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Técnico"}}]},{"@type":"WebSite","@id":"https://sleygrowth.com/#website","url":"https://sleygrowth.com/","name":"Sley Growth AI","publisher":{"@id":"https://sleygrowth.com/#org"},"inLanguage":"es"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta un proyecto con Sley Growth AI?","acceptedAnswer":{"@type":"Answer","text":"Cada proyecto se cotiza según su complejidad técnica y los sistemas a integrar. Como referencia de inversión: landing pages de alta conversión desde $450, sitios web corporativos desde $900, y agentes de IA en WhatsApp o automatizaciones de procesos desde $950. El alcance técnico y los plazos quedan fijos en la propuesta comercial, sin costos ocultos."}},{"@type":"Question","name":"¿Cuánto tiempo tarda en estar listo mi proyecto?","acceptedAnswer":{"@type":"Answer","text":"Una landing page suele tomar 1-2 semanas, un sitio web completo 4-6 semanas, y un e-commerce o sistema con automatizaciones de 6 a 10 semanas. El cronograma exacto queda fijo en la propuesta técnica, antes de empezar, y no se mueve a mitad de camino."}},{"@type":"Question","name":"¿Pueden hacer una tienda en línea completa, con pagos de Costa Rica?","acceptedAnswer":{"@type":"Answer","text":"Sí, de punta a punta: catálogo, carrito y pagos como compran los ticos (SINPE Móvil, tarjeta, depósito o contra entrega), cuentas de clientes con puntos de fidelidad y descuentos, panel interno para revisar pagos y pedidos desde el teléfono, y seguimiento de envíos por Correos de Costa Rica. Tu tienda, tus reglas, sin mensualidades de plataformas extranjeras."}},{"@type":"Question","name":"¿Qué pasa después de la entrega?","acceptedAnswer":{"@type":"Answer","text":"Cada entrega incluye 30 días de soporte prioritario. Después ofrecemos planes mensuales de mantenimiento preventivo: monitoreo de APIs, actualizaciones y ajustes al agente de IA para que todo siga operando aunque WhatsApp, Google o el proveedor de turno cambien las reglas."}}]}
 </script>
 </head>
 <body>
@@ -584,10 +595,30 @@ body.sgl-active{overflow:hidden}
   var loader = document.getElementById('sg-loader');
   function revealHero(){
     var ht = document.querySelector('.hero-title');
-    if(ht) ht.classList.add('hero-ready');
+    // El preloader corre en el body ANTES de que el hero este parseado. En la
+    // rama de visitante que ya vio el loader (seen/reduced), revealHero() se
+    // llamaba sincronicamente y ht era null: nunca se agregaba .hero-ready y el
+    // texto quedaba oculto (translateY 110%). Por eso fallaba al volver al home
+    // dentro de la misma sesion, pero no en carga fresca (ahi corre desde load).
+    if(!ht){
+      document.addEventListener('DOMContentLoaded', revealHero, { once: true });
+      return;
+    }
+    ht.classList.add('hero-ready');
     setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 40);
     setTimeout(function(){ if(window._startHeroRotation) window._startHeroRotation(); }, 3000);
   }
+  // Safeguard bfcache: al volver con "atras" el navegador restaura la pagina sin
+  // re-ejecutar el script; si el hero quedo a medio crossfade lo reaseguramos.
+  window.addEventListener('pageshow', function(ev){
+    if(!ev.persisted) return;
+    var ht2 = document.querySelector('.hero-title');
+    if(ht2) ht2.classList.add('hero-ready');
+    ['rl0','rl1','rl2'].forEach(function(id){
+      var w = document.getElementById(id); if(!w) return;
+      var a = w.querySelector('.rl-a'); if(a) a.style.opacity = '1';
+    });
+  });
   if(!loader) { revealHero(); return; }
   if(seen || reduced){
     loader.parentNode && loader.parentNode.removeChild(loader);
@@ -640,9 +671,9 @@ body.sgl-active{overflow:hidden}
     </li>
     <li class="dd"><button>IA &amp; Auto. <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="ddm">
-        <a href="servicios/chatbots.html" class="di"><strong>ChatBots IA</strong><span>Atención automática 24/7.</span></a>
+        <a href="servicios/chatbots.html" class="di"><strong>Automatización de WhatsApp</strong><span>Atención automática 24/7.</span></a>
         <a href="servicios/integraciones.html" class="di"><strong>Integraciones</strong><span>Conectá todas tus apps.</span></a>
-        <a href="servicios/flujos-trabajo.html" class="di"><strong>Flujos de Trabajo</strong><span>Automatización de procesos internos.</span></a>
+        <a href="servicios/flujos-trabajo.html" class="di"><strong>Sistemas de Trabajo Automáticos</strong><span>Automatización de procesos internos.</span></a>
       </div>
     </li>
     <li><a href="proyectos.html">Proyectos</a></li>
@@ -673,9 +704,9 @@ body.sgl-active{overflow:hidden}
     <div>
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:14px">IA &amp; Auto.</div>
       <div style="display:flex;flex-direction:column;gap:10px">
-        <a href="servicios/chatbots.html" style="color:var(--w2);text-decoration:none;font-size:14px">ChatBots IA</a>
+        <a href="servicios/chatbots.html" style="color:var(--w2);text-decoration:none;font-size:14px">Automatización de WhatsApp</a>
         <a href="servicios/integraciones.html" style="color:var(--w2);text-decoration:none;font-size:14px">Integraciones</a>
-        <a href="servicios/flujos-trabajo.html" style="color:var(--w2);text-decoration:none;font-size:14px">Flujos de Trabajo</a>
+        <a href="servicios/flujos-trabajo.html" style="color:var(--w2);text-decoration:none;font-size:14px">Sistemas de Trabajo Automáticos</a>
       </div>
     </div>
   </div>
@@ -702,19 +733,16 @@ body.sgl-active{overflow:hidden}
         <span class="badge-dot"></span>
         <span class="badge-text">Agencia Digital — Costa Rica</span>
       </div>
-      <h1 class="hero-title" id="h1">
-        <span class="line-white"><span class="tline" id="rl0"><span class="rl-txt rl-a">Crecimiento</span><span class="rl-txt rl-b"></span></span></span>
-        <span class="line-dim"><span class="tline" id="rl1"><span class="rl-txt rl-a">digital real,</span><span class="rl-txt rl-b"></span></span></span>
-        <span class="line-grad"><span class="tline" id="rl2"><span class="rl-txt rl-a">sin excusas.</span><span class="rl-txt rl-b"></span></span></span>
-      </h1>
-      <p class="hero-desc" id="h2">Desarrollo web, SEO técnico y automatizaciones con IA. Resultados medibles para empresas que van en serio.</p>
+      <h1 class="hero-title hero-static" id="h1">Software y agentes de IA que le quitan <span class="grad">trabajo operativo</span> a tu empresa.</h1>
+      <p class="hero-desc" id="h2">Sitios web de alto rendimiento, SEO local y asistentes de IA que contestan WhatsApp, califican leads y agendan citas 24/7 — sin que contratés a nadie más.</p>
       <div class="hero-cta" id="h3">
         <a href="contacto.html" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Empezar proyecto
+          Agendar auditoría de 45 min
         </a>
         <a href="proyectos.html" class="btn-ghost">Ver portafolio</a>
       </div>
+      <p class="hero-trust" id="h4">Sistemas en producción para clínicas, veterinarias y comercios en Costa Rica.</p>
     </div>
     
   </div>
@@ -816,7 +844,8 @@ body.sgl-active{overflow:hidden}
           <div class="srv-card-num" style="opacity:.04">01</div>
           <div class="srv-card-body">
             <div class="srv-card-eyebrow">Desarrollo de Software</div>
-            <h3 class="srv-card-title">Web, Apps<br>&amp; Sistemas</h3>
+            <h3 class="srv-card-title">Webs, tiendas y<br>sistemas a la medida</h3>
+            <p class="srv-card-desc">Plataformas rápidas y seguras que convierten visitas en clientes. Con SINPE Móvil, ONVO Pay y tarjetas, sin mensualidades de plataformas extranjeras.</p>
             <div class="srv-card-chips">
               <a href="servicios/desarrollo-web.html" class="srv-card-chip">Desarrollo Web</a>
               <a href="servicios/rediseno-web.html" class="srv-card-chip">Rediseño</a>
@@ -888,7 +917,8 @@ body.sgl-active{overflow:hidden}
           <div class="srv-card-num" style="opacity:.03">02</div>
           <div class="srv-card-body">
             <div class="srv-card-eyebrow">SEO y Posicionamiento</div>
-            <h3 class="srv-card-title">Rankings que<br>suben y se quedan.</h3>
+            <h3 class="srv-card-title">Clientes listos<br>para comprar.</h3>
+            <p class="srv-card-desc">Aparecés en Google justo cuando alguien en Costa Rica busca lo que vendés. SEO técnico, local y Google Business Profile para depender menos de la pauta.</p>
             <div class="srv-card-chips">
               <a href="servicios/auditoria-seo.html" class="srv-card-chip">Auditoría SEO</a>
               <a href="servicios/seo-local.html" class="srv-card-chip">SEO Local</a>
@@ -953,14 +983,16 @@ body.sgl-active{overflow:hidden}
           <div class="srv-card-num" style="opacity:.03">03</div>
           <div class="srv-card-body">
             <div class="srv-card-eyebrow">IA y Automatizaciones</div>
-            <h3 class="srv-card-title">Sistemas que<br>trabajan por vos.</h3>
+            <h3 class="srv-card-title">Agentes de IA y<br>flujos 24/7.</h3>
+            <p class="srv-card-desc">Un asistente entrenado con tu negocio: contesta WhatsApp, califica leads, agenda citas y las registra en tu CRM. Sin turnos, sin errores, sin costo por hora.</p>
             <div class="srv-card-chips">
-              <a href="servicios/chatbots.html" class="srv-card-chip">ChatBots IA</a>
+              <a href="servicios/chatbots.html" class="srv-card-chip">Automatización de WhatsApp</a>
               <a href="servicios/integraciones.html" class="srv-card-chip">Integraciones</a>
-              <a href="servicios/flujos-trabajo.html" class="srv-card-chip">Flujos de Trabajo</a>
+              <a href="servicios/flujos-trabajo.html" class="srv-card-chip">Sistemas de Trabajo Automáticos</a>
               <a href="servicios/integraciones.html" class="srv-card-chip">CRM</a>
             </div>
             <a href="servicios/chatbots.html" class="srv-card-link">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+            <div class="srv-card-stack">n8n · Make · OpenAI · Supabase · WhatsApp Business API</div>
           </div>
         </div></div>
 
@@ -983,8 +1015,8 @@ body.sgl-active{overflow:hidden}
       </div>
       <div class="why-list">
         <div class="wi reveal"><span class="wi-num">01</span><div><div class="wi-title">Resultados sobre promesas</div><div class="wi-desc">No prometemos lo que no podemos cumplir. Cada propuesta incluye métricas reales y timelines honestos.</div></div></div>
-        <div class="wi reveal"><span class="wi-num">02</span><div><div class="wi-title">Sin intermediarios</div><div class="wi-desc">Trabajás directamente con quien construye. Sin account managers que solo transmiten mensajes.</div></div></div>
-        <div class="wi reveal"><span class="wi-num">03</span><div><div class="wi-title">Tecnología de punta, precios de Costa Rica</div><div class="wi-desc">La misma inteligencia artificial y automatización que usan las startups de Silicon Valley, a precio de Costa Rica.</div></div></div>
+        <div class="wi reveal"><span class="wi-num">02</span><div><div class="wi-title">Consultoría e ingeniería directa</div><div class="wi-desc">Hablás con quien escribe el código, no con un ejecutivo de cuenta que traduce mal. Alcance, arquitectura y entregables se definen en la misma conversación.</div></div></div>
+        <div class="wi reveal"><span class="wi-num">03</span><div><div class="wi-title">Estándar internacional, ejecución local</div><div class="wi-desc">Las mismas arquitecturas de software y sistemas de IA que usan startups de producto afuera, adaptadas al ecosistema comercial, legal y de pagos de Costa Rica.</div></div></div>
         <div class="wi reveal"><span class="wi-num">04</span><div><div class="wi-title">Visibilidad total del proceso</div><div class="wi-desc">Actualizaciones semanales reales, demos funcionales en cada etapa y acceso directo al estado del proyecto.</div></div></div>
       </div>
     </div>
@@ -1021,40 +1053,40 @@ body.sgl-active{overflow:hidden}
       <h2 class="sec-title">Proyectos que<br><span>hablan por sí solos.</span></h2>
     </div>
     <div class="bento">
-      <a href="https://la-promesa-tienda.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://la-promesa-tienda.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fla-promesa-tienda.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Tienda La Promesa — E-commerce completo" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--red)">E-commerce</div><div class="bento-name">Tienda La Promesa</div><div class="bento-domain">la-promesa-tienda.vercel.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--red)">E-commerce</div><div class="bento-name">Tienda La Promesa</div><div class="bento-domain">la-promesa-tienda.vercel.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fleafy-frangollo-9abe5c.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Barbería" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--cyan)">Landing Page</div><div class="bento-name">Barbería</div><div class="bento-domain">leafy-frangollo-9abe5c.netlify.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--cyan)">Landing Page</div><div class="bento-name">Barbería</div><div class="bento-domain">leafy-frangollo-9abe5c.netlify.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://taupe-rabanadas-c1791d.netlify.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Ftaupe-rabanadas-c1791d.netlify.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Studio Nails Mady" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--orange)">Landing Page</div><div class="bento-name">Studio Nails Mady</div><div class="bento-domain">taupe-rabanadas-c1791d.netlify.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--orange)">Landing Page</div><div class="bento-name">Studio Nails Mady</div><div class="bento-domain">taupe-rabanadas-c1791d.netlify.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://clinicadental-omega.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fclinicadental-omega.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Clínica Dental" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--green)">Sitio Web</div><div class="bento-name">Clínica Dental</div><div class="bento-domain">clinicadental-omega.vercel.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--green)">Sitio Web</div><div class="bento-name">Clínica Dental</div><div class="bento-domain">clinicadental-omega.vercel.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://bufeteherediaa.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fbufeteherediaa.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Bufete de Abogados" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Bufete de Abogados</div><div class="bento-domain">bufeteherediaa.vercel.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Bufete de Abogados</div><div class="bento-domain">bufeteherediaa.vercel.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
-      <a href="https://veterinaria-2026-silk.vercel.app/" target="_blank" rel="noopener" class="bento-card reveal">
+      <a href="https://veterinaria-2026-silk.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal">
         <img class="bento-img" onerror="this.style.display='none'" src="https://api.microlink.io/?url=https%3A%2F%2Fveterinaria-2026-silk.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Veterinaria Mr. Patitas" loading="lazy">
         <div class="bento-overlay"></div>
-        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Veterinaria Mr. Patitas</div><div class="bento-domain">veterinaria-2026-silk.vercel.app</div></div>
+        <div class="bento-info"><div class="bento-cat" style="color:var(--purple)">Sitio Web</div><div class="bento-name">Veterinaria Mr. Patitas</div><div class="bento-domain">veterinaria-2026-silk.vercel.app</div><div class="bento-result" hidden>[pendiente]</div></div>
         <div class="bento-arrow">↗</div>
       </a>
       
@@ -1083,8 +1115,8 @@ body.sgl-active{overflow:hidden}
         <div class="tc-author">
           <div class="tc-avatar" style="background:linear-gradient(135deg,var(--cyan),var(--purple))">B</div>
           <div>
-            <div class="tc-name">Barbería</div>
-            <div class="tc-role">Cliente · Landing Page</div>
+            <div class="tc-name"><a href="https://leafy-frangollo-9abe5c.netlify.app/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Barbería</a></div>
+            <div class="tc-role">Cliente · Landing page + sistema autónomo de agendamiento</div>
           </div>
         </div>
       </div>
@@ -1160,6 +1192,14 @@ body.sgl-active{overflow:hidden}
           <div class="vid-title">Código limpio y arquitectura escalable</div>
         </div>
       </div>
+      <!-- Tarjeta 3: evidencia de backend — captura del canvas de n8n (subir a assets/n8n-canvas.png) -->
+      <div class="vid-card reveal">
+        <img src="assets/n8n-canvas.png" alt="Canvas de n8n en producción: flujo que conecta WhatsApp, el CRM y el calendario de citas" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block" onerror="this.closest('.vid-card').style.display='none'">
+        <div class="vid-info">
+          <div class="vid-tag" style="color:var(--green)">Evidencia de backend</div>
+          <div class="vid-title">Canvas de n8n en producción</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="vid-modal" id="vidModal" onclick="if(event.target===this) closeVideoModal()">
@@ -1204,7 +1244,7 @@ body.sgl-active{overflow:hidden}
       <div class="pro-text-panel" id="pt3" style="transform:translateY(100%)">
         <div style="font-family:'Syne',sans-serif;font-size:clamp(100px,12vw,160px);font-weight:800;color:rgba(255,255,255,.03);letter-spacing:-0.06em;line-height:1;position:absolute;bottom:-10px;left:4%;pointer-events:none;user-select:none">04</div>
         <h3 style="font-family:'Syne',sans-serif;font-size:clamp(32px,3.5vw,52px);font-weight:800;letter-spacing:-0.04em;color:#fff;margin-bottom:18px;line-height:1.05">Lanzamiento<br>y soporte</h3>
-        <p style="font-size:15px;color:rgba(255,255,255,.52);font-weight:300;line-height:1.8;max-width:360px;margin-bottom:30px">Deploy en producción con pruebas completas y 30 días de soporte prioritario por WhatsApp incluidos.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.52);font-weight:300;line-height:1.8;max-width:360px;margin-bottom:30px">Deploy en producción con pruebas completas, 30 días de soporte prioritario y, después, planes mensuales de mantenimiento para que todo siga operando.</p>
         <span style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--purple);letter-spacing:.18em;text-transform:uppercase"><span style="width:18px;height:1px;background:var(--purple);display:inline-block;flex-shrink:0"></span>30 días soporte incluido</span>
       </div>
 
@@ -1346,7 +1386,7 @@ body.sgl-active{overflow:hidden}
           <span class="faq-q-text">¿Cuánto cuesta un proyecto con Sley Growth AI?</span>
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner"><p>Depende del alcance: una landing page no cuesta lo mismo que un e-commerce o un sistema con IA. Por eso el diagnóstico de 45 minutos es gratis: ahí definimos exactamente qué necesitás y recibís una cotización detallada en 48 horas, sin letras pequeñas ni costos ocultos.</p></div></div>
+        <div class="faq-a"><div class="faq-a-inner"><p>Cada proyecto se cotiza según su complejidad técnica y los sistemas a integrar. Como referencia de inversión: landing pages de alta conversión desde $450, sitios web corporativos desde $900, y agentes de IA en WhatsApp o automatizaciones de procesos desde $950. El alcance técnico y los plazos quedan fijos en la propuesta comercial, sin costos ocultos.</p></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -1354,6 +1394,13 @@ body.sgl-active{overflow:hidden}
           <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner"><p>Una landing page suele tomar 1-2 semanas, un sitio web completo 4-6 semanas, y un e-commerce o sistema con automatizaciones de 6 a 10 semanas. El cronograma exacto queda fijo en la propuesta técnica, antes de empezar, y no se mueve a mitad de camino.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Qué pasa después de la entrega?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Cada entrega incluye 30 días de soporte prioritario. Después ofrecemos planes mensuales de mantenimiento preventivo: monitoreo de APIs, actualizaciones y ajustes al agente de IA para que todo siga operando aunque WhatsApp, Google o el proveedor de turno cambien las reglas.</p></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -1429,14 +1476,14 @@ body.sgl-active{overflow:hidden}
   <div class="cta-in">
     <div class="reveal-l">
       <h2 class="cta-title">¿Listo para crecer<br>de <span class="grad">verdad?</span></h2>
-      <p class="cta-desc">Diagnóstico estratégico gratuito de 45 minutos. Sin compromiso, con claridad total sobre qué necesitás y cuánto cuesta realmente.</p>
+      <p class="cta-desc">Auditoría operativa y viabilidad de IA: 45 min, sin costo. Revisamos tus procesos actuales y te decimos qué se puede automatizar, qué no conviene y cuánto costaría. Salís con un plan aunque no trabajemos juntos.</p>
     </div>
     <div class="cta-cards reveal-r">
       <div class="cta-card">
         <div class="cta-card-tag" style="color:var(--green)">Opción 1 — Inmediato</div>
         <div class="cta-card-title">Agendar por WhatsApp</div>
         <div class="cta-card-desc">Respuesta en menos de 2 horas hábiles. Directo con quien toma decisiones.</div>
-        <a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20agendar%20diagn%C3%B3stico%20gratuito" target="_blank" class="cta-card-btn" style="color:var(--green)">Escribir ahora →</a>
+        <a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20agendar%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="cta-card-btn" style="color:var(--green)">Escribir ahora →</a>
       </div>
       <div class="cta-card">
         <div class="cta-card-tag" style="color:var(--cyan)">Opción 2 — Formulario</div>
@@ -1455,26 +1502,34 @@ body.sgl-active{overflow:hidden}
     <div class="foot-top">
       <div>
         <a href="index.html" class="foot-logo">SLEY<em>GROWTH</em><span style="background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.6em;letter-spacing:.14em;margin-left:3px;font-style:normal;font-weight:800">AI</span></a>
-        <p class="foot-tag">Listos para llevar tu marca al siguiente nivel.</p>
+        <p class="foot-tag">Sley Growth AI — Agencia de desarrollo de software, automatización de procesos e inteligencia artificial. Soluciones tecnológicas avanzadas para empresas en San José, Alajuela, Heredia, Cartago y toda Costa Rica.</p>
         <div class="foot-contacts">
           <a href="tel:+50660336062" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></span>+506 6033-6062</a>
-          <a href="mailto:sleygrowth@gmail.com" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>sleygrowth@gmail.com</a>
+          <a class="fcontact" data-brand-email hidden><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span data-brand-email-text></span></a>
           
         </div>
         <div class="foot-social">
-          <a href="https://www.facebook.com/sleygrowth" target="_blank" class="fsoc fsoc-fb" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://wa.me/50660336062" target="_blank" class="fsoc fsoc-wa" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
-          <a href="https://www.instagram.com/sleygrowth/" target="_blank" class="fsoc fsoc-ig" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" class="fsoc fsoc-tt" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="https://www.facebook.com/sleygrowth" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-fb" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/50660336062" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-wa" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.instagram.com/sleygrowth/" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-ig" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-tt" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
         </div>
       </div>
       <div>
         <div class="foot-col-title">Servicios</div>
         <ul class="foot-links">
-          <li><a href="servicios/desarrollo-web.html">Desarrollo Web</a></li>
+          <li><a href="servicios/desarrollo-web.html">Desarrollo Web a medida</a></li>
+          <li><a href="servicios/rediseno-web.html">Rediseño Web</a></li>
+          <li><a href="servicios/landing-page.html">Landing Pages de alta conversión</a></li>
+          <li><a href="servicios/ecommerce.html">Tiendas Online (E-commerce)</a></li>
+          <li><a href="servicios/aplicacion-escritorio.html">Aplicaciones de Escritorio</a></li>
           <li><a href="servicios/auditoria-seo.html">Auditoría SEO</a></li>
-          <li><a href="servicios/chatbots.html">ChatBots IA</a></li>
-          <li><a href="servicios/landing-page.html">Landing Pages</a></li>
+          <li><a href="servicios/seo-local.html">SEO Local</a></li>
+          <li><a href="servicios/seo-tecnico.html">SEO Técnico</a></li>
+          <li><a href="servicios/chatbots.html">Automatización de WhatsApp con IA</a></li>
+          <li><a href="servicios/integraciones.html">Integraciones y APIs</a></li>
+          <li><a href="servicios/flujos-trabajo.html">Sistemas de Trabajo Automáticos</a></li>
+          <li><a href="servicios/edicion-contenido.html">Edición de Contenido</a></li>
         </ul>
       </div>
       <div>
@@ -1500,7 +1555,7 @@ body.sgl-active{overflow:hidden}
 </footer>
 
 <!-- WhatsApp FAB -->
-<a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar" class="wfab" target="_blank" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar" class="wfab" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
   <svg viewBox="0 0 448 512" width="24" height="24"><path fill="white" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 
@@ -1795,7 +1850,8 @@ function toggleFaq(btn){
   setTimeout(tick,800);
 })();
 </script>
+<script src="assets/site.js"></script>
 <script src="cookies.js"></script>
-<a href="https://wa.me/50660336062?text=Hola%20Sley%20Growth%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="wa-flot" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></a>
+<a href="https://wa.me/50660336062?text=Hola%20Sley%20Growth%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="wa-flot" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></a>
 </body>
 </html>

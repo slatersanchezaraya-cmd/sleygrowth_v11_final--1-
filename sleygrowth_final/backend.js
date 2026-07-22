@@ -18,6 +18,11 @@ const DASHBOARD_ANON_KEY     = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ
 async function submitForm(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
+  const errBox = document.getElementById('formError');
+
+  // Honeypot anti-spam: campo oculto que solo un bot llenaria.
+  const hp = document.getElementById('empresa_web');
+  if (hp && hp.value.trim() !== '') { return; }
 
   const nombre      = document.getElementById('nombre').value.trim();
   const empresa     = document.getElementById('empresa').value.trim();
@@ -27,12 +32,27 @@ async function submitForm(e) {
   const presupuesto = document.getElementById('presupuesto').value;
   const mensaje     = document.getElementById('mensaje').value.trim();
 
-  if (!nombre || !empresa || !email || !tel || !servicio || !presupuesto || !mensaje) {
-    alert('Por favor completá todos los campos obligatorios (*).');
+  function showError(msg, elId){
+    if (errBox){ errBox.textContent = msg; errBox.style.display = 'block'; }
+    else { alert(msg); }
+    if (elId){
+      const el = document.getElementById(elId);
+      if (el){ el.setAttribute('aria-invalid','true'); el.focus(); }
+    }
+  }
+  ['nombre','empresa','email','tel','servicio','presupuesto','mensaje']
+    .forEach(function(id){ var el = document.getElementById(id); if (el) el.setAttribute('aria-invalid','false'); });
+  if (errBox){ errBox.textContent = ''; errBox.style.display = 'none'; }
+
+  var faltante = !nombre ? 'nombre' : !empresa ? 'empresa' : !email ? 'email'
+    : !tel ? 'tel' : !servicio ? 'servicio' : !presupuesto ? 'presupuesto' : !mensaje ? 'mensaje' : null;
+  if (faltante) {
+    showError('Por favor completá todos los campos obligatorios (*).', faltante);
     return;
   }
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  if (!emailOk) { alert('Correo electrónico inválido.'); return; }
+  if (!emailOk) { showError('El correo electrónico no parece válido. Revisalo, por favor.', 'email'); return; }
+  if (mensaje.length < 20) { showError('Contanos un poco más: mínimo 20 caracteres en “¿Qué querés resolver?”.', 'mensaje'); return; }
 
   btn.textContent = 'Enviando...';
   btn.disabled = true;
@@ -115,7 +135,7 @@ async function submitForm(e) {
     document.getElementById('formSuccess').style.display = 'block';
     document.getElementById('formSuccess').querySelector('a').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + waMsg;
   } else {
-    alert('Ocurrió un error al enviar. Por favor intentá de nuevo o contáctanos por WhatsApp.');
+    showError('No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.');
     btn.textContent = 'Enviar mensaje ↗';
     btn.disabled = false;
   }
