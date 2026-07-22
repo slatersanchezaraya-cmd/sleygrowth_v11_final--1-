@@ -221,7 +221,7 @@ section.cta-sec{border-top:0;padding-top:130px;padding-bottom:130px;background:l
 section.faq-sec{background:#E9EDF5;border-top:0}
 section.faq-sec .eyebrow{color:#6D4FE0!important}
 section.faq-sec .sec-title{color:#0F1430}
-section.faq-sec .sec-title span{color:rgba(15,20,48,.38)}
+section.faq-sec .sec-title span{color:rgba(15,20,48,.68)}
 section.faq-sec .faq-item{border-bottom:1px solid rgba(15,20,48,.12)}
 section.faq-sec .faq-q-text{color:#131A3F}
 section.faq-sec .faq-q:hover .faq-q-text{color:#4F46E5}
@@ -252,6 +252,6 @@ section.faq-sec .faq-item.faq-open .faq-a{max-height:460px}
 section.faq-sec .faq-a-inner{padding:0 52px 26px 0}
 section.faq-sec .faq-a-inner p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(15,20,40,.82)}
 section.faq-sec .sec-title{color:#0B0F26}
-section.faq-sec .sec-title span{color:rgba(11,15,38,.45)}
+section.faq-sec .sec-title span{color:rgba(15,20,48,.68)}
 section.faq-sec .eyebrow{color:#5B45D6!important}
 @media(max-width:720px){section.faq-sec{padding:72px 20px}section.faq-sec .faq-a-inner{padding-right:0}}
