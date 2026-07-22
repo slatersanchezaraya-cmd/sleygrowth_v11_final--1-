@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1030">
+<meta name="description" content="Software CRM para pymes en Costa Rica: centralice contactos, automatice seguimientos por WhatsApp y cierre más ventas desde cualquier lugar. El mejor software para ventas Costa Rica.">
+<title>CRM en Costa Rica para Pymes | Software de Ventas | Sley Growth AI</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:title" content="CRM en Costa Rica para Pymes | Software de Ventas | Sley Growth AI">
+<meta property="og:description" content="Software CRM para pymes en Costa Rica: centralice contactos, automatice seguimientos por WhatsApp y cierre más ventas desde cualquier lugar.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://sleygrowth.com/servicios/crm.html">
+<meta property="og:url" content="https://sleygrowth.com/servicios/crm.html">
+<meta property="og:site_name" content="Sley Growth AI">
+<meta property="og:locale" content="es_CR">
+<meta property="og:image" content="https://sleygrowth.com/assets/og-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CRM en Costa Rica para Pymes | Software de Ventas | Sley Growth AI">
+<meta name="twitter:description" content="Software CRM para pymes en Costa Rica: centralice contactos, automatice seguimientos por WhatsApp y cierre más ventas desde cualquier lugar.">
+<meta name="twitter:image" content="https://sleygrowth.com/assets/og-cover.svg">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sley Growth AI">
+<meta name="geo.region" content="CR">
+<meta name="geo.placename" content="Costa Rica">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ui-polish.css">
+<style>
+:root{--accent:var(--purple);--accent-hex:#8B5CF6}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0B1030;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+:root{--bg:#0B1030;--bg2:#0D1238;--bg3:#131A4A;--cyan:#00D4FF;--green:#22C55E;--orange:#F97316;--purple:#8B5CF6;--red:#EF4444;--w1:#fff;--w2:rgba(255,255,255,0.55);--w3:rgba(255,255,255,0.22);--w4:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;--grad:linear-gradient(135deg,#00D4FF,#8B5CF6)}
+.skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--accent,var(--cyan));color:#0B1030;padding:12px 20px;font-weight:700;font-size:13px;text-decoration:none}
+.skip:focus{left:0}
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,16,48,0);backdrop-filter:blur(0);border-bottom:1px solid transparent;transition:all .4s}
+nav.scrolled{background:rgba(11,16,48,.95);backdrop-filter:blur(24px);border-color:var(--border)}
+.nav-logo{font-family:var(--display);font-size:19px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-0.04em}
+.nav-logo em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a,.dd>button{color:var(--w2);font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;text-decoration:none;transition:color .2s,background .2s;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px}
+.nav-links a:hover,.nav-links a.active,.dd:hover>button{color:#fff;background:var(--w4)}
+.dd{position:relative}
+.ddm{position:absolute;top:calc(100%+10px);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(15,20,58,.98);border:1px solid var(--border2);border-radius:16px;padding:8px;min-width:240px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;backdrop-filter:blur(20px);box-shadow:0 32px 80px rgba(0,0,0,.7)}
+.dd:hover .ddm{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.di{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s}
+.di:hover{background:var(--w4)}
+.di strong{color:#fff;font-size:12px;font-weight:600;display:block}
+.di span{color:var(--w2);font-size:11px;margin-top:2px;display:block}
+.btn-nav{background:var(--grad);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:9px 22px;border-radius:8px;text-decoration:none;transition:opacity .2s,transform .2s}
+.btn-nav:hover{opacity:.88;transform:translateY(-1px)}
+.btn-nav,.btn-p{position:relative;overflow:hidden}
+.btn-nav::before,.btn-p::before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(82.3deg,rgba(150,93,233,1) 10.8%,rgba(99,88,238,1) 94.3%);transform:scaleX(0);transform-origin:0 50%;transition:transform .475s}
+.btn-nav:hover::before,.btn-p:hover::before{transform:scaleX(1)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.ham span{width:22px;height:1.5px;background:#fff;border-radius:2px;transition:all .3s;display:block}
+.mob{display:none;position:fixed;inset:0;background:rgba(11,16,48,.98);backdrop-filter:blur(24px);z-index:199;padding:84px 24px 40px;overflow-y:auto;flex-direction:column}
+.mob.open{display:flex}
+/* HERO */
+.ph{min-height:100dvh;position:relative;overflow:hidden;display:flex;align-items:center}
+.ph-video{position:absolute;inset:0;z-index:0}
+.ph-video img{width:100%;height:100%;object-fit:cover;opacity:.25}
+.ph-video::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,16,48,.92),rgba(11,16,48,.65) 50%,rgba(11,16,48,.88))}
+.gblob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:1}
+.gb1{width:600px;height:600px;top:-150px;right:-80px;animation:blobF 9s ease-in-out infinite}
+.gb2{width:500px;height:500px;bottom:-150px;left:-80px;animation:blobF 11s ease-in-out infinite reverse}
+@keyframes blobF{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-20px)}}
+.ph-in{max-width:1280px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2;padding-top:140px;padding-bottom:100px}
+/* Breadcrumb */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--w3);margin-bottom:24px;letter-spacing:.08em}
+.breadcrumb a{color:var(--w3);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--w2)}
+.breadcrumb span{color:var(--accent,var(--cyan))}
+/* Hero badge */
+.ph-badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:100px;border:1px solid;margin-bottom:32px}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent,var(--cyan));animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.7)}}
+.badge-txt{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,var(--cyan))}
+/* Title */
+.ph-title{font-family:var(--display);font-size:clamp(48px,6vw,86px);font-weight:800;line-height:.92;letter-spacing:-0.05em;margin-bottom:28px;overflow:hidden}
+.tline{display:block;transform:translateY(110%);animation:slideUp .8s cubic-bezier(.22,1,.36,1) forwards}
+.tline:nth-child(1){animation-delay:.15s}
+.tline:nth-child(2){animation-delay:.28s}
+.tline:nth-child(3){animation-delay:.41s}
+@keyframes slideUp{to{transform:translateY(0)}}
+.ph-title .muted{color:var(--w3)}
+.ph-title .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ph-desc{font-size:17px;color:var(--w2);font-weight:300;line-height:1.8;max-width:560px;margin-bottom:44px;opacity:0;animation:fadeIn .8s ease .7s forwards}
+@keyframes fadeIn{to{opacity:1}}
+.ph-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeIn .8s ease .9s forwards}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;color:#fff;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.btn-p:hover{transform:translateY(-3px)}
+.btn-p:active{transform:scale(.97)}
+.btn-g{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;color:var(--w2);border:1px solid var(--border2);border-radius:10px;font-size:13px;font-weight:500;text-decoration:none;transition:color .2s,border-color .2s,background .2s}
+.btn-g:hover{color:#fff;border-color:rgba(255,255,255,.3);background:var(--w4)}
+/* FEATURES */
+.sec{padding:100px 40px;border-top:1px solid var(--border)}
+.sec-in{max-width:1280px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow::before{content:'';width:20px;height:1px;background:currentColor}
+.sec-title{font-family:var(--display);font-size:clamp(32px,4vw,56px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#fff;margin-bottom:60px}
+.sec-title span{color:var(--w3)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.feat-item{padding:40px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .25s;position:relative;overflow:hidden}
+.feat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.feat-item:hover::before{transform:scaleX(1)}
+.feat-item:hover{background:var(--w4)}
+.feat-item:nth-child(3n){border-right:none}
+.feat-item:nth-last-child(-n+3){border-bottom:none}
+.feat-num{font-family:var(--mono);font-size:10px;color:var(--w3);letter-spacing:.12em;margin-bottom:20px;display:block}
+.feat-icon{font-size:28px;display:block;margin-bottom:14px}
+.feat-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
+.feat-desc{font-size:13px;color:var(--w2);font-weight:300;line-height:1.7;margin-bottom:16px}
+.feat-tag{display:inline-block;font-family:var(--mono);font-size:9px;border-radius:4px;padding:3px 10px;letter-spacing:.08em;border:1px solid;background:transparent}
+/* IMAGE FEATURE SECTION */
+.feat-img-sec{padding:80px 40px;border-top:1px solid var(--border);background:var(--bg2)}
+.feat-img-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feat-img-photo{border-radius:4px;overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3;position:relative}
+.feat-img-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.feat-img-photo:hover img{transform:scale(1.04)}
+.feat-img-photo-overlay{position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(11,16,48,.4))}
+.feat-img-list{display:flex;flex-direction:column;gap:0}
+.fi-row{display:grid;grid-template-columns:48px 1fr;gap:0;padding:24px 0;border-bottom:1px solid var(--border)}
+.fi-row:last-child{border-bottom:none}
+.fi-num{font-family:var(--mono);font-size:10px;color:var(--w3);padding-top:2px}
+.fi-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+.fi-desc{font-size:13px;color:var(--w2);font-weight:300;line-height:1.7}
+/* PROCESS */
+.proc-sec{padding:100px 40px;border-top:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
+.proc-bg{position:absolute;font-family:var(--display);font-size:clamp(80px,12vw,160px);font-weight:800;color:rgba(255,255,255,.015);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-0.06em}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:56px;position:relative;z-index:1}
+.paso{padding:44px 32px;border-right:1px solid var(--border);transition:background .25s;position:relative;overflow:hidden}
+.paso:last-child{border-right:none}
+.paso::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.paso:hover::before{transform:scaleX(1)}
+.paso:hover{background:var(--w4)}
+.paso-n{font-family:var(--display);font-size:72px;font-weight:800;color:rgba(255,255,255,.03);letter-spacing:-0.06em;line-height:1;margin-bottom:16px}
+.paso-icon{font-size:26px;display:block;margin-bottom:14px}
+.paso-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+.paso-desc{font-size:13px;color:var(--w2);font-weight:300;line-height:1.65}
+.paso-tag{display:inline-block;font-family:var(--mono);font-size:9px;color:var(--accent,var(--cyan));background:rgba(0,212,255,.05);border:1px solid;border-color:rgba(0,212,255,.15);border-radius:4px;padding:3px 8px;margin-top:14px;letter-spacing:.08em}
+/* CTA */
+.cta-sec{padding:100px 40px;border-top:1px solid var(--border);position:relative;overflow:hidden}
+.cta-glow{position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(80px);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:.6}
+.cta-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.cta-title{font-family:var(--display);font-size:clamp(36px,4.5vw,62px);font-weight:800;letter-spacing:-0.05em;line-height:.95;color:#fff;margin-bottom:20px}
+.cta-title .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-desc{font-size:16px;color:var(--w2);font-weight:300;line-height:1.75;margin-bottom:32px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:28px;position:relative;overflow:hidden;transition:border-color .3s}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--cyan));transform:scaleX(0);transition:transform .4s}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-card:hover{border-color:rgba(255,255,255,.18)}
+.stat-num{font-family:var(--display);font-size:32px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:12px;color:var(--w2);font-weight:300;line-height:1.5}
+/* FOOTER */
+footer{background:#030510;border-top:1px solid var(--border);padding:72px 40px 40px}
+.foot-in{max-width:1280px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:52px;margin-bottom:52px}
+.foot-logo{font-family:var(--display);font-size:19px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-0.04em;display:block;margin-bottom:12px}
+.foot-logo em{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.foot-tag{font-size:13px;color:var(--w2);font-weight:300;line-height:1.7;max-width:240px;margin-bottom:24px}
+.foot-contacts{display:flex;flex-direction:column;gap:12px}
+.fcontact{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w2);text-decoration:none;transition:color .2s}
+.fcontact:hover{color:var(--accent,var(--cyan))}
+.fci{width:32px;height:32px;border-radius:50%;background:var(--w4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.foot-col-title{font-size:10px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:13px;color:var(--w3);text-decoration:none;transition:color .2s;font-weight:300}
+.foot-links a:hover{color:#fff}
+.foot-social{display:flex;gap:8px;margin-top:20px}
+.fsoc{width:42px;height:42px;border-radius:9px;border:1px solid var(--border);background:var(--w4);display:flex;align-items:center;justify-content:center;color:var(--w2);text-decoration:none;transition:all .2s}
+
+.fsoc-fb:hover,.fsoc-fb:active{color:#1877F2!important;border-color:rgba(24,119,242,.45)!important;background:rgba(24,119,242,.1)!important}
+.fsoc-wa:hover,.fsoc-wa:active{color:#25D366!important;border-color:rgba(37,211,102,.45)!important;background:rgba(37,211,102,.1)!important}
+.fsoc-ig:hover,.fsoc-ig:active{color:#E1306C!important;border-color:rgba(225,48,108,.45)!important;background:rgba(225,48,108,.1)!important}
+.fsoc-tt:hover,.fsoc-tt:active{color:#FF0050!important;border-color:rgba(255,0,80,.45)!important;background:rgba(255,0,80,.1)!important}
+.fsoc:hover{color:var(--accent,var(--cyan));border-color:rgba(0,212,255,.35);transform:translateY(-2px)}
+.foot-bot{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy,.flegal a{font-size:12px;color:var(--w3)}
+.flegal{display:flex;gap:20px}
+.flegal a{text-decoration:none;transition:color .2s}
+.flegal a:hover{color:#fff}
+.wfab{position:fixed;bottom:28px;right:28px;z-index:50;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.4);transition:transform .3s;text-decoration:none}
+.wfab:hover{transform:scale(1.12)}
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(32px);transition:none}
+.reveal.in{opacity:1;transform:none;transition:opacity .75s ease,transform .75s ease}
+.reveal-l{opacity:0;transform:translateX(-32px);transition:none}
+.reveal-l.in{opacity:1;transform:none;transition:opacity .75s ease,transform .75s ease}
+.reveal-r{opacity:0;transform:translateX(32px);transition:none}
+.reveal-r.in{opacity:1;transform:none;transition:opacity .75s ease,transform .75s ease}
+.reveal-s{opacity:0;transform:scale(.94);transition:none}
+.reveal-s.in{opacity:1;transform:scale(1);transition:opacity .7s ease,transform .7s ease}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.reveal-s,.tline{opacity:1;transform:none;transition:none;animation:none}}
+/* RESPONSIVE */
+@media(max-width:1024px){.feat-grid{grid-template-columns:1fr 1fr}.feat-item:nth-child(3n){border-right:1px solid var(--border)}.feat-item:nth-child(2n){border-right:none}.feat-item:nth-last-child(-n+3){border-bottom:1px solid var(--border)}.feat-item:nth-last-child(-n+2){border-bottom:none}.proc-grid{grid-template-columns:1fr 1fr}.cta-in{grid-template-columns:1fr;gap:48px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}.feat-img-in{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links,.btn-nav{display:none!important}.ham{display:flex}.ph-in,.sec,.feat-img-sec,.proc-sec,.cta-sec{padding-left:20px;padding-right:20px}.ph-in{padding-top:100px;padding-bottom:60px}.proc-grid{grid-template-columns:1fr}.paso{border-right:none;border-bottom:1px solid var(--border)}.paso:last-child{border-bottom:none}.foot-top{grid-template-columns:1fr;gap:28px}.foot-bot{flex-direction:column;text-align:center}.feat-grid{grid-template-columns:1fr}.feat-item{border-right:none}.feat-item:nth-last-child(-n+3){border-bottom:1px solid var(--border)}.feat-item:last-child{border-bottom:none}.ph-cta{flex-direction:column;align-items:flex-start}.btn-p,.btn-g{width:100%;justify-content:center}.stat-grid{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column}a,button,.feat-item,.paso,.stat-card{touch-action:manipulation}::selection{background:rgba(0,212,255,.2);color:#fff}}
+
+</style>
+<style>
+/* EDITORIAL CONTENT */
+.editorial-sec{padding:100px 40px;border-top:1px solid var(--border)}
+.editorial-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.toc{position:sticky;top:150px;align-self:start;width:100%}
+.toc-track{position:relative}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:22px;margin-top:0}
+.toc-indicator{position:absolute;left:0;right:0;top:0;height:0;background:var(--w4);border-radius:8px;transition:transform .4s cubic-bezier(.65,0,.35,1),height .4s cubic-bezier(.65,0,.35,1);z-index:0;will-change:transform}
+.toc-link{position:relative;z-index:1;display:block;padding:14px 18px;font-size:1.15rem;color:var(--w2);text-decoration:none;border-radius:8px;white-space:nowrap;letter-spacing:.01em;transition:color .2s}
+.toc-link:hover{color:#fff}
+.toc-link.active{color:#fff}
+.content-col{display:flex;flex-direction:column;gap:56px}
+.content-block{position:relative;padding-left:32px;scroll-margin-top:90px}
+.content-block::before{content:'';position:absolute;left:0;top:8px;width:11px;height:11px;border-radius:50%;background:var(--grad)}
+.content-block::after{content:'';position:absolute;left:5px;top:24px;bottom:-56px;width:1px;background:linear-gradient(to bottom,var(--border),transparent)}
+.content-block:last-child::after{display:none}
+.content-block h3{font-family:var(--display);font-size:clamp(23px,2.6vw,32px);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:14px;line-height:1.15}
+.content-block p{font-size:15px;color:var(--w2);font-weight:300;line-height:1.8;max-width:620px}
+@media(max-width:900px){.editorial-in{grid-template-columns:1fr}.toc{display:none}.content-col{gap:44px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Chatbots con IA","serviceType":"Chatbots con IA","provider":{"@id":"https://sleygrowth.com/#org"},"areaServed":{"@type":"Country","name":"Costa Rica"},"url":"https://sleygrowth.com/servicios/crm.html"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://sleygrowth.com/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://sleygrowth.com/#servicios"},{"@type":"ListItem","position":3,"name":"Chatbots con IA","item":"https://sleygrowth.com/servicios/crm.html"}]}]}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Saltar al contenido</a>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">SLEY<em>GROWTH</em><span style="background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.6em;letter-spacing:.14em;margin-left:3px;font-style:normal;font-weight:800">AI</span></a>
+  <ul class="nav-links" style="display:flex">
+    <li><a href="../index.html">Inicio</a></li>
+    <li class="dd"><button>Desarrollo <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="ddm">
+        <a href="desarrollo-web.html" class="di"><strong>Desarrollo Web</strong><span>Sitios y apps a medida.</span></a>
+        <a href="rediseno-web.html" class="di"><strong>Rediseño Web</strong><span>Modernización sin perder el SEO.</span></a>
+        <a href="landing-page.html" class="di"><strong>Landing Pages</strong><span>Optimizadas para convertir.</span></a>
+        <a href="ecommerce.html" class="di"><strong>E-commerce</strong><span>Tiendas online robustas.</span></a>
+        <a href="aplicacion-escritorio.html" class="di"><strong>App de Escritorio</strong><span>Sistemas locales a medida.</span></a>
+      </div>
+    </li>
+    <li class="dd"><button>SEO <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="ddm">
+        <a href="auditoria-seo.html" class="di"><strong>Auditoría SEO</strong><span>Diagnóstico técnico completo.</span></a>
+        <a href="seo-local.html" class="di"><strong>SEO Local</strong><span>Posicionamiento geolocalizado.</span></a>
+        <a href="seo-tecnico.html" class="di"><strong>SEO Técnico</strong><span>Velocidad y que Google te encuentre.</span></a>
+      </div>
+    </li>
+    <li class="dd"><button>IA &amp; Auto. <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="ddm">
+        <a href="chatbots.html" class="di"><strong>Automatización de WhatsApp</strong><span>Atención automática 24/7.</span></a><a href="crm.html" class="di"><strong>CRM para Pymes</strong><span>Gestión de clientes y ventas.</span></a>
+        <a href="integraciones.html" class="di"><strong>Integraciones</strong><span>Conectá todas tus apps.</span></a>
+        <a href="flujos-trabajo.html" class="di"><strong>Sistemas de Trabajo Automáticos</strong><span>Automatización de procesos internos.</span></a>
+      </div>
+    </li>
+    <li><a href="../proyectos.html">Proyectos</a></li>
+    <li><a href="../contacto.html">Contacto</a></li>
+  </ul>
+  <a href="../contacto.html" class="btn-nav">Cotizar</a>
+  <button class="ham" id="ham" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px">Desarrollo</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+        <a href="desarrollo-web.html" style="color:var(--w2);text-decoration:none;font-size:14px">Desarrollo Web</a>
+        <a href="rediseno-web.html" style="color:var(--w2);text-decoration:none;font-size:14px">Rediseño Web</a>
+        <a href="landing-page.html" style="color:var(--w2);text-decoration:none;font-size:14px">Landing Pages</a>
+        <a href="ecommerce.html" style="color:var(--w2);text-decoration:none;font-size:14px">E-commerce</a>
+      </div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:14px">SEO</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="auditoria-seo.html" style="color:var(--w2);text-decoration:none;font-size:14px">Auditoría SEO</a>
+        <a href="seo-local.html" style="color:var(--w2);text-decoration:none;font-size:14px">SEO Local</a>
+        <a href="seo-tecnico.html" style="color:var(--w2);text-decoration:none;font-size:14px">SEO Técnico</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:14px">IA &amp; Automatizaciones</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="chatbots.html" style="color:var(--w2);text-decoration:none;font-size:14px">Automatización de WhatsApp</a><a href="crm.html" style="color:var(--w2);text-decoration:none;font-size:14px">CRM para Pymes</a>
+        <a href="integraciones.html" style="color:var(--w2);text-decoration:none;font-size:14px">Integraciones</a>
+        <a href="flujos-trabajo.html" style="color:var(--w2);text-decoration:none;font-size:14px">Sistemas de Trabajo Automáticos</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:24px;display:flex;flex-direction:column;gap:16px">
+    <a href="../proyectos.html" style="font-size:22px;font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;letter-spacing:-0.03em">Proyectos</a>
+    <a href="../contacto.html" style="font-size:22px;font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;letter-spacing:-0.03em">Contacto</a>
+    <a href="../contacto.html" class="btn-p" style="margin-top:8px;justify-content:center;background:var(--grad)">Cotizar proyecto</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="ph" id="main">
+  <div class="ph-grid"></div>
+  <div class="gblob gb1" style="background:radial-gradient(circle,rgba(139,92,246,.18),transparent 70%)"></div>
+  <div class="gblob gb2" style="background:radial-gradient(circle,rgba(0,212,255,.08),transparent 70%)"></div>
+  <div class="ph-in">
+    <div class="breadcrumb">
+      <a href="../index.html">Inicio</a>
+      <span>/</span>
+      <span style="color:var(--accent)">CRM</span>
+    </div>
+    <div class="ph-badge" style="background:rgba(0,0,0,.2);border-color:#8B5CF633" id="h0">
+      <span class="badge-dot"></span>
+      <span class="badge-txt">CRM para pymes en Costa Rica</span>
+    </div>
+    <h1 class="ph-title" id="h1">
+<span class="tline">CRM en Costa Rica</span>
+<span class="tline muted">para vender más y no</span>
+<span class="tline grad">perder un cliente.</span>
+    </h1>
+    <p class="ph-desc" id="h2">Software CRM para pymes en Costa Rica: centralice contactos, automatice seguimientos por WhatsApp y cierre más ventas desde cualquier lugar. Sin pagar horas extra.</p>
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px;flex-wrap:wrap">
+      <span style="font-family:var(--display);font-size:30px;font-weight:800;color:#fff;letter-spacing:-0.02em">Desde $950</span>
+      <span style="font-size:12px;color:var(--w3);letter-spacing:.04em">+ mantenimiento mensual</span>
+    </div>
+    <div class="ph-cta">
+      <a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar%20un%20CRM%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" class="btn-p" style="background:var(--purple);box-shadow:0 8px 30px #8B5CF633">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Cotizar CRM
+      </a>
+      <a href="../proyectos.html" class="btn-g">Ver casos de éxito</a>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE + LIST -->
+<div class="wave-sep" style="--prev:#0B1030;--next:#E9EDF5" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
+<section class="faq-sec">
+  <div class="faq-in">
+    <div style="text-align:center">
+      <div class="eyebrow" style="color:#6D4FE0;justify-content:center">Preguntas frecuentes</div>
+      <h2 class="sec-title" style="margin-bottom:0;font-size:clamp(28px,4vw,44px)">Lo que nos preguntan sobre<br><span>el CRM.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Puedo pasar los contactos que ya tengo en Excel?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí. Importamos tus contactos desde Excel, Google Contacts o el sistema que tengas hoy, sin que pierdas ningún dato. Vos seguís trabajando mientras nosotros dejamos todo ordenado.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Funciona desde el celular, en la calle?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí. Tiene app móvil pensada para vendedores que andan viajando dentro de Costa Rica: podés ver la ficha de un cliente, anotar y dar seguimiento desde cualquier lugar.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Se conecta con WhatsApp y correo?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Sí. Enviás seguimientos, recordatorios y promociones por WhatsApp o correo directo desde el CRM, y todo queda registrado en la ficha del cliente para no repetir ni olvidar nada.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">¿Necesito saber de tecnología para usarlo?</span>
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p>No. Configuramos el pipeline de ventas a tu medida y capacitamos a tu equipo en una videollamada de una hora. Después quedás con soporte continuo por WhatsApp.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>function toggleFaq(btn){var item=btn.closest('.faq-item');var wasOpen=item.classList.contains('faq-open');document.querySelectorAll('.faq-item.faq-open').forEach(function(el){el.classList.remove('faq-open');});if(!wasOpen)item.classList.add('faq-open');}</script>
+<div class="wave-sep" style="--prev:#E9EDF5;--next:#0D1238" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
+<section class="feat-img-sec">
+  <div class="feat-img-in">
+    <div class="reveal-l">
+      <div style="background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.18);border-radius:16px;padding:28px 26px">
+        <div class="eyebrow" style="color:#EF4444">Problemas comunes</div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#EF4444;flex-shrink:0;font-weight:700">✕</span><span style="color:var(--w2);font-size:15px;line-height:1.5">Se me pierden los clientes en notas o Excel.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#EF4444;flex-shrink:0;font-weight:700">✕</span><span style="color:var(--w2);font-size:15px;line-height:1.5">No doy seguimiento a tiempo.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#EF4444;flex-shrink:0;font-weight:700">✕</span><span style="color:var(--w2);font-size:15px;line-height:1.5">No sé cuánto vendí este mes.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#EF4444;flex-shrink:0;font-weight:700">✕</span><span style="color:var(--w2);font-size:15px;line-height:1.5">Mi equipo no anota nada.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="eyebrow" style="color:var(--green)">El diagnóstico</div>
+      <h2 class="sec-title" style="font-size:clamp(28px,3.5vw,48px);margin-bottom:18px">De los problemas<br><span>a la solución CRM.</span></h2>
+      <p style="color:var(--w2);font-size:15px;line-height:1.7;font-weight:300;margin-bottom:26px;max-width:440px">La gestión de clientes en Costa Rica no tiene por qué ser un caos. Así resuelve nuestro CRM los problemas reales de las pymes.</p>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;font-weight:700">✓</span><span style="color:#fff;font-size:15px;line-height:1.5">Base de datos centralizada de todos tus contactos.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;font-weight:700">✓</span><span style="color:#fff;font-size:15px;line-height:1.5">Reportes de ventas en tiempo real, en ₡.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;font-weight:700">✓</span><span style="color:#fff;font-size:15px;line-height:1.5">Recordatorios automáticos por WhatsApp o correo.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;font-weight:700">✓</span><span style="color:#fff;font-size:15px;line-height:1.5">App móvil fácil para tus vendedores.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS CRM -->
+<section class="sec" style="padding:96px 40px;background:#0D1238">
+  <div class="sec-in" style="max-width:1200px;margin:0 auto">
+    <div class="reveal" style="text-align:center;max-width:660px;margin:0 auto 56px">
+      <div class="eyebrow" style="color:var(--green);justify-content:center">Beneficios</div>
+      <h2 class="sec-title" style="margin-bottom:14px;font-size:clamp(28px,4vw,44px)">Todo lo que usan las<br><span>pymes ticas para vender.</span></h2>
+      <p style="color:var(--w2);font-size:15px;font-weight:300;line-height:1.7">Lo que necesitás para llevar tu gestión de clientes al siguiente nivel.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">👥</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">Gestor de contactos completo</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Campos personalizables: teléfono, correo, SINPE, récord de compras. La gestión de clientes nunca fue tan ordenada.</p>
+      </div>
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">⏰</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">Recordatorios automáticos</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Tareas, cumpleaños, cotizaciones por vencer. El CRM te avisa antes de que se te olvide.</p>
+      </div>
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">📊</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">Pipeline de ventas visual</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Arrastrá y soltá etapas: Primer contacto, Negociación, Cerrado. Software para ventas de Costa Rica intuitivo.</p>
+      </div>
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">📱</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">App móvil para campo</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Ideal para vendedores que viajan dentro de Costa Rica. Accedé al CRM desde cualquier lugar.</p>
+      </div>
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">💬</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">Integración con correo y WhatsApp</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Enviá promociones o seguimientos desde el CRM. Gestión de clientes multicanal.</p>
+      </div>
+      <div class="reveal" style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:26px 24px">
+        <div style="font-size:24px;margin-bottom:14px">🧾</div>
+        <div style="font-family:var(--display);font-size:17px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em">Facturación electrónica lista</div>
+        <p style="color:var(--w2);font-size:13.5px;font-weight:300;line-height:1.6">Conexión con proveedores autorizados por Hacienda (opcional). El CRM en Costa Rica que cumple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="wave-sep" style="--prev:#0D1238;--next:#0A1F3C" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
+<section class="proc-sec">
+  <div class="proc-bg">PROCESO</div>
+  <div class="sec-in">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--purple);justify-content:center">Cómo trabajamos</div>
+      <h2 class="sec-title" style="margin-bottom:0">Cómo arrancamos tu<br><span>CRM en 4 pasos.</span></h2>
+    </div>
+    <div class="proc-grid">
+<div class="paso reveal" style="transition-delay:0.00s">
+<div class="paso-n">01</div>
+<span class="paso-icon">📥</span>
+<div class="paso-title">Importamos tus contactos</div>
+<div class="paso-desc">Desde Excel, Google Contacts o el sistema que tengas hoy. No perdés ningún dato.</div>
+</div>
+<div class="paso reveal" style="transition-delay:0.08s">
+<div class="paso-n">02</div>
+<span class="paso-icon">🔧</span>
+<div class="paso-title">Configuramos tu pipeline</div>
+<div class="paso-desc">Armamos las etapas de venta a la medida de cómo trabaja tu negocio.</div>
+</div>
+<div class="paso reveal" style="transition-delay:0.16s">
+<div class="paso-n">03</div>
+<span class="paso-icon">🎓</span>
+<div class="paso-title">Capacitamos a tu equipo</div>
+<div class="paso-desc">Una videollamada de una hora y tus vendedores quedan usándolo sin enredos.</div>
+</div>
+<div class="paso reveal" style="transition-delay:0.24s">
+<div class="paso-n">04</div>
+<span class="paso-icon">💬</span>
+<div class="paso-title">Soporte continuo</div>
+<div class="paso-desc">Te acompañamos por WhatsApp con el plan de soporte incluido.</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<!-- CONTENIDO EDITORIAL -->
+<div class="wave-sep" style="--prev:#0D1238;--next:#10163F" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
+<section class="editorial-sec" id="detalles">
+  <div class="editorial-in">
+    <nav class="toc" aria-label="Contenido de la página">
+      <div class="toc-track">
+        <div class="toc-indicator"></div>
+        <ul class="toc-list">
+          <li><a href="#atencion" class="toc-link active">Gestión ordenada</a></li>
+          <li><a href="#canales" class="toc-link">Reportes en ₡</a></li>
+          <li><a href="#calificacion" class="toc-link">App móvil</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content-col">
+      <article class="content-block reveal" id="atencion">
+        <h3>Todo tu negocio ordenado en un solo lugar</h3>
+        <p>Centralizá contactos, historial de compras, notas y conversaciones. Se acabó buscar en Excel, cuadernos y post-its: todo tu equipo ve la misma información actualizada.</p>
+      </article>
+      <article class="content-block reveal" id="canales">
+        <h3>Reportes de ventas en tiempo real, en ₡</h3>
+        <p>Sabé cuánto vendiste este mes, qué vendedor va mejor y qué clientes te compran más, con reportes claros en colones y sin armar hojas de cálculo a mano.</p>
+      </article>
+      <article class="content-block reveal" id="calificacion">
+        <h3>Accedé desde donde estés</h3>
+        <p>Con la app móvil tus vendedores actualizan clientes y dan seguimiento desde la calle, en cualquier parte de Costa Rica, y todo queda sincronizado al instante.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wave-sep" style="--prev:#0B1030;--next:#0D1238" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C180,66 360,10 560,30 C760,50 920,64 1120,44 C1260,30 1360,34 1440,44 L1440,70 L0,70 Z"/></svg></div>
+<section class="cta-sec">
+  <div class="cta-glow" style="background:radial-gradient(circle,rgba(139,92,246,.06),transparent 70%)"></div>
+  <div class="cta-in">
+    <div class="reveal-l">
+      <h2 class="cta-title">Dejá de perder ventas <span class='grad'>por desorden.</span></h2>
+      <p class="cta-desc">Te armamos una demo del CRM con tus propios datos, sin costo y sin compromiso.</p>
+      <div class="cta-btns" style="margin-top:32px">
+        <a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar%20un%20CRM%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" class="btn-p" style="background:var(--purple);box-shadow:0 8px 30px #8B5CF633">Cotizar CRM por WhatsApp ↗</a>
+        <a href="../contacto.html" class="btn-g">Formulario de contacto</a>
+      </div>
+    </div>
+    <div class="stat-grid reveal-r">
+<div class="stat-card reveal" style="transition-delay:0.00s">
+<div class="stat-num"><span data-target="100" data-pre="" data-suf="%" data-dec="0" style="font-family:var(--display);font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span></div>
+<div class="stat-label">Tus datos, en la nube</div>
+</div>
+<div class="stat-card reveal" style="transition-delay:0.08s">
+<div class="stat-num"><span data-target="24" data-pre="" data-suf="/7" data-dec="0" style="font-family:var(--display);font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span></div>
+<div class="stat-label">Acceso a tus clientes</div>
+</div>
+<div class="stat-card reveal" style="transition-delay:0.16s">
+<div class="stat-num"><span data-target="1" data-pre="" data-suf="h" data-dec="0" style="font-family:var(--display);font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span></div>
+<div class="stat-label">Capacitación a tu equipo</div>
+</div>
+<div class="stat-card reveal" style="transition-delay:0.24s">
+<div class="stat-num"><span data-target="0" data-pre="" data-suf="" data-dec="0" style="font-family:var(--display);font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span></div>
+<div class="stat-label">Hojas de Excel perdidas</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div>
+        <a href="../index.html" class="foot-logo">SLEY<em>GROWTH</em><span style="background:linear-gradient(135deg,#00D4FF,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.6em;letter-spacing:.14em;margin-left:3px;font-style:normal;font-weight:800">AI</span></a>
+        <p class="foot-tag">Sley Growth AI — Agencia de desarrollo de software, automatización de procesos e inteligencia artificial. Soluciones tecnológicas avanzadas para empresas en San José, Alajuela, Heredia, Cartago y toda Costa Rica.</p>
+        <div class="foot-contacts">
+          <a href="tel:+50660336062" class="fcontact"><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></span>+506 6033-6062</a>
+          <a class="fcontact" data-brand-email hidden><span class="fci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span data-brand-email-text></span></a>
+          
+        </div>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/sleygrowth" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-fb" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/50660336062" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-wa" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.instagram.com/sleygrowth/" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-ig" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.tiktok.com/@sleygrowth" target="_blank" rel="noopener noreferrer" class="fsoc fsoc-tt" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="foot-col-title">Servicios</div><ul class="foot-links"><li><a href="desarrollo-web.html">Desarrollo Web</a></li><li><a href="auditoria-seo.html">Auditoría SEO</a></li><li><a href="chatbots.html">Automatización de WhatsApp</a></li><li><a href="landing-page.html">Landing Pages</a></li></ul></div>
+      <div><div class="foot-col-title">Empresa</div><ul class="foot-links"><li><a href="../proyectos.html">Proyectos</a></li><li><a href="../contacto.html">Contacto</a></li><li><a href="../privacidad.html">Privacidad</a></li><li><a href="../terminos.html">Términos</a></li></ul></div>
+      <div><div class="foot-col-title">Trabajemos juntos</div><p style="font-size:13px;color:var(--w2);font-weight:300;line-height:1.7;margin-bottom:20px">Somos aliados estratégicos para marcas que buscan crecer de verdad.</p><a href="../contacto.html" class="btn-p" style="width:100%;justify-content:center;background:var(--grad);box-shadow:0 8px 30px rgba(0,212,255,.2)">Cotizar proyecto ↗</a></div>
+    </div>
+    <div class="foot-bot"><p class="fcopy">© 2026 Sley Growth AI. Todos los derechos reservados.</p><div class="flegal"><a href="../privacidad.html">Política de Privacidad</a><a href="../terminos.html">Términos de Servicio</a></div></div>
+  </div>
+</footer>
+<a href="https://wa.me/50660336062?text=Hola%2C%20quiero%20cotizar" class="wfab" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 448 512" width="24" height="24"><path fill="white" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');let op=false;
+ham.addEventListener('click',()=>{op=!op;mob.classList.toggle('open',op);document.body.style.overflow=op?'hidden':'';ham.children[0].style.transform=op?'rotate(45deg) translate(5px,5px)':'';ham.children[1].style.opacity=op?'0':'1';ham.children[2].style.transform=op?'rotate(-45deg) translate(5px,-5px)':'';});
+function animCount(el){const t=parseFloat(el.dataset.target),pre=el.dataset.pre||'',suf=el.dataset.suf||'',dec=parseInt(el.dataset.dec||'0'),dur=2000,s=performance.now();function u(n){const p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,4),v=t*e;el.textContent=pre+(dec?v.toFixed(dec):Math.floor(v))+suf;if(p<1)requestAnimationFrame(u);else el.textContent=pre+(dec?t.toFixed(dec):t)+suf;}requestAnimationFrame(u);}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-target]').forEach(c=>animCount(c));}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(el=>obs.observe(el));
+window.addEventListener('mousemove',e=>{const x=(e.clientX/innerWidth-.5)*15,y=(e.clientY/innerHeight-.5)*15;document.querySelectorAll('.gblob').forEach((b,i)=>{b.style.transform=`translate(${x*(i+1)*.5}px,${y*(i+1)*.5}px)`});},{passive:true});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));
+(function(){
+  var links=document.querySelectorAll('.toc-link');
+  var blocks=document.querySelectorAll('.content-block');
+  var indicator=document.querySelector('.toc-indicator');
+  if(!links.length||!blocks.length)return;
+  var byId={};
+  links.forEach(function(l){byId[l.getAttribute('href').slice(1)]=l;});
+  function moveIndicator(l){
+    if(!indicator||!l)return;
+    indicator.style.height=l.offsetHeight+'px';
+    indicator.style.transform='translateY('+l.offsetTop+'px)';
+  }
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('active')});
+        var l=byId[e.target.id];
+        if(l){l.classList.add('active');moveIndicator(l);}
+      }
+    });
+  },{rootMargin:'-20% 0px -65% 0px',threshold:0});
+  blocks.forEach(function(b){spy.observe(b)});
+  moveIndicator(document.querySelector('.toc-link.active'));
+  window.addEventListener('resize',function(){moveIndicator(document.querySelector('.toc-link.active'));});
+})();
+</script>
+<a href="https://wa.me/50660336062?text=Hola%20Sley%20Growth%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="wa-flot" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></a>
+</body>
+</html>
