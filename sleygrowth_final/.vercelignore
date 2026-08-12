@@ -1,0 +1,10 @@
+# Secretos y config local
+.env*
+
+# Material interno: guiones de ventas y presentaciones de veterinaria
+guion-*.md
+presentacion-veterinaria.html
+presentacion-veterinaria-extendida.html
+
+# Notas de backend (no se sirven)
+_backend/
