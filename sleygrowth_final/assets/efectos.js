@@ -9,14 +9,23 @@
   var seen = false; try { seen = sessionStorage.getItem('sg_intro') === '1'; } catch (e) {}
   var T = 0;
   if (document.body.hasAttribute('data-intro') && !seen) {
-    T = 1900; try { sessionStorage.setItem('sg_intro', '1'); } catch (e) {}
+    T = 3000; try { sessionStorage.setItem('sg_intro', '1'); } catch (e) {}
     var iv = document.createElement('div'); iv.id = 'intro'; iv.setAttribute('aria-hidden', 'true');
-    iv.innerHTML = '<div class="iw"><span>Sley</span><span>Growth</span><span>AI</span></div><div class="ib"><i></i></div><div class="it">Software y agentes de IA para tu empresa</div>';
+    var letters = 'Sley Growth AI'.split('').map(function (c, i) { return c === ' ' ? '<span class="sp"></span>' : '<span style="--i:' + i + '">' + c + '</span>'; }).join('');
+    var words = ['Desarrollo web', 'SEO', 'IA y WhatsApp', 'CRM', 'Automatización'];
+    iv.innerHTML = '<div class="icols"><i></i><i></i><i></i><i></i><i></i></div>' +
+      '<div class="iring r1"></div><div class="iring r2"></div>' +
+      '<div class="ic"><div class="iw">' + letters + '</div><div class="iword">' + words.map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div></div>' +
+      '<div class="ifoot"><b class="icount">0</b><span>Costa Rica</span></div>';
     document.body.appendChild(iv); document.body.classList.add('intro-lock');
-    setTimeout(function () { iv.classList.add('out'); document.body.classList.remove('intro-lock'); }, T - 200);
-    setTimeout(function () { iv.remove(); }, T + 1100);
+    var cnt = iv.querySelector('.icount'), ws = iv.querySelectorAll('.iword span'), t0 = performance.now(), done = false;
+    (function tick(now) { if (done) return; var p = Math.min((now - t0) / 2300, 1); cnt.textContent = Math.round(100 * (p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2)); if (p < 1) requestAnimationFrame(tick); })(t0);
+    var wi = 0; function cycle() { ws.forEach(function (w, k) { w.className = k === wi ? 'on' : (k === wi - 1 || (wi === 0 && k === ws.length - 1) ? 'off' : ''); }); wi = (wi + 1) % ws.length; }
+    var wt = setInterval(cycle, 460); setTimeout(cycle, 500);
+    function finish() { if (done) return; done = true; clearInterval(wt); cnt.textContent = '100'; iv.classList.add('out'); document.body.classList.remove('intro-lock'); setTimeout(function () { iv.remove(); }, 1500); }
+    setTimeout(finish, T - 500); iv.addEventListener('click', finish);
   }
-  window.__sgDelay = T ? T - 400 : 0;
+  window.__sgDelay = T ? T - 300 : 0;
 
   /* ── 1. Titulos: cada palabra sube desde una mascara ───────── */
   function split(el) {
@@ -49,7 +58,7 @@
 
   document.querySelectorAll('.hero-title,.ph-title,.sec-title,.cta-title,.legal-title,.info-title').forEach(function (t) {
     split(t);
-    if (t.classList.contains('hero-title') || t.classList.contains('ph-title')) setTimeout(function () { t.classList.add('in'); }, T ? T - 300 : 30);
+    if (t.classList.contains('hero-title') || t.classList.contains('ph-title')) setTimeout(function () { t.classList.add('in'); }, T ? T - 450 : 30);
     else io.observe(t);
   });
 
