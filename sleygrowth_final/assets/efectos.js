@@ -16,13 +16,12 @@
     iv.innerHTML = '<div class="icols"><i></i><i></i><i></i><i></i><i></i></div>' +
       '<div class="iring r1"></div><div class="iring r2"></div>' +
       '<div class="ic"><div class="iw">' + letters + '</div><div class="iword">' + words.map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div></div>' +
-      '<div class="ifoot"><b class="icount">0</b><span>Costa Rica</span></div>';
+      '<div class="ifoot"><span>Costa Rica</span></div>';
     document.body.appendChild(iv); document.body.classList.add('intro-lock');
-    var cnt = iv.querySelector('.icount'), ws = iv.querySelectorAll('.iword span'), t0 = performance.now(), done = false;
-    (function tick(now) { if (done) return; var p = Math.min((now - t0) / 2300, 1); cnt.textContent = Math.round(100 * (p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2)); if (p < 1) requestAnimationFrame(tick); })(t0);
+    var ws = iv.querySelectorAll('.iword span'), done = false;
     var wi = 0; function cycle() { ws.forEach(function (w, k) { w.className = k === wi ? 'on' : (k === wi - 1 || (wi === 0 && k === ws.length - 1) ? 'off' : ''); }); wi = (wi + 1) % ws.length; }
     var wt = setInterval(cycle, 460); setTimeout(cycle, 500);
-    function finish() { if (done) return; done = true; clearInterval(wt); cnt.textContent = '100'; iv.classList.add('out'); document.body.classList.remove('intro-lock'); setTimeout(function () { iv.remove(); }, 1500); }
+    function finish() { if (done) return; done = true; clearInterval(wt); iv.classList.add('out'); document.body.classList.remove('intro-lock'); setTimeout(function () { iv.remove(); }, 1500); }
     setTimeout(finish, T - 500); iv.addEventListener('click', finish);
   }
   window.__sgDelay = T ? T - 300 : 0;
