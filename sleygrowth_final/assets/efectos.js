@@ -137,4 +137,28 @@
       b.addEventListener('mouseleave', function () { b.style.translate = ''; });
     });
   }
+
+  /* ── 7. Videos: solo corren cuando estan a la vista ────────── */
+  var vio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.preload = 'auto'; var pr = e.target.play(); if (pr && pr.catch) pr.catch(function () {}); } else e.target.pause(); }); }, { threshold: 0.25 });
+  document.querySelectorAll('.vid-card video').forEach(function (v) { vio.observe(v); });
+
+  /* ── 8. Transicion suave entre paginas ───────────────────── */
+  addEventListener('pageshow', function () { document.body.classList.remove('leaving'); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button || a.target === '_blank' || a.hasAttribute('download')) return;
+    var u; try { u = new URL(a.href, location.href); } catch (x) { return; }
+    if (u.origin !== location.origin || (u.pathname === location.pathname && u.search === location.search) || !/\.html?$|\/$/.test(u.pathname)) return;
+    e.preventDefault(); document.body.classList.add('leaving'); setTimeout(function () { location.href = a.href; }, 240);
+  });
+
+  /* ── 9. Burbuja "Ver sitio" que sigue al mouse sobre los proyectos ── */
+  if (fine) {
+    var cur = document.createElement('div'); cur.className = 'cur'; cur.textContent = 'Ver sitio'; document.body.appendChild(cur);
+    document.querySelectorAll('.bento-card,.bc:not(.bc-placeholder)').forEach(function (c) {
+      c.addEventListener('mouseenter', function () { cur.classList.add('on'); });
+      c.addEventListener('mouseleave', function () { cur.classList.remove('on'); });
+      c.addEventListener('mousemove', function (e) { cur.style.transform = 'translate(' + (e.clientX + 14) + 'px,' + (e.clientY + 14) + 'px)'; });
+    });
+  }
 })();

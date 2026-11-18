@@ -79,6 +79,36 @@ window.SG_KB = {
      "t": "Soporte y cómo trabajamos",
      "d": "Incluimos 30 días de soporte post-lanzamiento con correcciones gratuitas. Después, el mantenimiento se ajusta a lo que tu sitio realmente necesite, mensual o por hora. Trabajamos en cuatro pasos: conversación inicial, diseño aprobado por vos, avances que podés probar en cada etapa, y lanzamiento con pruebas exhaustivas."
     }
+   ],
+   "who": [
+    {
+     "t": "Empresas con sitio que no las representa",
+     "p": "Tenés una página, pero no te genera consultas y te da pena mandarla a un cliente.",
+     "h": "Un sitio a medida, rápido y pensado para que te contacten."
+    },
+    {
+     "t": "Negocios que necesitan más que una página",
+     "p": "Reservas, catálogo, clientes o pedidos que hoy se manejan por mensajes y hojas sueltas.",
+     "h": "Sistemas web con panel propio, conectados a lo que ya usás."
+    },
+    {
+     "t": "Quien está arrancando",
+     "p": "Recién abrís y querés verte serio desde el primer día.",
+     "h": "Un sitio profesional que crece con vos, sin rehacerlo desde cero."
+    }
+   ],
+   "deliver": [
+    "Sitio publicado en tu propio dominio",
+    "Panel para editar textos e imágenes sin tocar código",
+    "Versión pensada primero para celular",
+    "SEO técnico base: sitemap, datos estructurados y velocidad",
+    "Capacitación para que lo manejes solo",
+    "30 días de soporte prioritario por WhatsApp"
+   ],
+   "drivers": [
+    "Cuántas páginas y secciones lleva",
+    "Las funciones: reservas, tienda, panel, integraciones",
+    "Si ya tenés textos y fotos o hay que crearlos"
    ]
   },
   {
@@ -162,6 +192,36 @@ window.SG_KB = {
      "t": "Mantenimiento continuo",
      "d": "Revisiones técnicas periódicas, mejoras de seguridad, respaldos y monitoreo constante. Detectamos problemas antes de que afecten a tus visitantes, así vos te enfocás en tu negocio mientras nosotros cuidamos que tu web siga rápida y estable."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios con un sitio de hace años",
+     "p": "Se ve viejo, no abre bien en el celular y los clientes dudan de la empresa.",
+     "h": "Una cara nueva y moderna, sin perder lo que ya funciona."
+    },
+    {
+     "t": "Quien ya aparece en Google",
+     "p": "Tenés visitas y posiciones que no querés perder al cambiar de sitio.",
+     "h": "Migración cuidada con redirecciones, para conservar tu posicionamiento."
+    },
+    {
+     "t": "Sitios difíciles de actualizar",
+     "p": "Cada cambio depende de alguien y tarda días.",
+     "h": "Una estructura simple que podés mantener vos."
+    }
+   ],
+   "deliver": [
+    "Análisis previo del sitio actual",
+    "Diseño nuevo y estructura renovada",
+    "Migración controlada en un entorno separado",
+    "Redirecciones 301 y revisión de títulos y descripciones",
+    "Informe de velocidad antes y después",
+    "Soporte tras el lanzamiento"
+   ],
+   "drivers": [
+    "Cuántas páginas tiene el sitio actual",
+    "La plataforma de la que venís y su estado",
+    "Si cambia la estructura o solo el diseño"
    ]
   },
   {
@@ -242,6 +302,36 @@ window.SG_KB = {
      "t": "Medible desde el día uno",
      "d": "Formularios, botones de contacto y analíticas configuradas desde el lanzamiento. Sabés qué funciona y qué no, para ajustar la estrategia con datos reales en vez de suposiciones."
     }
+   ],
+   "who": [
+    {
+     "t": "Quien paga anuncios",
+     "p": "Mandás el tráfico a la página general y se pierde entre menús.",
+     "h": "Una página por campaña, con una sola acción clara."
+    },
+    {
+     "t": "Quien promociona un servicio puntual",
+     "p": "Querés que la gente agende, cotice o compre, no que navegue.",
+     "h": "Estructura enfocada en que el visitante dé el siguiente paso."
+    },
+    {
+     "t": "Lanzamientos y eventos",
+     "p": "Necesitás algo listo en pocos días para captar interesados.",
+     "h": "Entrega rápida: una landing suele tomar de 1 a 2 semanas."
+    }
+   ],
+   "deliver": [
+    "Landing page diseñada para convertir",
+    "Textos orientados a la acción",
+    "Formulario o botón directo a WhatsApp",
+    "Medición de visitas y conversiones",
+    "Versión móvil impecable",
+    "Soporte tras la entrega"
+   ],
+   "drivers": [
+    "Cuántas secciones necesita",
+    "Si ya tenés textos, fotos y logo",
+    "Si se conecta a un CRM o a anuncios"
    ]
   },
   {
@@ -327,6 +417,36 @@ window.SG_KB = {
      "t": "Equipo completo detrás",
      "d": "Diseñadores, desarrolladores, estrategas y especialistas en marketing trabajando juntos en tu tienda. El resultado es un ecommerce de alto rendimiento que tus clientes disfrutan usar."
     }
+   ],
+   "who": [
+    {
+     "t": "Tiendas físicas",
+     "p": "Querés vender también por internet sin depender de plataformas extranjeras.",
+     "h": "Tu tienda, con pagos como compran los ticos."
+    },
+    {
+     "t": "Quien vende por Instagram y WhatsApp",
+     "p": "Cada pedido es una conversación larga y cuesta llevar el control.",
+     "h": "Catálogo, carrito y pedidos ordenados en un panel."
+    },
+    {
+     "t": "Marcas con catálogo propio",
+     "p": "Necesitás inventario, envíos y clientes en un solo lugar.",
+     "h": "Un sistema pensado para tu forma de vender."
+    }
+   ],
+   "deliver": [
+    "Tienda completa con catálogo y carrito",
+    "Pagos: SINPE Móvil, tarjeta, depósito y contra entrega",
+    "Panel para revisar pagos y pedidos desde el teléfono",
+    "Cuentas de clientes con puntos de fidelidad y descuentos",
+    "Seguimiento de envíos por Correos de Costa Rica",
+    "Pruebas con transacciones reales antes del lanzamiento"
+   ],
+   "drivers": [
+    "Cantidad de productos y variantes",
+    "Los métodos de pago que querés ofrecer",
+    "Integraciones: envíos, facturación electrónica, inventario"
    ]
   },
   {
@@ -411,6 +531,36 @@ window.SG_KB = {
      "t": "Datos seguros y listos para crecer",
      "d": "Control total sobre tu información, sin depender de terceros ni de licencias externas. La herramienta crece con tu empresa, no al revés."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios con inventario",
+     "p": "Controlás existencias en hojas de cálculo que se desordenan.",
+     "h": "Un programa propio con tu inventario siempre al día."
+    },
+    {
+     "t": "Lugares con internet inestable",
+     "p": "Si se cae la conexión, se detiene el trabajo.",
+     "h": "Funciona en tu computadora, con o sin internet."
+    },
+    {
+     "t": "Quien no quiere pagar licencias cada mes",
+     "p": "Las licencias de programas ajenos suman y no se adaptan a tu proceso.",
+     "h": "Un sistema hecho a tu medida, sin alquiler mensual de licencias."
+    }
+   ],
+   "deliver": [
+    "Programa instalado y configurado en tu computadora",
+    "Módulos a tu medida: inventario, ventas, reportes",
+    "Respaldos de tu información",
+    "Importación de los datos que ya tenés",
+    "Capacitación para tu equipo",
+    "Soporte tras la entrega"
+   ],
+   "drivers": [
+    "Cuántos módulos necesitás",
+    "Cuántos usuarios lo usarán",
+    "Qué datos hay que importar"
    ]
   },
   {
@@ -491,6 +641,35 @@ window.SG_KB = {
      "t": "Plan de acción priorizado",
      "d": "Entregamos un plan ordenado por impacto, listo para que tu equipo lo ejecute o para que nosotros lo implementemos directamente."
     }
+   ],
+   "who": [
+    {
+     "t": "Quien no aparece en Google",
+     "p": "Tu sitio existe, pero cuando buscan lo que vendés aparece la competencia.",
+     "h": "Te decimos exactamente qué lo impide."
+    },
+    {
+     "t": "Quien ya invirtió en SEO",
+     "p": "Pagaste, pero no ves resultados y nadie te explica por qué.",
+     "h": "Un diagnóstico independiente y claro."
+    },
+    {
+     "t": "Antes de rediseñar",
+     "p": "Querés saber qué conservar y qué corregir antes de cambiar el sitio.",
+     "h": "Una base sólida para decidir bien."
+    }
+   ],
+   "deliver": [
+    "Informe completo de tu sitio",
+    "Problemas ordenados por impacto",
+    "Plan de acción listo para aplicar",
+    "Llamada para explicarte los resultados",
+    "Recomendaciones de contenido y estructura"
+   ],
+   "drivers": [
+    "El tamaño del sitio (páginas)",
+    "Qué tan competitivo es tu sector",
+    "Si querés que también apliquemos las correcciones"
    ]
   },
   {
@@ -573,6 +752,35 @@ window.SG_KB = {
      "t": "Reputación gestionada",
      "d": "Gestión de reseñas y presencia en directorios que refuerzan tu reputación en la zona donde operás, con paquetes a medida según tu negocio."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios con local físico",
+     "p": "Clínicas, talleres, restaurantes: dependés de que te encuentren cerca.",
+     "h": "Que aparezcas entre los primeros en Google Maps."
+    },
+    {
+     "t": "Servicios por zona",
+     "p": "Atendés ciertos cantones y querés que te busquen ahí.",
+     "h": "Posicionamiento pensado para tu zona de trabajo."
+    },
+    {
+     "t": "Quien tiene pocas reseñas",
+     "p": "La competencia tiene más estrellas y se lleva a los clientes.",
+     "h": "Estrategia para conseguir y responder reseñas."
+    }
+   ],
+   "deliver": [
+    "Optimización completa de tu perfil de Google",
+    "Corrección de datos de contacto en directorios",
+    "Estrategia de reseñas y respuestas",
+    "Contenido local para tus búsquedas",
+    "Reportes mensuales explicados en simple"
+   ],
+   "drivers": [
+    "Cuántas ubicaciones o sucursales tenés",
+    "Qué tan competida está tu zona",
+    "Cuántas reseñas partís"
    ]
   },
   {
@@ -656,6 +864,35 @@ window.SG_KB = {
      "t": "Experiencia que retiene",
      "d": "Navegación y carga pensadas para que el visitante se quede, no para que se vaya en los primeros segundos. Cada arreglo se basa en el diagnóstico real de tu sitio."
     }
+   ],
+   "who": [
+    {
+     "t": "Sitios lentos",
+     "p": "Los visitantes se van antes de que cargue la página.",
+     "h": "Velocidad medida y mejorada de forma concreta."
+    },
+    {
+     "t": "Sitios que Google no entiende bien",
+     "p": "Páginas que no se indexan o aparecen con datos incorrectos.",
+     "h": "Estructura y datos que Google lee sin problema."
+    },
+    {
+     "t": "Tiendas y sitios grandes",
+     "p": "Muchas páginas y errores acumulados con el tiempo.",
+     "h": "Limpieza técnica ordenada por prioridad."
+    }
+   ],
+   "deliver": [
+    "Diagnóstico técnico completo",
+    "Mejoras de velocidad y rendimiento",
+    "Sitemap, robots y rastreo corregidos",
+    "Datos estructurados implementados",
+    "Medición de antes y después"
+   ],
+   "drivers": [
+    "El tamaño y la plataforma del sitio",
+    "La cantidad de problemas encontrados",
+    "Si hay cambios de código o solo configuración"
    ]
   },
   {
@@ -741,6 +978,36 @@ window.SG_KB = {
      "t": "Identifica clientes listos para comprar",
      "d": "Filtra y prioriza conversaciones antes de que un humano tenga que intervenir, así tu equipo se enfoca solo en los clientes que realmente van a comprar."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios que reciben los mismos mensajes todo el día",
+     "p": "Precios, horarios, ubicación: contestás lo mismo una y otra vez.",
+     "h": "El asistente responde al instante y vos atendés lo importante."
+    },
+    {
+     "t": "Clínicas, veterinarias y servicios con citas",
+     "p": "Agendar por mensaje consume horas y se escapan clientes fuera de horario.",
+     "h": "Citas agendadas a cualquier hora, sin intervención manual."
+    },
+    {
+     "t": "Tiendas que venden por WhatsApp",
+     "p": "Cada consulta de producto es una venta que depende de que contestés rápido.",
+     "h": "Atención 24/7 que califica y pasa a una persona cuando hace falta."
+    }
+   ],
+   "deliver": [
+    "Asistente entrenado con la información de tu negocio",
+    "Conexión a WhatsApp Business",
+    "Captura de datos del cliente",
+    "Traspaso a una persona cuando hace falta",
+    "Panel con las conversaciones",
+    "Ajustes iniciales y 30 días de soporte"
+   ],
+   "drivers": [
+    "Cuántos canales querés cubrir",
+    "Si se conecta a una agenda o a un CRM",
+    "El volumen de conversaciones (WhatsApp e IA tienen costos del proveedor)"
    ]
   },
   {
@@ -834,6 +1101,36 @@ window.SG_KB = {
      "t": "Accedé desde donde estés",
      "d": "Con la app móvil tus vendedores actualizan clientes y dan seguimiento desde la calle, en cualquier parte de Costa Rica, y todo queda sincronizado al instante."
     }
+   ],
+   "who": [
+    {
+     "t": "Pymes que venden con seguimiento",
+     "p": "Cotizás, esperás respuesta y se te olvida volver a escribir.",
+     "h": "Recordatorios y etapas claras para no perder ventas."
+    },
+    {
+     "t": "Equipos de ventas en la calle",
+     "p": "Cada vendedor anota por su lado y no hay una vista común.",
+     "h": "Una app móvil con todos los clientes al alcance."
+    },
+    {
+     "t": "Quien lleva clientes en Excel o cuaderno",
+     "p": "La información se pierde, se duplica o nadie sabe dónde está.",
+     "h": "Una base de datos centralizada y ordenada."
+    }
+   ],
+   "deliver": [
+    "CRM configurado con las etapas de tu proceso",
+    "Importación de tus contactos actuales",
+    "Recordatorios automáticos por WhatsApp o correo",
+    "App móvil para tu equipo",
+    "Capacitación al equipo",
+    "Soporte tras el lanzamiento"
+   ],
+   "drivers": [
+    "Cuántos usuarios lo usarán",
+    "Campos y reportes personalizados",
+    "Integraciones: WhatsApp, correo, facturación electrónica"
    ]
   },
   {
@@ -917,6 +1214,35 @@ window.SG_KB = {
      "t": "Compatible con tus herramientas",
      "d": "Nos adaptamos a las herramientas que ya tenés implementadas, sin obligarte a migrar a algo nuevo solo para que todo se conecte."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios con varias herramientas que no se hablan",
+     "p": "Tenés ventas, inventario y contabilidad en lugares distintos.",
+     "h": "Que los datos viajen solos de una herramienta a otra."
+    },
+    {
+     "t": "Quien copia y pega datos a mano",
+     "p": "Pasás horas pasando información de un sistema a otro.",
+     "h": "Sincronización automática y sin errores de digitación."
+    },
+    {
+     "t": "Tiendas en línea",
+     "p": "Pedidos, pagos y envíos viven separados.",
+     "h": "Un flujo continuo desde la venta hasta la entrega."
+    }
+   ],
+   "deliver": [
+    "Conexiones por API entre tus herramientas",
+    "Mapeo claro de qué dato va a dónde",
+    "Pruebas con datos reales",
+    "Documentación de cada integración",
+    "Monitoreo y alertas de errores"
+   ],
+   "drivers": [
+    "Cuántas herramientas se conectan",
+    "Qué tan completa es la API de cada una",
+    "Cuánto dato y con qué frecuencia se sincroniza"
    ]
   },
   {
@@ -999,6 +1325,36 @@ window.SG_KB = {
      "t": "Automatización a medida",
      "d": "Menos errores, menos tareas manuales, más tiempo para que tu equipo se enfoque en lo que realmente impulsa el crecimiento del negocio."
     }
+   ],
+   "who": [
+    {
+     "t": "Equipos con tareas repetitivas",
+     "p": "Reportes, recordatorios y avisos que alguien hace a mano todos los días.",
+     "h": "Procesos que se ejecutan solos y sin olvidos."
+    },
+    {
+     "t": "Negocios que reciben formularios y solicitudes",
+     "p": "Cada solicitud pasa por varias manos antes de resolverse.",
+     "h": "Un recorrido automático desde que llega hasta que se atiende."
+    },
+    {
+     "t": "Áreas administrativas",
+     "p": "Aprobaciones y seguimientos que se atrasan por falta de tiempo.",
+     "h": "Flujos con avisos y reglas claras."
+    }
+   ],
+   "deliver": [
+    "Mapa de tus procesos actuales",
+    "Flujos automáticos construidos y probados",
+    "Alertas cuando un paso falla",
+    "Documentación de cada flujo",
+    "Capacitación al equipo",
+    "Soporte tras la entrega"
+   ],
+   "drivers": [
+    "Cuántos procesos se automatizan",
+    "Cuántos sistemas intervienen",
+    "Si hay aprobaciones y reglas especiales"
    ]
   },
   {
@@ -1083,6 +1439,35 @@ window.SG_KB = {
      "t": "Lista para cualquier canal",
      "d": "Redes sociales, presentaciones o campañas digitales, el contenido sale optimizado para el formato donde va a vivir."
     }
+   ],
+   "who": [
+    {
+     "t": "Negocios que publican en redes sin tiempo",
+     "p": "Grabás, pero editar consume horas que no tenés.",
+     "h": "Videos listos para publicar, con tu estilo."
+    },
+    {
+     "t": "Clínicas, restaurantes y servicios",
+     "p": "Querés mostrar tu trabajo y el resultado se ve improvisado.",
+     "h": "Edición profesional con subtítulos y música."
+    },
+    {
+     "t": "Quien vende productos",
+     "p": "Necesitás videos cortos para anuncios y redes.",
+     "h": "Versiones listas para cada formato y plataforma."
+    }
+   ],
+   "deliver": [
+    "Edición con cortes y ritmo",
+    "Subtítulos y música de fondo",
+    "Motion graphics y tu logo",
+    "Versiones en varios formatos",
+    "Entrega lista para publicar"
+   ],
+   "drivers": [
+    "La duración y la cantidad de videos",
+    "El nivel de motion graphics",
+    "Cuántos formatos necesitás"
    ]
   }
  ],

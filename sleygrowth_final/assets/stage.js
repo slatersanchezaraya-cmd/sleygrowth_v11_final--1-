@@ -2,7 +2,7 @@
 (function () {
   var st = document.getElementById('stage'); if (!st) return;
   var tabs = [].slice.call(st.querySelectorAll('.st-tabs button')), scs = [].slice.call(st.querySelectorAll('.st-sc')), foot = st.querySelector('.st-foot');
-  var DUR = 9500, caps = ['Un sitio rápido, a medida, que se ve bien en cualquier pantalla.', 'Subí en Google cuando tus clientes te buscan cerca.', 'Un asistente que contesta, vende y agenda mientras vos descansás.'];
+  var DUR = 9500, caps = ['Un sitio rápido, a medida, que se ve bien en cualquier pantalla.', 'Subí en Google cuando tus clientes te buscan cerca.', 'Un asistente que contesta, vende y agenda mientras vos descansás.', 'Todos tus clientes y ventas ordenados, con recordatorios para no perder ninguna.'];
   var timers = [], cur = -1, elapsed = 0, paused = false, loop;
   function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
   function count(el) { var to = parseFloat(el.dataset.count), dec = +el.dataset.dec || 0, t0 = performance.now(); (function s(n) { var p = Math.min((n - t0) / 1200, 1); el.textContent = (to * (1 - Math.pow(1 - p, 3))).toFixed(dec); if (p < 1) requestAnimationFrame(s); })(t0); }
@@ -26,6 +26,7 @@
         (function (mm, tt) { at(tt, function () { if (mm._ty) mm._ty.remove(); mm.classList.add('show'); }); })(m, t);
       });
     }
+    ,function () { var sc = scs[3]; steps(sc).forEach(function (s) { at(+s.dataset.t || 0, function () { s.classList.add('in'); s.querySelectorAll('[data-count]').forEach(count); }); }); }
   ];
 
   function play(i) {
@@ -37,6 +38,6 @@
   tabs.forEach(function (t, i) { t.addEventListener('click', function () { play(i); }); });
   st.addEventListener('mouseenter', function () { paused = true; st.classList.add('paused'); });
   st.addEventListener('mouseleave', function () { paused = false; st.classList.remove('paused'); });
-  function start() { play(0); loop = setInterval(function () { if (paused || document.hidden) return; elapsed += 100; if (elapsed >= DUR) play((cur + 1) % 3); }, 100); }
+  function start() { play(0); loop = setInterval(function () { if (paused || document.hidden) return; elapsed += 100; if (elapsed >= DUR) play((cur + 1) % tabs.length); }, 100); }
   setTimeout(start, (window.__sgDelay || 0) + 250);
 })();

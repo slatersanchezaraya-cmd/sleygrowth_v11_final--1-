@@ -75,7 +75,7 @@
     return sc > 0 ? best : null;
   }
   function bestFaq(t) {
-    var w = words(t); if (/(panama|mexico|colombia|guatemala|nicaragua|honduras|salvador|usa|estados unidos|espana|chile|argentina|peru|ecuador|extranjero|otro pais|internacional|afuera|fuera)/.test(t)) w = w.concat(['empresas', 'fuera', 'costa', 'rica', 'trabajan']);
+    var w = words(t); if (/\b(panama|mexico|colombia|guatemala|nicaragua|honduras|salvador|usa|estados unidos|espana|chile|argentina|peru|ecuador|extranjero|otro pais|internacional|afuera|fuera)\b/.test(t)) w = w.concat(['empresas', 'fuera', 'costa', 'rica', 'trabajan']);
     if (!w.length) return null; var best = null, sc = 0;
     var pool = KB.faq.map(function (f) { return { f: f, s: null }; });
     KB.services.forEach(function (s) { s.faq.forEach(function (f) { pool.push({ f: f, s: s }); }); });
@@ -96,10 +96,13 @@
     var price = /\b(precio|precios|cuanto cuesta|cuanto vale|cuanto sale|costo|costos|tarifa|cobran|inversion|cuanto cobran)\b/.test(t), time = /\b(cuanto tarda|cuanto demora|plazo|plazos|tiempo|cuando estaria|semanas|duracion|tardan|demoran)\b/.test(t), steps = /\b(proceso|pasos|como trabajan|metodologia|etapas|como es el proceso)\b/.test(t), inc = /\b(incluye|incluyen|que es|en que consiste|como funciona|de que trata|que hacen|que ofrece)\b/.test(t);
     if (s) {
       topic(s);
-      if (price) return say(s.price ? '<b>' + esc(s.name) + ':</b> ' + esc(s.price.replace(/\s*\+ mantenimiento mensual/, '')) + ', más un mantenimiento mensual opcional. El alcance exacto se fija en la propuesta, sin costos ocultos.' : '<b>' + esc(s.name) + '</b> se cotiza según el alcance de tu proceso. En la auditoría gratis de 45 minutos te damos el número.', follow(s).concat([]), 700);
+      if (/\b(para quien|a quien|me sirve|le sirve|sirve para|quien lo necesita|quienes lo usan)\b/.test(t) && s.who.length) return say('<b>' + esc(s.short) + '</b> les sirve sobre todo a:<ul>' + s.who.map(function (w) { return '<li><b>' + esc(w.t) + '.</b> ' + esc(w.h) + '</li>'; }).join('') + '</ul>', follow(s), 800);
+      if (/\b(que recibo|que reciben|que entregan|entregables|que me dan|que obtengo|que incluye el precio)\b/.test(t) && s.deliver.length) return say('En <b>' + esc(s.short) + '</b> recibís:<ul>' + s.deliver.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>', follow(s), 800);
+      if (price && /\b(depende|define|influye|sube|cambia)\b/.test(t) && s.drivers.length) return say('El precio de <b>' + esc(s.short) + '</b> depende de:<ul>' + s.drivers.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' + (s.price ? 'Base: ' + esc(s.price.replace(/\s*\+ mantenimiento mensual/, '')) + '.' : 'Se cotiza según el alcance.'), follow(s), 800);
+      if (price) return say(s.price ? '<b>' + esc(s.name) + ':</b> ' + esc(s.price.replace(/\s*\+ mantenimiento mensual/, '')) + ', más un mantenimiento mensual opcional. El alcance exacto se fija en la propuesta, sin costos ocultos.' + (s.drivers.length ? ' El precio final depende de: ' + s.drivers.map(function (x) { return esc(x); }).join('; ') + '.' : '') : '<b>' + esc(s.name) + '</b> se cotiza según el alcance de tu proceso. En la auditoría gratis de 45 minutos te damos el número.', follow(s).concat([]), 700);
       if (time) return say('<b>' + esc(s.name) + ':</b> ' + TIME, follow(s));
       if (steps && s.steps.length) return say('Así trabajamos <b>' + esc(s.short) + '</b>:<ul>' + s.steps.map(function (p, i) { return '<li><b>' + (i + 1) + '. ' + esc(p.t) + '.</b> ' + esc(p.d) + '</li>'; }).join('') + '</ul>', follow(s), 800);
-      var f = bestFaq(t); if (f && f.s === s && !inc && /\?|^(que|como|cual|cuanto|cuando|donde|quien|puedo|pueden|se puede|hacen|tienen|es posible|funciona)/.test(raw.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim())) return say(esc(f.f.a), follow(s));
+      var f = bestFaq(t); if (f && f.s === s && !inc && /\?|^(que|como|cual|cuanto|cuando|donde|quien|puedo|pueden|se puede|hacen|tienen|es posible|funciona)\b/.test(raw.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim())) return say(esc(f.f.a), follow(s));
       var det = s.details.length ? s.details[0] : null;
       return say('<b>' + esc(s.short) + '.</b> ' + esc(s.desc) + (s.includes.length ? list(s.includes, 3) : (det ? '<ul><li><b>' + esc(det.t) + '.</b> ' + esc(det.d) + '</li></ul>' : '')) + (s.price ? 'Desde <b>' + esc(s.price.replace(/Desde\s*/, '').replace(/\s*\+ mantenimiento mensual/, '')) + '</b>. ' : '') + link(s) + (find(s.slug) ? ' <a class="cb-a" href="' + url(s) + '#demo">Probar la demo</a>' : ''), follow(s), 800);
     }
